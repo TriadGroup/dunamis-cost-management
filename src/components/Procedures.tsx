@@ -2,56 +2,45 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Smile, Sparkles } from 'lucide-react';
+import { Sparkles, User, Scissors, MessageCircle } from 'lucide-react';
+
+const WHATSAPP_NUMBER = '5513997149974';
 
 const tabs = [
   {
-    id: 'sorriso',
-    label: 'Lentes & Sorriso',
-    icon: Smile,
+    id: 'facial',
+    label: 'Facial',
+    icon: Sparkles,
     procedures: [
-      {
-        name: 'Lentes de contato dental',
-        tagline: 'Sorriso alinhado e luminoso',
-        bullets: ['Aparência natural e harmônica', 'Planejamento digital personalizado'],
-      },
-      {
-        name: 'Clareamento dental',
-        tagline: 'Dentes mais brancos com segurança',
-        bullets: ['Protocolo supervisionado', 'Resultado perceptível desde as primeiras sessões'],
-      },
-      {
-        name: 'Reabilitação/Estética do sorriso',
-        tagline: 'Restaure a funcionalidade e a beleza',
-        bullets: ['Abordagem completa e integrada', 'Devolvendo confiança ao sorrir'],
-      },
-      {
-        name: 'Avaliação do sorriso',
-        tagline: 'Planejamento é o primeiro passo',
-        bullets: ['Análise facial e dental detalhada', 'Simulação do resultado esperado'],
-      },
+      { name: 'Botox', tagline: 'Suavidade nas expressões', bullets: ['Aplicação precisa e cuidadosa', 'Aparência descansada e natural'] },
+      { name: 'Preenchimento', tagline: 'Volume e contorno com delicadeza', bullets: ['Produtos de alta qualidade', 'Harmonia com os traços do rosto'] },
+      { name: 'Bioestimulador de colágeno', tagline: 'Firmeza e rejuvenescimento', bullets: ['Estímulo natural do colágeno', 'Resultado progressivo e duradouro'] },
+      { name: 'Skinbooster', tagline: 'Hidratação profunda', bullets: ['Melhora da qualidade da pele', 'Mais viço e luminosidade'] },
+      { name: 'Microagulhamento', tagline: 'Renovação celular', bullets: ['Estímulo de colágeno e elastina', 'Pele mais uniforme e saudável'] },
+      { name: 'Peeling', tagline: 'Renovação e uniformidade', bullets: ['Tratamento de manchas e textura', 'Pele renovada e luminosa'] },
+      { name: 'Laser para rejuvenescimento facial', tagline: 'Tecnologia avançada', bullets: ['Tratamento preciso e eficaz', 'Rejuvenescimento com segurança'] },
+      { name: 'Lavieen', tagline: 'Tecnologia coreana', bullets: ['Tratamento de melasma e manchas', 'Resultados desde as primeiras sessões'] },
+      { name: 'Lifting temporal não cirúrgico', tagline: 'Efeito lifting sem cirurgia', bullets: ['Procedimento minimamente invasivo', 'Reposicionamento dos tecidos faciais'] },
+      { name: 'Endolifting', tagline: 'Sustentação e firmeza', bullets: ['Tecnologia a laser', 'Flacidez facial e corporal'] },
+      { name: 'Intradermoterapia facial', tagline: 'Nutrição direta para a pele', bullets: ['Vitaminas e ativos injetáveis', 'Revitalização profunda'] },
     ],
   },
   {
-    id: 'harmonizacao',
-    label: 'Harmonização Facial',
-    icon: Sparkles,
+    id: 'corporal',
+    label: 'Corporal',
+    icon: User,
     procedures: [
-      {
-        name: 'Harmonização facial (Full Face)',
-        tagline: 'Equilíbrio e proporção no rosto',
-        bullets: ['Abordagem global e personalizada', 'Resultados que respeitam sua identidade'],
-      },
-      {
-        name: 'Botox',
-        tagline: 'Suavidade nas expressões',
-        bullets: ['Aplicação precisa e cuidadosa', 'Aparência descansada e natural'],
-      },
-      {
-        name: 'Preenchimento',
-        tagline: 'Volume e contorno com delicadeza',
-        bullets: ['Produtos de alta qualidade', 'Harmonia com os traços do rosto'],
-      },
+      { name: 'Ultraformer', tagline: 'Ultrassom microfocado', bullets: ['Lifting sem cirurgia', 'Firmeza e contorno corporal'] },
+      { name: 'Intradermoterapia corporal', tagline: 'Tratamento localizado', bullets: ['Redução de gordura localizada', 'Melhora de celulite'] },
+      { name: 'Protocoll', tagline: 'Protocolo personalizado', bullets: ['Combinação de técnicas avançadas', 'Resultado otimizado'] },
+    ],
+  },
+  {
+    id: 'capilar',
+    label: 'Capilar',
+    icon: Scissors,
+    procedures: [
+      { name: 'Intradermoterapia capilar', tagline: 'Fortalecimento dos fios', bullets: ['Nutrientes direto no couro cabeludo', 'Combate à queda e afinamento'] },
     ],
   },
 ];
@@ -61,11 +50,16 @@ interface ProceduresProps {
 }
 
 export const Procedures = ({ onSelectProcedure }: ProceduresProps) => {
-  const [activeTab, setActiveTab] = useState('sorriso');
+  const [activeTab, setActiveTab] = useState('facial');
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   const currentTab = tabs.find((t) => t.id === activeTab)!;
+
+  const buildWhatsAppUrl = (procedureName: string) => {
+    const msg = `Olá! Gostaria de saber mais sobre ${procedureName} com a Dra. Mayara Paccola em Registro/SP.`;
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+  };
 
   return (
     <section id="procedimentos" className="section-dark py-24 md:py-32 overflow-hidden">
@@ -84,12 +78,12 @@ export const Procedures = ({ onSelectProcedure }: ProceduresProps) => {
             Encontre o cuidado <span className="italic">ideal</span>
           </h2>
           <p className="text-body text-foreground-light/70 max-w-xl mx-auto">
-            Cada procedimento é adaptado às suas necessidades. Resultados variam e dependem de avaliação.
+            Cada procedimento é adaptado às suas necessidades. Resultados variam e dependem de avaliação individualizada.
           </p>
         </motion.div>
 
         {/* Tab switcher */}
-        <div className="flex justify-center gap-3 mb-12">
+        <div className="flex justify-center gap-3 mb-12 flex-wrap">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -132,12 +126,23 @@ export const Procedures = ({ onSelectProcedure }: ProceduresProps) => {
                   </li>
                 ))}
               </ul>
-              <button
-                onClick={() => onSelectProcedure(proc.name)}
-                className="text-sm text-accent font-medium hover:underline self-start"
-              >
-                Quero avaliar →
-              </button>
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={() => onSelectProcedure(proc.name)}
+                  className="text-sm text-accent font-medium hover:underline"
+                >
+                  Quero avaliar →
+                </button>
+                <a
+                  href={buildWhatsAppUrl(proc.name)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-foreground-light/50 hover:text-foreground-light/80 inline-flex items-center gap-1"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  WhatsApp
+                </a>
+              </div>
             </motion.div>
           ))}
         </motion.div>

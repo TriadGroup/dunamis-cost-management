@@ -1,16 +1,18 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { MapPin, Phone, Clock, MessageCircle, Instagram } from 'lucide-react';
+import { MapPin, Phone, Clock, MessageCircle, Navigation } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '5537999833437';
+const WHATSAPP_NUMBER = '5513997149974';
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de agendar uma avaliação com a Dra. Mayara Paccola em Registro/SP.')}`;
+const MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=R.+José+Antônio+de+Campos,+480+-+Centro,+Registro+-+SP,+11900-000';
 
-export const Contact = () => {
+export const Location = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="contato" className="section-dark py-24 md:py-32">
+    <section id="localizacao" className="section-dark py-24 md:py-32">
       <div className="container-narrow">
         <motion.div
           ref={ref}
@@ -20,7 +22,7 @@ export const Contact = () => {
           className="text-center mb-16"
         >
           <p className="text-sm font-medium tracking-[0.2em] uppercase text-accent mb-4">
-            Contato
+            Localização
           </p>
           <h2 className="text-display-lg text-foreground-light mb-4">
             Venha nos conhecer
@@ -41,7 +43,7 @@ export const Contact = () => {
               <div>
                 <h3 className="font-display text-lg text-foreground-light mb-1">Endereço</h3>
                 <p className="text-foreground-light/70">
-                  [Endereço da clínica]<br />[Cidade — UF]
+                  R. José Antônio de Campos, 480 — Centro<br />Registro — SP, 11900-000
                 </p>
               </div>
             </div>
@@ -52,7 +54,7 @@ export const Contact = () => {
               </div>
               <div>
                 <h3 className="font-display text-lg text-foreground-light mb-1">WhatsApp</h3>
-                <p className="text-foreground-light/70">+55 37 99983-3437</p>
+                <p className="text-foreground-light/70">+55 (13) 99714-9974</p>
               </div>
             </div>
 
@@ -61,46 +63,62 @@ export const Contact = () => {
                 <Clock className="w-5 h-5 text-accent" />
               </div>
               <div>
-                <h3 className="font-display text-lg text-foreground-light mb-1">Atendimento</h3>
+                <h3 className="font-display text-lg text-foreground-light mb-1">Horário</h3>
                 <p className="text-foreground-light/70">
-                  Segunda a Sexta, 8h às 18h<br />Sábados com agendamento
+                  Fechado · Abre ter. às 09:00
+                </p>
+                <p className="text-foreground-light/50 text-sm mt-1">
+                  Atendimento com horário marcado. Confirme disponibilidade no WhatsApp.
                 </p>
               </div>
             </div>
 
-            <div className="flex gap-4 pt-4">
+            <div className="flex flex-wrap gap-3 pt-4">
               <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de agendar uma avaliação com a Dra. Vanessa Ribeiro.')}`}
+                href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary"
+                className="btn-secondary-dark text-sm"
               >
-                <MessageCircle className="w-5 h-5" />
-                Falar no WhatsApp
+                <Navigation className="w-4 h-4" />
+                Abrir no Maps
               </a>
               <a
-                href="#"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-foreground-light/70 hover:text-foreground-light hover:border-white/40 transition-all"
-                aria-label="Instagram"
+                className="btn-primary text-sm"
               >
-                <Instagram className="w-5 h-5" />
+                <MessageCircle className="w-4 h-4" />
+                Chamar no WhatsApp
+              </a>
+              <a
+                href="tel:+5513997149974"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-white/20 text-foreground-light/70 rounded-full text-sm font-medium transition-all hover:border-white/40 hover:text-foreground-light"
+              >
+                <Phone className="w-4 h-4" />
+                Ligar
               </a>
             </div>
           </motion.div>
 
-          {/* Map placeholder */}
+          {/* Map embed */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden bg-card-dark border border-white/10 flex items-center justify-center"
+            className="aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden border border-white/10"
           >
-            <div className="text-center text-foreground-light/30">
-              <MapPin className="w-12 h-12 mx-auto mb-2" />
-              <p className="text-sm">Mapa em breve</p>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.5!2d-47.8441!3d-24.4871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sR.+Jos%C3%A9+Ant%C3%B4nio+de+Campos%2C+480+-+Centro%2C+Registro+-+SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização da clínica"
+            />
           </motion.div>
         </div>
       </div>

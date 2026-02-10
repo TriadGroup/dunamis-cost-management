@@ -3,12 +3,10 @@ import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { Trust } from '@/components/Trust';
 import { Procedures } from '@/components/Procedures';
-import { Gallery } from '@/components/Gallery';
 import { HowItWorks } from '@/components/HowItWorks';
-import { About } from '@/components/About';
 import { AgendamentoExpress } from '@/components/AgendamentoExpress';
 import { FAQ } from '@/components/FAQ';
-import { Contact } from '@/components/Contact';
+import { Location } from '@/components/Location';
 import { Footer } from '@/components/Footer';
 
 const Index = () => {
@@ -32,15 +30,13 @@ const Index = () => {
       <Hero />
       <Trust />
       <Procedures onSelectProcedure={handleSelectProcedure} />
-      <Gallery />
       <HowItWorks />
-      <About />
       <AgendamentoExpress
         initialService={selectedProcedure}
         onServiceChange={handleServiceChange}
       />
       <FAQ />
-      <Contact />
+      <Location />
       <Footer />
     </div>
   );

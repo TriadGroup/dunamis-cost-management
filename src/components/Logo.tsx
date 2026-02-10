@@ -10,19 +10,19 @@ export const Logo = ({ className = '', showSubtitle = false, variant = 'dark' }:
 
   return (
     <div className={`inline-flex items-center gap-3 ${className}`}>
-      {/* VR Monogram */}
+      {/* MP Monogram */}
       <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
         <text
           x="50"
           y="72"
           textAnchor="middle"
           fontFamily="'Playfair Display', Georgia, serif"
-          fontSize="68"
+          fontSize="60"
           fontWeight="500"
           fill={goldColor}
-          letterSpacing="-4"
+          letterSpacing="-2"
         >
-          VR
+          MP
         </text>
       </svg>
 
@@ -32,14 +32,14 @@ export const Logo = ({ className = '', showSubtitle = false, variant = 'dark' }:
           className="font-display text-lg md:text-xl font-medium tracking-wide"
           style={{ color: textColor }}
         >
-          Dra. Vanessa Ribeiro
+          Dra. Mayara Paccola
         </span>
         {showSubtitle && (
           <span
             className="text-[10px] md:text-xs tracking-[0.15em] uppercase font-body"
             style={{ color: goldColor }}
           >
-            Harmonização Facial & Lentes
+            Estética Avançada
           </span>
         )}
       </div>
@@ -62,12 +62,12 @@ export const LogoMonogram = ({ className = '', variant = 'dark' }: { className?:
         y="72"
         textAnchor="middle"
         fontFamily="'Playfair Display', Georgia, serif"
-        fontSize="68"
+        fontSize="60"
         fontWeight="500"
         fill={goldColor}
-        letterSpacing="-4"
+        letterSpacing="-2"
       >
-        VR
+        MP
       </text>
     </svg>
   );
