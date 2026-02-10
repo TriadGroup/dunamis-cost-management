@@ -4,6 +4,7 @@ import { Hero } from '@/components/Hero';
 import { Trust } from '@/components/Trust';
 import { Procedures } from '@/components/Procedures';
 import { HowItWorks } from '@/components/HowItWorks';
+import { About } from '@/components/About';
 import { AgendamentoExpress } from '@/components/AgendamentoExpress';
 import { FAQ } from '@/components/FAQ';
 import { Location } from '@/components/Location';
@@ -31,6 +32,7 @@ const Index = () => {
       <Trust />
       <Procedures onSelectProcedure={handleSelectProcedure} />
       <HowItWorks />
+      <About />
       <AgendamentoExpress
         initialService={selectedProcedure}
         onServiceChange={handleServiceChange}
