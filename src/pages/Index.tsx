@@ -3,6 +3,7 @@ import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { Trust } from '@/components/Trust';
 import { Procedures } from '@/components/Procedures';
+import { Gallery } from '@/components/Gallery';
 import { HowItWorks } from '@/components/HowItWorks';
 import { About } from '@/components/About';
 import { AgendamentoExpress } from '@/components/AgendamentoExpress';
@@ -31,6 +32,7 @@ const Index = () => {
       <Hero />
       <Trust />
       <Procedures onSelectProcedure={handleSelectProcedure} />
+      <Gallery />
       <HowItWorks />
       <About />
       <AgendamentoExpress
