@@ -5,28 +5,24 @@ import { ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
+    question: 'Harmonização fica natural?',
+    answer: 'Sim. Nosso foco é realçar sua beleza de forma equilibrada, respeitando seus traços e proporções. Nada de exageros — o resultado é pensado para parecer naturalmente bonito.',
+  },
+  {
     question: 'Como funciona a avaliação?',
-    answer: 'Na avaliação, conversamos sobre seus objetivos, analisamos seu perfil facial e dental, e montamos um plano personalizado. É o momento para tirar todas as suas dúvidas.',
+    answer: 'Na avaliação, conversamos sobre seus objetivos, analisamos seu perfil (pele, traços, saúde) e montamos um plano personalizado. É o momento para tirar todas as suas dúvidas antes de qualquer procedimento.',
   },
   {
-    question: 'Dói? Tem tempo de recuperação?',
-    answer: 'Depende do procedimento. Muitos são minimamente invasivos e com pouco desconforto. Na avaliação, explicamos tudo sobre o processo e a recuperação do procedimento escolhido.',
+    question: 'Quantas sessões posso precisar?',
+    answer: 'Depende do procedimento e do seu objetivo. Alguns tratamentos mostram resultado em sessão única; outros podem precisar de um protocolo com mais sessões. Tudo é explicado na avaliação.',
   },
   {
-    question: 'Quanto tempo dura?',
-    answer: 'A duração varia conforme o procedimento. Lentes podem durar muitos anos com bons cuidados. Harmonizações faciais têm durações variáveis. Cada caso é avaliado individualmente.',
+    question: 'Posso combinar procedimentos?',
+    answer: 'Em muitos casos, sim. Combinar procedimentos pode otimizar resultados. A Dra. Mayara avalia cada caso e indica o que faz sentido para você, sempre priorizando segurança.',
   },
   {
-    question: 'Fica natural?',
-    answer: 'Naturalidade é nosso foco principal. Trabalhamos respeitando os traços e proporções de cada paciente, buscando harmonia e equilíbrio — nunca exageros.',
-  },
-  {
-    question: 'Como é o planejamento do sorriso/lentes?',
-    answer: 'Utilizamos planejamento digital para simular o resultado antes de iniciar. Assim você participa das decisões e tem uma prévia do resultado final.',
-  },
-  {
-    question: 'Como posso agendar e quais horários?',
-    answer: 'Basta usar o formulário de agendamento express nesta página ou clicar em "Agendar no WhatsApp". Atendemos de segunda a sexta, e sábados com agendamento prévio.',
+    question: 'Tem tempo de recuperação?',
+    answer: 'Varia conforme o procedimento. A maioria dos tratamentos oferecidos é minimamente invasiva, com pouco ou nenhum tempo de recuperação. Na avaliação, explicamos tudo em detalhes.',
   },
 ];
 
@@ -64,7 +60,7 @@ export const FAQ = () => {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-muted/30 transition-colors"
+                className="w-full flex items-center justify-between p-5 text-left bg-card hover:bg-muted/30 transition-colors"
               >
                 <span className="font-display text-lg text-foreground pr-4">{faq.question}</span>
                 <ChevronDown

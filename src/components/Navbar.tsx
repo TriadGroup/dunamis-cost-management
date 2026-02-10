@@ -5,15 +5,15 @@ import { Logo } from './Logo';
 
 const navLinks = [
   { label: 'Procedimentos', href: '#procedimentos' },
-  { label: 'Resultados', href: '#resultados' },
   { label: 'Como Funciona', href: '#como-funciona' },
-  { label: 'Sobre', href: '#sobre' },
+  { label: 'Depoimentos', href: '#depoimentos' },
   { label: 'Agendar', href: '#agendar' },
+  { label: 'Localização', href: '#localizacao' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Contato', href: '#contato' },
 ];
 
-const WHATSAPP_NUMBER = '5537999833437';
+const WHATSAPP_NUMBER = '5513997149974';
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de agendar uma avaliação com a Dra. Mayara Paccola em Registro/SP.')}`;
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,10 +43,7 @@ export const Navbar = () => {
       >
         <div className="container-wide">
           <div className="flex items-center justify-between h-16 md:h-20">
-            <a
-              href="#home"
-              onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}
-            >
+            <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}>
               <Logo variant={isScrolled ? 'dark' : 'light'} />
             </a>
 
@@ -66,7 +63,7 @@ export const Navbar = () => {
             </div>
 
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de agendar uma avaliação com a Dra. Vanessa Ribeiro.')}`}
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden lg:flex btn-primary text-sm"
@@ -111,7 +108,7 @@ export const Navbar = () => {
                   </motion.a>
                 ))}
                 <motion.a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de agendar uma avaliação com a Dra. Vanessa Ribeiro.')}`}
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, x: -20 }}
@@ -129,7 +126,7 @@ export const Navbar = () => {
       </AnimatePresence>
 
       <motion.a
-        href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de agendar uma avaliação com a Dra. Vanessa Ribeiro.')}`}
+        href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0 }}

@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ClipboardList, FileText, Sparkles } from 'lucide-react';
+import { ClipboardList, FileText, ShieldCheck } from 'lucide-react';
 
 const steps = [
-  { icon: ClipboardList, number: '01', title: 'Avaliação e objetivos', desc: 'Entendemos o que você deseja e analisamos seu perfil completo.' },
-  { icon: FileText, number: '02', title: 'Plano + proposta', desc: 'Montamos um plano de tratamento transparente e sob medida.' },
-  { icon: Sparkles, number: '03', title: 'Execução + acompanhamento', desc: 'Realizamos o procedimento com cuidado e fazemos o acompanhamento.' },
+  { icon: ClipboardList, number: '01', title: 'Avaliação personalizada', desc: 'Entendemos seus objetivos e analisamos seu perfil completo.' },
+  { icon: FileText, number: '02', title: 'Plano de cuidados', desc: 'Montamos o plano com procedimentos e orientações sob medida.' },
+  { icon: ShieldCheck, number: '03', title: 'Acompanhamento seguro', desc: 'Realizamos o procedimento e fazemos o acompanhamento com segurança.' },
 ];
 
 export const HowItWorks = () => {
