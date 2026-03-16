@@ -19,3 +19,4 @@ export * from '@/app/store/useSyncQueueStore';
 export * from '@/app/store/useTraceabilityStore';
 export * from '@/app/store/useUiPreferencesStore';
 export * from '@/app/store/useOnboardingStore';
+export * from '@/app/store/useAuthStore';

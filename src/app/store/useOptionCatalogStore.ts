@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
+import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
+import { OptionCatalogSchema } from '@/entities/shared/validation';
 
 export interface OptionCatalogEntry {
   value: string;
@@ -127,45 +129,82 @@ export const useOptionCatalogStore = create<OptionCatalogState>()(
 
         if (existing) return existing.value;
 
-        set((state) => ({
-          options: {
-            ...state.options,
-            [taxonomy]: uniqueEntries([
-              ...current,
-              {
-                value: normalizedValue,
-                label: normalizedLabel
-              }
-            ]).sort((a, b) => a.label.localeCompare(b.label, 'pt-BR'))
-          }
-        }));
+        const nextOptions = {
+          ...get().options,
+          [taxonomy]: uniqueEntries([
+            ...current,
+            {
+              value: normalizedValue,
+              label: normalizedLabel
+            }
+          ]).sort((a, b) => a.label.localeCompare(b.label, 'pt-BR'))
+        };
 
+        const result = OptionCatalogSchema.safeParse(nextOptions);
+        if (!result.success) {
+          console.error('Validation failed for addOption:', result.error.format());
+          return '';
+        }
+
+        useSyncQueueStore.getState().enqueue({
+          table: 'option_catalog',
+          action: 'UPDATE', 
+          payload: { options: nextOptions }
+        });
+
+        set({ options: nextOptions });
         return normalizedValue;
       },
       renameOption: (taxonomy, value, nextLabel) => {
         const normalizedLabel = nextLabel.trim();
         if (!normalizedLabel) return;
-        set((state) => ({
-          options: {
-            ...state.options,
-            [taxonomy]: (state.options[taxonomy] ?? []).map((entry) =>
-              entry.value === value
-                ? {
-                    ...entry,
-                    label: normalizedLabel
-                  }
-                : entry
-            )
-          }
-        }));
+
+        const nextOptions = {
+          ...get().options,
+          [taxonomy]: (get().options[taxonomy] ?? []).map((entry) =>
+            entry.value === value
+              ? {
+                  ...entry,
+                  label: normalizedLabel
+                }
+              : entry
+          )
+        };
+
+        const result = OptionCatalogSchema.safeParse(nextOptions);
+        if (!result.success) {
+          console.error('Validation failed for renameOption:', result.error.format());
+          return;
+        }
+
+        useSyncQueueStore.getState().enqueue({
+          table: 'option_catalog',
+          action: 'UPDATE',
+          payload: { options: nextOptions }
+        });
+
+        set({ options: nextOptions });
       },
-      removeOption: (taxonomy, value) =>
-        set((state) => ({
-          options: {
-            ...state.options,
-            [taxonomy]: (state.options[taxonomy] ?? []).filter((entry) => entry.value !== value)
-          }
-        }))
+      removeOption: (taxonomy, value) => {
+        const nextOptions = {
+          ...get().options,
+          [taxonomy]: (get().options[taxonomy] ?? []).filter((entry) => entry.value !== value)
+        };
+
+        const result = OptionCatalogSchema.safeParse(nextOptions);
+        if (!result.success) {
+          console.error('Validation failed for removeOption:', result.error.format());
+          return;
+        }
+
+        useSyncQueueStore.getState().enqueue({
+          table: 'option_catalog',
+          action: 'UPDATE',
+          payload: { options: nextOptions }
+        });
+
+        set({ options: nextOptions });
+      }
     }),
     {
       name: 'dunamis-farm-os-option-catalog-v1',

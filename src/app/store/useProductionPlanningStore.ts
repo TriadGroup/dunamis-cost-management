@@ -4,6 +4,7 @@ import { createId } from '@/app/store/id';
 import { useFinanceStore } from '@/app/store/useFinanceStore';
 import { usePurchasesStore } from '@/app/store/usePurchasesStore';
 import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
+import { CropSchema, BedSchema, CropPlanSchema } from '@/entities/agro/production/validation';
 import {
   buildCropCostSelectionDefaults,
   createProductionPlanFromCulture,
@@ -317,7 +318,7 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
       draft: buildPlanDraftFromCrop(),
       setCultureDraft: (patch) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          // Draft state is local, no sync queue needed here
           return {
             cultureDraft: syncSalesSettings({
               ...syncCultureDraftPurchase(state.cultureDraft, patch),
@@ -329,7 +330,6 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
         }),
       setCultureDefaultCostSelections: (allocations) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
           return {
             cultureDraft: {
               ...state.cultureDraft,
@@ -339,7 +339,6 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
         }),
       toggleCultureDefaultCostSelection: (id) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
           return {
             cultureDraft: {
               ...state.cultureDraft,
@@ -357,7 +356,16 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
             usePurchasesStore.getState().purchases
           );
 
-          useSyncQueueStore.getState().markPending();
+          const target = state.crops.find(c => c.id === cropId);
+          if (target) {
+            const nextCrop = { ...target, defaultCostSelections: nextDefaults };
+            useSyncQueueStore.getState().enqueue({
+              table: 'crops',
+              action: 'UPDATE',
+              payload: nextCrop
+            });
+          }
+
           return {
             crops: state.crops.map((crop) => (crop.id === cropId ? { ...crop, defaultCostSelections: nextDefaults } : crop)),
             draft:
@@ -404,7 +412,18 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
           notes: draft.notes.trim()
         };
 
-        useSyncQueueStore.getState().markPending();
+        const result = CropSchema.safeParse(newCrop);
+        if (!result.success) {
+          console.error('Validation failed for addCultureFromDraft:', result.error.format());
+          return null;
+        }
+
+        useSyncQueueStore.getState().enqueue({
+          table: 'crops',
+          action: 'INSERT',
+          payload: newCrop
+        });
+
         set((state) => ({
           crops: [...state.crops, newCrop],
           cultureDraft: defaultCultureDraft(),
@@ -428,7 +447,17 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
           const updatedCrop = nextCrops.find((crop) => crop.id === id);
           if (!updatedCrop) return state;
 
-          useSyncQueueStore.getState().markPending();
+          const result = CropSchema.safeParse(updatedCrop);
+          if (!result.success) {
+            console.error('Validation failed for updateCrop:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'crops',
+            action: 'UPDATE',
+            payload: updatedCrop
+          });
           return {
             crops: nextCrops,
             plans: state.plans.map((plan) =>
@@ -471,8 +500,6 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
             state.crops.find((crop) => crop.id === (patch.cropId ?? state.draft.cropId)) ??
             state.crops.find((crop) => crop.id === state.draft.cropId);
 
-          useSyncQueueStore.getState().markPending();
-
           if (patch.cropId && selectedCrop) {
             const baseDraft = buildPlanDraftFromCrop(selectedCrop);
             return {
@@ -496,7 +523,6 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
         }),
       setPlanCostAllocations: (allocations) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
           return {
             draft: {
               ...state.draft,
@@ -506,7 +532,6 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
         }),
       togglePlanCostAllocation: (id) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
           return {
             draft: {
               ...state.draft,
@@ -518,7 +543,6 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
         }),
       addManualPlanCostAllocation: () =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
           return {
             draft: {
               ...state.draft,
@@ -530,7 +554,6 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
         set((state) => {
           const crop = state.crops.find((entry) => entry.id === cropId);
           if (!crop) return state;
-          useSyncQueueStore.getState().markPending();
           return {
             draft: {
               ...state.draft,
@@ -544,7 +567,6 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
           const crop = state.crops.find((entry) => entry.id === cropId);
           if (!crop) return state;
           const nonInherited = state.draft.costAllocations.filter((allocation) => !allocation.inheritedFromCrop);
-          useSyncQueueStore.getState().markPending();
           return {
             draft: {
               ...state.draft,
@@ -587,7 +609,18 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
           status: draft.status
         });
 
-        useSyncQueueStore.getState().markPending();
+        const result = CropPlanSchema.safeParse(newPlan);
+        if (!result.success) {
+          console.error('Validation failed for addPlanFromDraft:', result.error.format());
+          return null;
+        }
+
+        useSyncQueueStore.getState().enqueue({
+          table: 'crop_plans',
+          action: 'INSERT',
+          payload: newPlan
+        });
+
         set((current) => ({
           plans: [...current.plans, newPlan],
           draft: buildPlanDraftFromCrop(crop)
@@ -604,24 +637,48 @@ export const useProductionPlanningStore = create<ProductionPlanningState>()(
           const crop = state.crops.find((entry) => entry.id === nextCropId);
           if (!crop) return state;
 
-          useSyncQueueStore.getState().markPending();
+          const next = hydratePlan(crop, {
+            ...currentPlan,
+            ...patch,
+            cropId: nextCropId,
+            costAllocations: (patch.costAllocations ?? currentPlan.costAllocations).map(normalizeCultivationCostAllocation)
+          });
+
+          const result = CropPlanSchema.safeParse(next);
+          if (!result.success) {
+            console.error('Validation failed for updatePlan:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'crop_plans',
+            action: 'UPDATE',
+            payload: next
+          });
+
           return {
-            plans: state.plans.map((plan) =>
-              plan.id === id
-                ? hydratePlan(crop, {
-                    ...plan,
-                    ...patch,
-                    cropId: nextCropId,
-                    costAllocations: (patch.costAllocations ?? plan.costAllocations).map(normalizeCultivationCostAllocation)
-                  })
-                : plan
-            )
+            plans: state.plans.map((plan) => (plan.id === id ? next : plan))
           };
         }),
       updateBed: (id, patch) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
-          return { beds: state.beds.map((bed) => (bed.id === id ? { ...bed, ...patch } : bed)) };
+          const target = state.beds.find(b => b.id === id);
+          if (!target) return state;
+
+          const next = { ...target, ...patch };
+          const result = BedSchema.safeParse(next);
+          if (!result.success) {
+            console.error('Validation failed for updateBed:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'beds',
+            action: 'UPDATE',
+            payload: next
+          });
+
+          return { beds: state.beds.map((bed) => (bed.id === id ? next : bed)) };
         })
     }),
     {

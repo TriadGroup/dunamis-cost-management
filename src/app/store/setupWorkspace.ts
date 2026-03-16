@@ -398,7 +398,9 @@ const setWorkspaceFromSetup = (setup: SetupState) => {
 };
 
 export const loadExampleWorkspace = () => {
-  useSyncQueueStore.getState().markPending();
+  // Demo data should not be synced
+  useSetupStore.getState().loadDemoSetup();
+  
   useProductionPlanningStore.setState({
     crops: cloneValue(seedCrops),
     beds: cloneValue(seedBeds),
@@ -473,21 +475,19 @@ export const loadExampleWorkspace = () => {
       notes: ''
     }
   });
-  useSetupStore.getState().loadDemoSetup();
   useUiPreferencesStore.getState().setActiveRoute('dashboard');
-  useSyncQueueStore.getState().markSaved();
 };
 
 export const applySetupWorkspace = () => {
-  useSyncQueueStore.getState().markPending();
   const setup = useSetupStore.getState();
+  // New setup is NOT demo by default unless specified
   setWorkspaceFromSetup(setup);
   useUiPreferencesStore.getState().setActiveRoute('dashboard');
-  useSyncQueueStore.getState().markSaved();
 };
 
 export const resetWorkspaceToEmpty = () => {
-  useSyncQueueStore.getState().markPending();
+  useSetupStore.getState().resetSetup(); // This clears isDemo too
+  
   useProductionPlanningStore.setState({
     crops: [] as Crop[],
     beds: [] as Bed[],
@@ -552,7 +552,6 @@ export const resetWorkspaceToEmpty = () => {
     }
   });
   useUiPreferencesStore.getState().setActiveRoute('dashboard');
-  useSyncQueueStore.getState().markSaved();
 };
 
 export const staticKnowledgeState = {

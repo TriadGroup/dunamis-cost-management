@@ -3,6 +3,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import type { CostItem } from '@/entities';
 import { createId } from '@/app/store/id';
 import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
+import { CostItemSchema } from '@/entities/finance/cost/validation';
 
 interface FinanceState {
   costItems: CostItem[];
@@ -30,23 +31,62 @@ const defaultCostItem = (): CostItem => ({
 
 export const useFinanceStore = create<FinanceState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       costItems: [],
       addCostItem: (item) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
-          return { costItems: [...state.costItems, { ...defaultCostItem(), ...item, id: createId() }] };
+          const newItem = { ...defaultCostItem(), ...item, id: createId() };
+          
+          // Final Gate Validation
+          const result = CostItemSchema.safeParse(newItem);
+          if (!result.success) {
+            console.error('Validation failed for addCostItem:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'cost_items',
+            action: 'INSERT',
+            payload: newItem
+          });
+
+          return { costItems: [...state.costItems, newItem] };
         }),
       updateCostItem: (id, patch) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          const updated = state.costItems.find((entry) => entry.id === id);
+          if (!updated) return state;
+
+          const next = { ...updated, ...patch };
+
+          // Final Gate Validation
+          const result = CostItemSchema.safeParse(next);
+          if (!result.success) {
+            console.error('Validation failed for updateCostItem:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'cost_items',
+            action: 'UPDATE',
+            payload: next
+          });
+
           return {
-            costItems: state.costItems.map((entry) => (entry.id === id ? { ...entry, ...patch } : entry))
+            costItems: state.costItems.map((entry) => (entry.id === id ? next : entry))
           };
         }),
       removeCostItem: (id) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          const target = state.costItems.find((item) => item.id === id);
+          if (!target) return state;
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'cost_items',
+            action: 'DELETE',
+            payload: { id }
+          });
+
           return { costItems: state.costItems.filter((entry) => entry.id !== id) };
         })
     }),

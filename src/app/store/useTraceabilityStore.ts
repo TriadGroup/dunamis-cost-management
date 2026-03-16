@@ -4,6 +4,7 @@ import { createId } from '@/app/store/id';
 import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
 import type { Lot } from '@/entities';
 import { generateLotCode } from '@/entities';
+import { LotSchema } from '@/entities/agro/traceability/validation';
 
 interface LotDraft {
   cropId: string;
@@ -47,7 +48,7 @@ export const useTraceabilityStore = create<TraceabilityState>()(
       setSearchQuery: (value) => set({ searchQuery: value }),
       setDraft: (patch) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          // Draft is local state, no sync queue needed for intermediate edits
           return { draft: { ...state.draft, ...patch } };
         }),
       clearDraft: () => set({ draft: defaultDraft() }),
@@ -55,8 +56,9 @@ export const useTraceabilityStore = create<TraceabilityState>()(
         set((state) => {
           const draft = get().draft;
           if (!draft.cropId || !draft.receivedAt) return state;
+          
           const code = generateLotCode(new Date(draft.receivedAt), state.lots.length + 1);
-          useSyncQueueStore.getState().markPending();
+          
           const newLot: Lot = {
             id: createId(),
             code,
@@ -79,6 +81,20 @@ export const useTraceabilityStore = create<TraceabilityState>()(
             traceabilityStatus: 'incompleta',
             notes: draft.notes
           };
+
+          // Final Gate Validation
+          const result = LotSchema.safeParse(newLot);
+          if (!result.success) {
+            console.error('Validation failed for addLotFromDraft:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'production_lots',
+            action: 'INSERT',
+            payload: newLot
+          });
+
           return {
             lots: [...state.lots, newLot],
             draft: defaultDraft()
@@ -86,9 +102,26 @@ export const useTraceabilityStore = create<TraceabilityState>()(
         }),
       updateLot: (id, patch) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          const updated = state.lots.find((lot) => lot.id === id);
+          if (!updated) return state;
+
+          const next = { ...updated, ...patch };
+          
+          // Final Gate Validation
+          const result = LotSchema.safeParse(next);
+          if (!result.success) {
+            console.error('Validation failed for updateLot:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'production_lots',
+            action: 'UPDATE',
+            payload: next
+          });
+
           return {
-            lots: state.lots.map((lot) => (lot.id === id ? { ...lot, ...patch } : lot))
+            lots: state.lots.map((lot) => (lot.id === id ? next : lot))
           };
         })
     }),

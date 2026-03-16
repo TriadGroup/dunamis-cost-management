@@ -3,6 +3,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import { createId } from '@/app/store/id';
 import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
 import type { MaintenanceEvent } from '@/entities';
+import { MaintenanceEventSchema } from '@/entities/agro/shared_validation';
 
 interface MaintenanceState {
   events: MaintenanceEvent[];
@@ -35,17 +36,56 @@ export const useMaintenanceStore = create<MaintenanceState>()(
       events: [],
       addEvent: (item) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
-          return { events: [...state.events, { ...defaultEvent(), ...item, id: createId() }] };
+          const next = { ...defaultEvent(), ...item, id: createId() };
+          
+          // Final Gate Validation
+          const result = MaintenanceEventSchema.safeParse(next);
+          if (!result.success) {
+            console.error('Validation failed for addEvent:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'maintenance_events',
+            action: 'INSERT',
+            payload: next
+          });
+
+          return { events: [...state.events, next] };
         }),
       updateEvent: (id, patch) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
-          return { events: state.events.map((entry) => (entry.id === id ? { ...entry, ...patch } : entry)) };
+          const current = state.events.find((entry) => entry.id === id);
+          if (!current) return state;
+
+          const next = { ...current, ...patch };
+
+          // Final Gate Validation
+          const result = MaintenanceEventSchema.safeParse(next);
+          if (!result.success) {
+            console.error('Validation failed for updateEvent:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'maintenance_events',
+            action: 'UPDATE',
+            payload: next
+          });
+
+          return { events: state.events.map((entry) => (entry.id === id ? next : entry)) };
         }),
       removeEvent: (id) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          const target = state.events.find((entry) => entry.id === id);
+          if (!target) return state;
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'maintenance_events',
+            action: 'DELETE',
+            payload: { id }
+          });
+
           return { events: state.events.filter((entry) => entry.id !== id) };
         })
     }),

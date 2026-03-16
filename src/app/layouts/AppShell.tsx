@@ -40,6 +40,8 @@ export const AppShell = () => {
   const cropPlans = useProductionPlanningStore((state) => state.plans);
   const lots = useTraceabilityStore((state) => state.lots);
   const demandChannels = useDemandChannelsStore((state) => state.channels);
+  const setIsDemo = useSetupStore((state) => state.setIsDemo);
+  const isDemo = useSetupStore((state) => state.isDemo);
 
   const visibleRoutes = buildVisibleRoutes({
     productionProfiles,
@@ -51,7 +53,23 @@ export const AppShell = () => {
     hasTraceabilityData: lots.length > 0
   });
 
+  const handleToggleDemo = () => {
+    if (isDemo) {
+      const confirmMsg = "Deseja sair do MODO TESTE e começar a SALVAR no Supabase? (Os dados atuais de demonstração continuarão visíveis até que você resete o workspace)";
+      if (window.confirm(confirmMsg)) {
+        setIsDemo(false);
+      }
+    } else {
+      const confirmMsg = "Ativar MODO TESTE? Suas alterações NÃO serão salvas no banco de dados enquanto este modo estiver ativo.";
+      if (window.confirm(confirmMsg)) {
+        setIsDemo(true);
+      }
+    }
+  };
+
   const route = visibleRoutes.find((entry) => entry.id === activeRouteId) ?? findRouteById(visibleRoutes[0]?.id ?? 'dashboard');
+// ... (omitting some lines for clarity, will use multi_replace if needed)
+// Actually, let's keep the sequence clear.
   const activeGroupId = findGroupByRoute(route.id);
   const activeGroup = navGroups.find((group) => group.id === activeGroupId) ?? navGroups[0];
   const groupRoutes = visibleRoutes.filter((entry) => entry.group === activeGroupId);
@@ -154,13 +172,24 @@ export const AppShell = () => {
           </div>
           <div className="sidebar-summary-card">
             <span className="sidebar-panel-label">Sync</span>
-            <strong>{status === 'saved' ? 'OK' : status === 'pending' ? 'Pendente' : 'Reconectar'}</strong>
-            <p>{status === 'saved' ? 'Local salvo' : status === 'pending' ? 'Tem ajuste novo' : 'Sem conexao estavel'}</p>
+            <strong>{status === 'saved' ? 'OK' : status === 'pending' ? 'Pendente' : status === 'error' ? 'Erro' : 'Offline'}</strong>
+            <p>
+              {status === 'saved' ? 'Dados em nuvem' : 
+               status === 'pending' ? 'Sincronizando...' : 
+               status === 'error' ? 'Falha no envio' : 'Modo offline'}
+            </p>
           </div>
         </div>
       </aside>
 
       <section className="app-main-v2">
+        {isDemo && (
+          <div className="demo-mode-banner">
+            <UiIcon name="warning" width={16} height={16} />
+            <span><strong>Modo Teste Ativo</strong> - Suas alterações NÃO estão sendo salvas no Supabase.</span>
+            <button type="button" onClick={handleToggleDemo}>Ativar Produção</button>
+          </div>
+        )}
         <header className="page-topbar">
           <div className="page-topbar-main">
             <span className={clsx('page-badge', `accent-${route.accent}`)}>{activeGroup.label}</span>
@@ -203,11 +232,25 @@ export const AppShell = () => {
               </button>
             </div>
 
+            <div className="sync-mode-mini-toggle" title={isDemo ? 'Ativar Modo Produção (Salvar na nuvem)' : 'Ativar Modo Teste (Não salvar)'}>
+              <span className="sync-mode-label">{isDemo ? 'TESTE' : 'PROD'}</span>
+              <label className="toggle-switch is-mini">
+                <input 
+                  type="checkbox" 
+                  checked={!isDemo} 
+                  onChange={() => handleToggleDemo()} 
+                />
+                <span className="toggle-slider"></span>
+              </label>
+            </div>
+
             <WeatherPanel variant="topbar" />
 
-            <span className="sync-pill">
+            <span className={clsx('sync-pill', status)}>
               <span className={`sync-dot ${status}`} />
-              {status === 'saved' ? 'Salvo' : status === 'pending' ? 'Pendente' : 'Reconectando'}
+              {status === 'saved' ? 'Salvo' : 
+               status === 'pending' ? 'Salvando...' : 
+               status === 'error' ? 'Erro ao salvar' : 'Offline'}
             </span>
           </div>
         </header>

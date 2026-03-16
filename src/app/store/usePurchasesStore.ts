@@ -3,6 +3,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import { createId } from '@/app/store/id';
 import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
 import type { PurchaseItem } from '@/entities';
+import { PurchaseItemSchema } from '@/entities/finance/purchase/validation';
 
 interface PurchasesState {
   purchases: PurchaseItem[];
@@ -33,20 +34,53 @@ export const usePurchasesStore = create<PurchasesState>()(
       purchases: [],
       addPurchase: (item) => {
         const next = { ...defaultPurchase(), ...item, id: createId() };
+        
+        // Final Gate Validation
+        const result = PurchaseItemSchema.safeParse(next);
+        if (!result.success) {
+          console.error('Validation failed for addPurchase:', result.error.format());
+          return next.id; // Or throw error
+        }
+
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          useSyncQueueStore.getState().enqueue({
+            table: 'purchases',
+            action: 'INSERT',
+            payload: next
+          });
           return { purchases: [...state.purchases, next] };
         });
         return next.id;
       },
       updatePurchase: (id, patch) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
-          return { purchases: state.purchases.map((entry) => (entry.id === id ? { ...entry, ...patch } : entry)) };
+          const updated = state.purchases.find((p) => p.id === id);
+          if (!updated) return state;
+
+          const next = { ...updated, ...patch };
+          
+          // Final Gate Validation
+          const result = PurchaseItemSchema.safeParse(next);
+          if (!result.success) {
+            console.error('Validation failed for updatePurchase:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'purchases',
+            action: 'UPDATE',
+            payload: next
+          });
+          
+          return { purchases: state.purchases.map((entry) => (entry.id === id ? next : entry)) };
         }),
       removePurchase: (id) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          useSyncQueueStore.getState().enqueue({
+            table: 'purchases',
+            action: 'DELETE',
+            payload: { id }
+          });
           return { purchases: state.purchases.filter((entry) => entry.id !== id) };
         })
     }),

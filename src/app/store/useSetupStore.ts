@@ -86,6 +86,8 @@ export interface SetupState {
   customCrops: InitialCropEntry[];
   financialStartingPoints: FinancialStartingPoint[];
   hasChosenFinancialStartingPoint: boolean;
+  isDemo: boolean;
+  setIsDemo: (isDemo: boolean) => void;
   setStatus: (status: SetupStatus) => void;
   startSetup: () => void;
   returnToLanding: () => void;
@@ -142,18 +144,21 @@ const defaultState = {
   initialCrops: [] as InitialCropEntry[],
   customCrops: [] as InitialCropEntry[],
   financialStartingPoints: ['estrutura_minima'] as FinancialStartingPoint[],
-  hasChosenFinancialStartingPoint: false
+  hasChosenFinancialStartingPoint: false,
+  isDemo: false
 };
 
 export const useSetupStore = create<SetupState>()(
   persist(
     (set) => ({
       ...defaultState,
+      setIsDemo: (isDemo) => set({ isDemo }),
       setStatus: (status) => set({ status }),
       startSetup: () =>
         set((state) => ({
           status: 'in_progress',
-          currentStep: state.currentStep
+          currentStep: state.currentStep,
+          isDemo: false
         })),
       returnToLanding: () => set({ status: 'landing' }),
       setCurrentStep: (step) => set({ currentStep: Math.max(0, step) }),
@@ -218,7 +223,8 @@ export const useSetupStore = create<SetupState>()(
       resetSetup: () =>
         set({
           ...defaultState,
-          identity: defaultIdentity()
+          identity: defaultIdentity(),
+          isDemo: false
         }),
       loadDemoSetup: () =>
         set({
@@ -226,6 +232,7 @@ export const useSetupStore = create<SetupState>()(
           currentStep: 7,
           identity: demoIdentity(),
           productionProfiles: ['horta', 'cultivo_protegido', 'operacao_mista'],
+          isDemo: true,
           structures: [
             { id: 'setup-structure-1', type: 'canteiros', quantity: 12, notes: 'Base de produção folhosa' },
             { id: 'setup-structure-2', type: 'cozinha_interna', quantity: 1, notes: 'Canal interno ativo' },

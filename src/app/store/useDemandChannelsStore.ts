@@ -4,6 +4,7 @@ import { seedScenarios } from '@/app/store/seedData';
 import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
 import type { CashScenario, DemandChannel } from '@/entities';
 import { applyScenarioDemand } from '@/entities';
+import { DemandChannelSchema } from '@/entities/commercial/validation';
 
 interface DemandChannelsState {
   channels: DemandChannel[];
@@ -24,8 +25,25 @@ export const useDemandChannelsStore = create<DemandChannelsState>()(
       setActiveScenario: (id) => set({ activeScenarioId: id }),
       updateChannel: (id, patch) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
-          return { channels: state.channels.map((entry) => (entry.id === id ? { ...entry, ...patch } : entry)) };
+          const current = state.channels.find((entry) => entry.id === id);
+          if (!current) return state;
+
+          const next = { ...current, ...patch };
+
+          // Final Gate Validation
+          const result = DemandChannelSchema.safeParse(next);
+          if (!result.success) {
+            console.error('Validation failed for updateChannel:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'demand_channels',
+            action: 'UPDATE',
+            payload: next
+          });
+
+          return { channels: state.channels.map((entry) => (entry.id === id ? next : entry)) };
         }),
       reorderChannels: (orderedIds) =>
         set((state) => {
@@ -38,15 +56,34 @@ export const useDemandChannelsStore = create<DemandChannelsState>()(
               priority: index + 1
             }));
 
-          useSyncQueueStore.getState().markPending();
+          // Enqueue updates for all reordered channels
+          nextChannels.forEach((channel) => {
+            useSyncQueueStore.getState().enqueue({
+              table: 'demand_channels',
+              action: 'UPDATE',
+              payload: channel
+            });
+          });
+
           return { channels: nextChannels };
         }),
       applyActiveScenario: () =>
         set((state) => {
           const scenario = state.scenarios.find((entry) => entry.id === get().activeScenarioId);
           if (!scenario) return state;
-          useSyncQueueStore.getState().markPending();
-          return { channels: applyScenarioDemand(state.channels, scenario) };
+          
+          const nextChannels = applyScenarioDemand(state.channels, scenario);
+
+          // Enqueue updates for all affected channels
+          nextChannels.forEach((channel) => {
+            useSyncQueueStore.getState().enqueue({
+              table: 'demand_channels',
+              action: 'UPDATE',
+              payload: channel
+            });
+          });
+
+          return { channels: nextChannels };
         })
     }),
     {

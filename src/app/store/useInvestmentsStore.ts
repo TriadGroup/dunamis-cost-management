@@ -3,6 +3,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import { createId } from '@/app/store/id';
 import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
 import type { InvestmentContract } from '@/entities';
+import { InvestmentContractSchema } from '@/entities/finance/shared_validation';
 
 interface InvestmentsState {
   contracts: InvestmentContract[];
@@ -33,19 +34,58 @@ export const useInvestmentsStore = create<InvestmentsState>()(
       contracts: [],
       addContract: (item) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
-          return { contracts: [...state.contracts, { ...defaultContract(), ...item, id: createId() }] };
+          const next = { ...defaultContract(), ...item, id: createId() };
+          
+          // Final Gate Validation
+          const result = InvestmentContractSchema.safeParse(next);
+          if (!result.success) {
+            console.error('Validation failed for addContract:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'investment_contracts',
+            action: 'INSERT',
+            payload: next
+          });
+
+          return { contracts: [...state.contracts, next] };
         }),
       updateContract: (id, patch) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          const current = state.contracts.find((entry) => entry.id === id);
+          if (!current) return state;
+
+          const next = { ...current, ...patch };
+
+          // Final Gate Validation
+          const result = InvestmentContractSchema.safeParse(next);
+          if (!result.success) {
+            console.error('Validation failed for updateContract:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'investment_contracts',
+            action: 'UPDATE',
+            payload: next
+          });
+
           return {
-            contracts: state.contracts.map((entry) => (entry.id === id ? { ...entry, ...patch } : entry))
+            contracts: state.contracts.map((entry) => (entry.id === id ? next : entry))
           };
         }),
       removeContract: (id) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          const target = state.contracts.find((entry) => entry.id === id);
+          if (!target) return state;
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'investment_contracts',
+            action: 'DELETE',
+            payload: { id }
+          });
+
           return { contracts: state.contracts.filter((entry) => entry.id !== id) };
         })
     }),

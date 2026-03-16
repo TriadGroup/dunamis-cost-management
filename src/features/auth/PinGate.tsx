@@ -1,21 +1,17 @@
 import { useState } from 'react';
-import { useUiPreferencesStore } from '@/app/store';
+import { useAuthStore } from '@/app/store/useAuthStore';
 import { BrandLogo } from '@/shared/ui';
 
 export const PinGate = () => {
-  const pinHash = useUiPreferencesStore((state) => state.pinHash);
-  const authError = useUiPreferencesStore((state) => state.authError);
-  const setPinAction = useUiPreferencesStore((state) => state.setPin);
-  const unlockWithPin = useUiPreferencesStore((state) => state.unlockWithPin);
-  const [pin, setPinValue] = useState('');
+  const { signIn, isLoading, error } = useAuthStore();
+  const [email, setEmail] = useState('');
+  const [sent, setSent] = useState(false);
 
-  const isSetup = !pinHash;
-
-  const submit = (event: React.FormEvent<HTMLFormElement>) => {
+  const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (isSetup) setPinAction(pin);
-    else unlockWithPin(pin);
-    setPinValue('');
+    if (!email) return;
+    await signIn(email);
+    setSent(true);
   };
 
   return (
@@ -24,25 +20,47 @@ export const PinGate = () => {
 
       <section className="frost-card relative w-full max-w-md rounded-[30px] p-8">
         <BrandLogo variant="hero" />
-        <h1 className="mt-4 text-3xl font-semibold text-[#2f4e2f]">Dunamis Farm Agro</h1>
+        <h1 className="mt-4 text-3xl font-semibold text-[#2f4e2f]">Dunamis Farm</h1>
         <p className="mt-2 text-sm text-[#5c7c66]">
-          {isSetup ? 'Crie seu PIN local para proteger o painel agro-financeiro.' : 'Informe seu PIN para desbloquear o painel.'}
+          Acesse o painel agro-financeiro com segurança via e-mail.
         </p>
 
-        <form onSubmit={submit} className="mt-6 space-y-4">
-          <input
-            type="password"
-            inputMode="numeric"
-            placeholder="PIN"
-            value={pin}
-            onChange={(event) => setPinValue(event.target.value)}
-            className="input-dark w-full"
-          />
-          {authError && <p className="text-sm text-[#d45e6e]">{authError}</p>}
-          <button type="submit" className="cta-btn w-full">
-            {isSetup ? 'Salvar PIN e entrar' : 'Desbloquear'}
-          </button>
-        </form>
+        {sent ? (
+          <div className="mt-6 space-y-4 text-center">
+            <div className="text-sm font-medium text-[#2f4e2f]">Link de acesso enviado!</div>
+            <p className="text-xs text-[#5c7c66]">Verifique sua caixa de entrada em {email}.</p>
+            <button 
+              onClick={() => setSent(false)}
+              className="text-xs font-semibold text-[#2f4e2f] hover:underline"
+            >
+              Tentar outro e-mail
+            </button>
+          </div>
+        ) : (
+          <form onSubmit={submit} className="mt-6 space-y-4">
+            <div className="space-y-1">
+              <label className="text-[10px] font-bold uppercase tracking-wider text-[#5c7c66] ml-4">
+                E-mail Profissional
+              </label>
+              <input
+                type="email"
+                placeholder="nome@fazenda.com"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                className="input-dark w-full"
+                required
+              />
+            </div>
+            {error && <p className="text-sm text-[#d45e6e]">{error}</p>}
+            <button 
+              type="submit" 
+              disabled={isLoading}
+              className="cta-btn w-full disabled:opacity-50"
+            >
+              {isLoading ? 'Enviando...' : 'Receber link de acesso'}
+            </button>
+          </form>
+        )}
       </section>
     </main>
   );

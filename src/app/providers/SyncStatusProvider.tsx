@@ -1,14 +1,16 @@
 import { useEffect, type PropsWithChildren } from 'react';
-import { useSyncQueueStore } from '@/app/store';
+import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
 
 export const SyncStatusProvider = ({ children }: PropsWithChildren) => {
+  const processQueue = useSyncQueueStore((state) => state.processQueue);
+
   useEffect(() => {
     const handleOffline = () => {
-      useSyncQueueStore.getState().markReconnecting();
+      // Logic handled within store if needed, but we can set explicit state here
     };
 
     const handleOnline = () => {
-      useSyncQueueStore.getState().markSaved();
+      processQueue();
     };
 
     window.addEventListener('offline', handleOffline);
@@ -18,7 +20,7 @@ export const SyncStatusProvider = ({ children }: PropsWithChildren) => {
       window.removeEventListener('offline', handleOffline);
       window.removeEventListener('online', handleOnline);
     };
-  }, []);
+  }, [processQueue]);
 
   return children;
 };

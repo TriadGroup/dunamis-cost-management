@@ -3,6 +3,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import { createId } from '@/app/store/id';
 import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
 import type { ApplicationEvent, LossEvent } from '@/entities';
+import { ApplicationEventSchema, LossEventSchema } from '@/entities/agro/shared_validation';
 
 interface FieldOperationsState {
   applications: ApplicationEvent[];
@@ -55,38 +56,110 @@ export const useFieldOperationsStore = create<FieldOperationsState>()(
       losses: [],
       addApplication: (item) => {
         const next = { ...defaultApplication(), ...item, id: createId() };
-        set((state) => {
-          useSyncQueueStore.getState().markPending();
-          return { applications: [...state.applications, next] };
+        
+        // Final Gate Validation
+        const result = ApplicationEventSchema.safeParse(next);
+        if (!result.success) {
+          console.error('Validation failed for addApplication:', result.error.format());
+          return next.id;
+        }
+
+        useSyncQueueStore.getState().enqueue({
+          table: 'application_events',
+          action: 'INSERT',
+          payload: next
         });
+
+        set((state) => ({ applications: [...state.applications, next] }));
         return next.id;
       },
       updateApplication: (id, patch) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
-          return { applications: state.applications.map((entry) => (entry.id === id ? { ...entry, ...patch } : entry)) };
+          const current = state.applications.find((entry) => entry.id === id);
+          if (!current) return state;
+
+          const next = { ...current, ...patch };
+
+          // Final Gate Validation
+          const result = ApplicationEventSchema.safeParse(next);
+          if (!result.success) {
+            console.error('Validation failed for updateApplication:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'application_events',
+            action: 'UPDATE',
+            payload: next
+          });
+
+          return { applications: state.applications.map((entry) => (entry.id === id ? next : entry)) };
         }),
       removeApplication: (id) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          const target = state.applications.find((entry) => entry.id === id);
+          if (!target) return state;
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'application_events',
+            action: 'DELETE',
+            payload: { id }
+          });
+
           return { applications: state.applications.filter((entry) => entry.id !== id) };
         }),
       addLossEvent: (item) => {
         const next = { ...defaultLoss(), ...item, id: createId() };
-        set((state) => {
-          useSyncQueueStore.getState().markPending();
-          return { losses: [...state.losses, next] };
+        
+        // Final Gate Validation
+        const result = LossEventSchema.safeParse(next);
+        if (!result.success) {
+          console.error('Validation failed for addLossEvent:', result.error.format());
+          return next.id;
+        }
+
+        useSyncQueueStore.getState().enqueue({
+          table: 'loss_events',
+          action: 'INSERT',
+          payload: next
         });
+
+        set((state) => ({ losses: [...state.losses, next] }));
         return next.id;
       },
       updateLossEvent: (id, patch) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
-          return { losses: state.losses.map((entry) => (entry.id === id ? { ...entry, ...patch } : entry)) };
+          const current = state.losses.find((entry) => entry.id === id);
+          if (!current) return state;
+
+          const next = { ...current, ...patch };
+
+          // Final Gate Validation
+          const result = LossEventSchema.safeParse(next);
+          if (!result.success) {
+            console.error('Validation failed for updateLossEvent:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'loss_events',
+            action: 'UPDATE',
+            payload: next
+          });
+
+          return { losses: state.losses.map((entry) => (entry.id === id ? next : entry)) };
         }),
       removeLossEvent: (id) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          const target = state.losses.find((entry) => entry.id === id);
+          if (!target) return state;
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'loss_events',
+            action: 'DELETE',
+            payload: { id }
+          });
+
           return { losses: state.losses.filter((entry) => entry.id !== id) };
         })
     }),

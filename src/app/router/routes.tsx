@@ -260,7 +260,7 @@ export const buildVisibleRoutes = (context: RouteContext): AppRoute[] => {
     ...(context.financialStartingPoints.includes('investimentos_financiamentos') || context.hasInvestmentData ? ['investments'] : []),
     ...(context.productionProfiles.length > 0 ? ['agronomic-calendar'] : []),
     ...(context.selectedChannels.length > 1 ? ['scenarios'] : []),
-    ...(context.hasUnitEconomicsData ? ['unit-economics'] : []),
+    'unit-economics',
     'settings'
   ];
 

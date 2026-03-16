@@ -14,6 +14,7 @@ import {
   buildAllocationEntriesFromLabor,
   buildAllocationEntriesFromStockUsage
 } from '@/entities';
+import { CostAllocationLedgerEntrySchema } from '@/entities/agro/allocation/validation';
 
 interface CostAllocationState {
   ledger: CostAllocationLedgerEntry[];
@@ -48,35 +49,87 @@ export const useCostAllocationStore = create<CostAllocationState>()(
       ledger: [],
       addEntry: (entry) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          // Final Gate Validation
+          const result = CostAllocationLedgerEntrySchema.safeParse(entry);
+          if (!result.success) {
+            console.error('Validation failed for addEntry:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'cost_allocation_ledger',
+            action: 'INSERT',
+            payload: entry
+          });
+
           return { ledger: [...state.ledger, entry] };
         }),
       removeEntry: (id) =>
         set((state) => {
-          useSyncQueueStore.getState().markPending();
+          const target = state.ledger.find((entry) => entry.id === id);
+          if (!target) return state;
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'cost_allocation_ledger',
+            action: 'DELETE',
+            payload: { id }
+          });
+
           return { ledger: state.ledger.filter((entry) => entry.id !== id) };
         }),
       replaceLedger: (entries) =>
         set(() => {
-          useSyncQueueStore.getState().markPending();
+          // Mass sync for replacement
+          entries.forEach((entry) => {
+            useSyncQueueStore.getState().enqueue({
+              table: 'cost_allocation_ledger',
+              action: 'UPDATE', // Upsert logic would be better, but UPDATE + INSERT works in queue
+              payload: entry
+            });
+          });
           return { ledger: entries };
         }),
       rebuildEntriesForPlan: (planId) =>
         set(() => {
           const derived = deriveLedger().filter((entry) => entry.cropPlanId === planId || (entry.targetType === 'plano' && entry.targetId === planId));
-          useSyncQueueStore.getState().markPending();
+          
+          derived.forEach((entry) => {
+             useSyncQueueStore.getState().enqueue({
+              table: 'cost_allocation_ledger',
+              action: 'UPDATE',
+              payload: entry
+            });
+          });
+
           return { ledger: derived };
         }),
       rebuildEntriesForLot: (lotId) =>
         set(() => {
           const derived = deriveLedger().filter((entry) => entry.productionLotId === lotId || (entry.targetType === 'lote' && entry.targetId === lotId));
-          useSyncQueueStore.getState().markPending();
+          
+          derived.forEach((entry) => {
+             useSyncQueueStore.getState().enqueue({
+              table: 'cost_allocation_ledger',
+              action: 'UPDATE',
+              payload: entry
+            });
+          });
+
           return { ledger: derived };
         }),
       rebuildFromFacts: () =>
         set(() => {
-          useSyncQueueStore.getState().markPending();
-          return { ledger: deriveLedger() };
+          const derived = deriveLedger();
+          
+          derived.forEach((entry) => {
+             useSyncQueueStore.getState().enqueue({
+              table: 'cost_allocation_ledger',
+              action: 'UPDATE',
+              payload: entry
+            });
+          });
+
+          return { ledger: derived };
         })
     }),
     {

@@ -3,6 +3,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import { createId } from '@/app/store/id';
 import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
 import { calculateImplantationTotals, type ImplantationItem, type ImplantationProject, type PaymentMode, type Quotation } from '@/entities';
+import { ImplantationProjectSchema, ImplantationItemSchema } from '@/entities/agro/implantation/validation';
 
 export interface ImplantationProjectDraft {
   name: string;
@@ -98,10 +99,6 @@ const defaultQuotationDraft = (paymentMode: PaymentMode = 'avista'): QuotationDr
   firstDueDate: '',
   paymentNotes: ''
 });
-
-const markPending = () => {
-  useSyncQueueStore.getState().markPending();
-};
 
 const normalizeQuotation = (
   quotation: QuotationDraft | (Partial<QuotationDraft> & Pick<Quotation, 'id' | 'createdAt' | 'updatedAt' | 'supplier' | 'totalCostCents' | 'status'>),
@@ -219,7 +216,7 @@ export const useImplantationStore = create<ImplantationState>()(
       draft: defaultDraft(),
       setProjectDraft: (patch) =>
         set((state) => {
-          markPending();
+          // Draft state is local
           return { projectDraft: { ...state.projectDraft, ...patch } };
         }),
       clearProjectDraft: () => set({ projectDraft: defaultProjectDraft() }),
@@ -241,7 +238,19 @@ export const useImplantationStore = create<ImplantationState>()(
             notes: draft.notes.trim(),
             createdAt: new Date().toISOString()
           };
-          markPending();
+
+          const result = ImplantationProjectSchema.safeParse(project);
+          if (!result.success) {
+            console.error('Validation failed for addProjectFromDraft:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'implantation_projects',
+            action: 'INSERT',
+            payload: project
+          });
+
           return {
             projects: [...state.projects, project],
             projectDraft: defaultProjectDraft(),
@@ -252,26 +261,47 @@ export const useImplantationStore = create<ImplantationState>()(
       },
       updateProject: (id, patch) =>
         set((state) => {
-          markPending();
+          const current = state.projects.find((p) => p.id === id);
+          if (!current) return state;
+
+          const project = {
+            ...current,
+            ...patch,
+            budgetTargetCents:
+              patch.budgetTargetCents === undefined ? current.budgetTargetCents : Math.max(0, Math.round(patch.budgetTargetCents))
+          };
+
+          const result = ImplantationProjectSchema.safeParse(project);
+          if (!result.success) {
+            console.error('Validation failed for updateProject:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'implantation_projects',
+            action: 'UPDATE',
+            payload: project
+          });
+
           return {
-            projects: state.projects.map((project) =>
-              project.id === id
-                ? {
-                    ...project,
-                    ...patch,
-                    budgetTargetCents:
-                      patch.budgetTargetCents === undefined ? project.budgetTargetCents : Math.max(0, Math.round(patch.budgetTargetCents))
-                  }
-                : project
-            )
+            projects: state.projects.map((p) => (p.id === id ? project : p))
           };
         }),
       removeProject: (id) =>
         set((state) => {
           if (state.items.some((item) => item.projectId === id)) return state;
+          const target = state.projects.find(p => p.id === id);
+          if (!target) return state;
+
           const remainingProjects = state.projects.filter((project) => project.id !== id);
           const nextProjectId = remainingProjects[0]?.id ?? '';
-          markPending();
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'implantation_projects',
+            action: 'DELETE',
+            payload: { id }
+          });
+
           return {
             projects: remainingProjects,
             draft: state.draft.projectId === id ? defaultDraft(nextProjectId) : withDraftProjectFallback(remainingProjects, state.draft)
@@ -279,7 +309,7 @@ export const useImplantationStore = create<ImplantationState>()(
         }),
       setDraft: (patch) =>
         set((state) => {
-          markPending();
+          // Draft state is local
           return { draft: { ...state.draft, ...patch } };
         }),
       clearDraft: () => set((state) => ({ draft: defaultDraft(state.projects[0]?.id ?? '') })),
@@ -289,25 +319,36 @@ export const useImplantationStore = create<ImplantationState>()(
           const draft = state.draft;
           if (!draft.projectId || !draft.name.trim()) return state;
           createdId = createId();
-          markPending();
+
+          const item: ImplantationItem = {
+            id: createdId,
+            projectId: draft.projectId,
+            group: draft.group,
+            name: draft.name.trim(),
+            description: draft.description.trim(),
+            priority: draft.priority,
+            quotations: [],
+            selectedQuotationId: null,
+            paymentMode: draft.paymentMode,
+            status: 'em_cotacao',
+            deadline: draft.deadline,
+            notes: draft.notes.trim()
+          };
+
+          const result = ImplantationItemSchema.safeParse(item);
+          if (!result.success) {
+            console.error('Validation failed for addFromDraft (item):', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'implantation_items',
+            action: 'INSERT',
+            payload: item
+          });
+
           return {
-            items: [
-              ...state.items,
-              {
-                id: createdId,
-                projectId: draft.projectId,
-                group: draft.group,
-                name: draft.name.trim(),
-                description: draft.description.trim(),
-                priority: draft.priority,
-                quotations: [],
-                selectedQuotationId: null,
-                paymentMode: draft.paymentMode,
-                status: 'em_cotacao',
-                deadline: draft.deadline,
-                notes: draft.notes.trim()
-              }
-            ],
+            items: [...state.items, item],
             draft: defaultDraft(draft.projectId)
           };
         });
@@ -315,103 +356,176 @@ export const useImplantationStore = create<ImplantationState>()(
       },
       updateItem: (id, patch) =>
         set((state) => {
-          markPending();
+          const current = state.items.find(i => i.id === id);
+          if (!current) return state;
+
+          const next = {
+            ...current,
+            ...patch,
+            projectId: patch.projectId ?? current.projectId
+          };
+
+          const result = ImplantationItemSchema.safeParse(next);
+          if (!result.success) {
+            console.error('Validation failed for updateItem:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'implantation_items',
+            action: 'UPDATE',
+            payload: next
+          });
+
           return {
-            items: state.items.map((item) =>
-              item.id === id
-                ? {
-                    ...item,
-                    ...patch,
-                    projectId: patch.projectId ?? item.projectId
-                  }
-                : item
-            )
+            items: state.items.map((item) => (item.id === id ? next : item))
           };
         }),
       removeItem: (id) =>
         set((state) => {
-          markPending();
+          const target = state.items.find(i => i.id === id);
+          if (!target) return state;
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'implantation_items',
+            action: 'DELETE',
+            payload: { id }
+          });
+
           return { items: state.items.filter((item) => item.id !== id) };
         }),
-      addQuotation: (itemId, quotation) =>
+      addQuotation: (itemId, quotationDraft) =>
         set((state) => {
-          markPending();
+          const currentItem = state.items.find(i => i.id === itemId);
+          if (!currentItem) return state;
+
+          const newQuotation = normalizeQuotation(quotationDraft, quotationDraft.paymentMode);
+          const nextItem = {
+            ...currentItem,
+            quotations: [...currentItem.quotations, newQuotation]
+          };
+
+          const result = ImplantationItemSchema.safeParse(nextItem);
+          if (!result.success) {
+            console.error('Validation failed for addQuotation:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'implantation_items',
+            action: 'UPDATE',
+            payload: nextItem
+          });
+
           return {
-            items: state.items.map((item) =>
-              item.id === itemId
-                ? {
-                    ...item,
-                    quotations: [...item.quotations, normalizeQuotation(quotation, quotation.paymentMode)]
-                  }
-                : item
-            )
+            items: state.items.map((item) => (item.id === itemId ? nextItem : item))
           };
         }),
       updateQuotation: (itemId, quotationId, patch) =>
         set((state) => {
           const nowIso = new Date().toISOString();
-          const nextItems = state.items.map((item) => {
-            if (item.id !== itemId) return item;
+          const targetItem = state.items.find(i => i.id === itemId);
+          if (!targetItem) return state;
 
-            const nextQuotations = item.quotations.map((quotation) =>
-              quotation.id === quotationId
-                ? normalizeQuotation(
-                    {
-                      ...quotation,
-                      ...patch,
-                      updatedAt: nowIso
-                    },
-                    item.paymentMode,
-                    quotation.createdAt
-                  )
-                : quotation
-            );
+          const nextQuotations = targetItem.quotations.map((quotation) =>
+            quotation.id === quotationId
+              ? normalizeQuotation(
+                  {
+                    ...quotation,
+                    ...patch,
+                    updatedAt: nowIso
+                  },
+                  targetItem.paymentMode,
+                  quotation.createdAt
+                )
+              : quotation
+          );
 
-            let nextItem: ImplantationItem = { ...item, quotations: nextQuotations };
+          let nextItem: ImplantationItem = { ...targetItem, quotations: nextQuotations };
 
-            if (patch.status === 'selecionada') {
-              nextItem = applyQuotationSelection(nextItem, quotationId);
-            } else if (nextItem.selectedQuotationId === quotationId) {
-              const selectedQuote = nextItem.quotations.find((quotation) => quotation.id === quotationId);
-              if (selectedQuote) {
-                nextItem = { ...nextItem, paymentMode: selectedQuote.paymentMode };
-              }
+          if (patch.status === 'selecionada') {
+            nextItem = applyQuotationSelection(nextItem, quotationId);
+          } else if (nextItem.selectedQuotationId === quotationId) {
+            const selectedQuote = nextItem.quotations.find((quotation) => quotation.id === quotationId);
+            if (selectedQuote) {
+              nextItem = { ...nextItem, paymentMode: selectedQuote.paymentMode };
             }
+          }
 
-            return nextItem;
+          const result = ImplantationItemSchema.safeParse(nextItem);
+          if (!result.success) {
+            console.error('Validation failed for updateQuotation:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'implantation_items',
+            action: 'UPDATE',
+            payload: nextItem
           });
 
-          markPending();
-          return { items: nextItems };
+          return {
+            items: state.items.map((item) => (item.id === itemId ? nextItem : item))
+          };
         }),
       removeQuotation: (itemId, quotationId) =>
         set((state) => {
-          const nextItems = state.items.map((item) => {
-            if (item.id !== itemId) return item;
+          const targetItem = state.items.find(i => i.id === itemId);
+          if (!targetItem) return state;
 
-            const remainingQuotations = item.quotations.filter((quotation) => quotation.id !== quotationId);
-            const removedSelected = item.selectedQuotationId === quotationId;
+          const remainingQuotations = targetItem.quotations.filter((quotation) => quotation.id !== quotationId);
+          const removedSelected = targetItem.selectedQuotationId === quotationId;
 
-            if (!removedSelected) {
-              return { ...item, quotations: remainingQuotations };
-            }
-
-            return {
-              ...item,
+          let nextItem: ImplantationItem;
+          if (!removedSelected) {
+            nextItem = { ...targetItem, quotations: remainingQuotations };
+          } else {
+            nextItem = {
+              ...targetItem,
               quotations: remainingQuotations,
               selectedQuotationId: null,
               status: remainingQuotations.length > 0 ? ('negociando' as const) : ('em_cotacao' as const)
             };
+          }
+
+          const result = ImplantationItemSchema.safeParse(nextItem);
+          if (!result.success) {
+            console.error('Validation failed for removeQuotation:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'implantation_items',
+            action: 'UPDATE',
+            payload: nextItem
           });
 
-          markPending();
-          return { items: nextItems };
+          return {
+            items: state.items.map((item) => (item.id === itemId ? nextItem : item))
+          };
         }),
       selectQuotation: (itemId, quotationId) =>
         set((state) => {
-          const nextItems = state.items.map((item) => (item.id === itemId ? applyQuotationSelection(item, quotationId) : item));
-          markPending();
-          return { items: nextItems };
+          const targetItem = state.items.find(i => i.id === itemId);
+          if (!targetItem) return state;
+
+          const nextItem = applyQuotationSelection(targetItem, quotationId);
+
+          const result = ImplantationItemSchema.safeParse(nextItem);
+          if (!result.success) {
+            console.error('Validation failed for selectQuotation:', result.error.format());
+            return state;
+          }
+
+          useSyncQueueStore.getState().enqueue({
+            table: 'implantation_items',
+            action: 'UPDATE',
+            payload: nextItem
+          });
+
+          return {
+            items: state.items.map((item) => (item.id === itemId ? nextItem : item))
+          };
         })
     }),
     {
