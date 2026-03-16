@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { useProductionPlanningStore, useDemandChannelsStore, useOnboardingStore } from '@/app/store';
+import { useProductionPlanningStore } from '@/app/store/useProductionPlanningStore';
+import { useDemandChannelsStore } from '@/app/store/useDemandChannelsStore';
+import { useOnboardingStore } from '@/app/store/useOnboardingStore';
 import { CenterModal, MoneyField, NumberField, SmartEmptyState, UiIcon } from '@/shared/ui';
 import { formatCurrency, formatUnitLabel } from '@/shared/lib/format';
 import type { DemandChannelItem } from '@/entities/agro/demand-channel/types';

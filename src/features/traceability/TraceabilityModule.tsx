@@ -1,5 +1,9 @@
 import { useMemo, useState } from 'react';
-import { useOnboardingStore, useOptionCatalogStore, useProductionPlanningStore, useTraceabilityStore, useUiPreferencesStore } from '@/app/store';
+import { useOnboardingStore } from '@/app/store/useOnboardingStore';
+import { useOptionCatalogStore } from '@/app/store/useOptionCatalogStore';
+import { useProductionPlanningStore } from '@/app/store/useProductionPlanningStore';
+import { useTraceabilityStore } from '@/app/store/useTraceabilityStore';
+import { useUiPreferencesStore } from '@/app/store/useUiPreferencesStore';
 import { calculateTraceabilityCompleteness, findLotByCode } from '@/entities';
 import { formatDate, formatUnitLabel } from '@/shared/lib/format';
 import { CreatableSelect, DetailCard, ExecutiveCard, NumberField, SearchBar, SmartEmptyState, StatusChip, TimelineList, WizardModal } from '@/shared/ui';

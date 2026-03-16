@@ -12,21 +12,19 @@ import {
   type Lot,
   type StockMovement
 } from '@/entities';
-import {
-  useCostAllocationStore,
-  useDemandChannelsStore,
-  useEquipmentUsageStore,
-  useFieldOperationsStore,
-  useFinanceStore,
-  useImplantationStore,
-  useInventoryStore,
-  useInvestmentsStore,
-  useLaborStore,
-  useMaintenanceStore,
-  useProductionPlanningStore,
-  usePurchasesStore,
-  useTraceabilityStore
-} from '@/app/store';
+import { useCostAllocationStore } from '@/app/store/useCostAllocationStore';
+import { useDemandChannelsStore } from '@/app/store/useDemandChannelsStore';
+import { useEquipmentUsageStore } from '@/app/store/useEquipmentUsageStore';
+import { useFieldOperationsStore } from '@/app/store/useFieldOperationsStore';
+import { useFinanceStore } from '@/app/store/useFinanceStore';
+import { useImplantationStore } from '@/app/store/useImplantationStore';
+import { useInventoryStore } from '@/app/store/useInventoryStore';
+import { useInvestmentsStore } from '@/app/store/useInvestmentsStore';
+import { useLaborStore } from '@/app/store/useLaborStore';
+import { useMaintenanceStore } from '@/app/store/useMaintenanceStore';
+import { useProductionPlanningStore } from '@/app/store/useProductionPlanningStore';
+import { usePurchasesStore } from '@/app/store/usePurchasesStore';
+import { useTraceabilityStore } from '@/app/store/useTraceabilityStore';
 import { useFarmSnapshot } from '@/features/dashboard/model/useFarmSnapshot';
 
 const resetOperationalStores = () => {

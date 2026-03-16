@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
-import { useOnboardingStore } from '@/app/store';
+import { useOnboardingStore } from '@/app/store/useOnboardingStore';
 import { tourDefinitions } from '@/features/onboarding/tourDefinitions';
 import './ProductTour.css';
 

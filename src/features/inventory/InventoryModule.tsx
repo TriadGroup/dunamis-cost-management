@@ -1,5 +1,8 @@
 import { useMemo, useState } from 'react';
-import { useFieldOperationsStore, useInventoryStore, useOptionCatalogStore, useProductionPlanningStore } from '@/app/store';
+import { useFieldOperationsStore } from '@/app/store/useFieldOperationsStore';
+import { useInventoryStore } from '@/app/store/useInventoryStore';
+import { useOptionCatalogStore } from '@/app/store/useOptionCatalogStore';
+import { useProductionPlanningStore } from '@/app/store/useProductionPlanningStore';
 import { calculateAverageUnitCost, type InventoryLot, type InventoryProduct } from '@/entities';
 import { formatCurrency, formatDate, formatNumber, formatUnitLabel } from '@/shared/lib/format';
 import { CenterModal, ContextHelp, CreatableSelect, DetailCard, ExecutiveCard, MoneyField, NumberField, SearchBar, SmartEmptyState, StatusChip } from '@/shared/ui';

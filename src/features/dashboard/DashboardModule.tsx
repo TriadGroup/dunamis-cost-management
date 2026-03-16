@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useProductionPlanningStore, useUiPreferencesStore, useOnboardingStore } from '@/app/store';
+import { useProductionPlanningStore } from '@/app/store/useProductionPlanningStore';
+import { useUiPreferencesStore } from '@/app/store/useUiPreferencesStore';
+import { useOnboardingStore } from '@/app/store/useOnboardingStore';
 import { useFarmSnapshot, type OperationStage } from '@/features/dashboard/model/useFarmSnapshot';
 import { GrowthProjectionCard } from '@/features/dashboard/components/GrowthProjectionCard';
 import { formatCurrency, formatNumber, formatUnitLabel } from '@/shared/lib/format';

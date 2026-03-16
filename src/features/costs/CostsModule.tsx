@@ -1,5 +1,8 @@
 import { useMemo, useState } from 'react';
-import { useFinanceStore, useOnboardingStore, useOptionCatalogStore, useProductionPlanningStore } from '@/app/store';
+import { useFinanceStore } from '@/app/store/useFinanceStore';
+import { useOnboardingStore } from '@/app/store/useOnboardingStore';
+import { useOptionCatalogStore } from '@/app/store/useOptionCatalogStore';
+import { useProductionPlanningStore } from '@/app/store/useProductionPlanningStore';
 import { calculateRecurringCostSummary, type CostItem, type CostRecurrenceType, type CostStatus } from '@/entities';
 import { formatCurrency, formatDate } from '@/shared/lib/format';
 import { CenterModal, CreatableSelect, DetailCard, ExecutiveCard, FilterPills, MoneyField, SearchBar, SmartEmptyState, StatusChip } from '@/shared/ui';

@@ -1,5 +1,9 @@
 import { useMemo, useState } from 'react';
-import { useInventoryStore, useOnboardingStore, useOptionCatalogStore, useProductionPlanningStore, usePurchasesStore } from '@/app/store';
+import { useInventoryStore } from '@/app/store/useInventoryStore';
+import { useOnboardingStore } from '@/app/store/useOnboardingStore';
+import { useOptionCatalogStore } from '@/app/store/useOptionCatalogStore';
+import { useProductionPlanningStore } from '@/app/store/useProductionPlanningStore';
+import { usePurchasesStore } from '@/app/store/usePurchasesStore';
 import type { InventoryProduct, PurchaseItem, PurchasePaymentStatus, PurchaseStatus } from '@/entities';
 import { formatCurrency, formatDate, formatUnitLabel } from '@/shared/lib/format';
 import { CenterModal, CreatableSelect, DetailCard, ExecutiveCard, MoneyField, NumberField, SearchBar, SmartEmptyState, StatusChip } from '@/shared/ui';

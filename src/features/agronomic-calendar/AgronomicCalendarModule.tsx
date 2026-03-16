@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { useAgronomicCalendarStore } from '@/app/store';
+import { useAgronomicCalendarStore } from '@/app/store/useAgronomicCalendarStore';
 import { guidelineForMonth, incompatibilityAlerts } from '@/entities';
 import { DetailCard, ExecutiveCard, FilterPills, SmartEmptyState, StatusChip } from '@/shared/ui';
 

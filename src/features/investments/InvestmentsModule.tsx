@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { useInvestmentsStore, useOptionCatalogStore } from '@/app/store';
+import { useInvestmentsStore } from '@/app/store/useInvestmentsStore';
+import { useOptionCatalogStore } from '@/app/store/useOptionCatalogStore';
 import { calculateInvestmentsSnapshot, deriveInvestmentContract } from '@/entities';
 import { formatCurrency, formatNullableMonths } from '@/shared/lib/format';
 import { CreatableSelect, DetailCard, ExecutiveCard, MoneyField, NumberField, SmartEmptyState, StatusChip } from '@/shared/ui';

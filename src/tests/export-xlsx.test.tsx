@@ -1,6 +1,6 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { useSetupStore } from '@/app/store';
+import { useSetupStore } from '@/app/store/useSetupStore';
 import { loadExampleWorkspace, resetWorkspaceToEmpty } from '@/app/store/setupWorkspace';
 import { buildFarmWorkbook } from '@/features/export/builders/WorkbookBuilders';
 import {

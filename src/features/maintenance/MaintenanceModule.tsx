@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { useMaintenanceStore, useOptionCatalogStore } from '@/app/store';
+import { useMaintenanceStore } from '@/app/store/useMaintenanceStore';
+import { useOptionCatalogStore } from '@/app/store/useOptionCatalogStore';
 import { calculateMaintenanceInefficiency } from '@/entities';
 import { formatCurrency } from '@/shared/lib/format';
 import { CreatableSelect, DetailCard, ExecutiveCard, MoneyField, NumberField, SmartEmptyState, StatusChip } from '@/shared/ui';

@@ -11,7 +11,12 @@ import {
   type CultureTemplate,
   type CultureTemplateCategory
 } from '@/entities';
-import { useFinanceStore, useOnboardingStore, useOptionCatalogStore, useProductionPlanningStore, usePurchasesStore, useUiPreferencesStore } from '@/app/store';
+import { useFinanceStore } from '@/app/store/useFinanceStore';
+import { useOnboardingStore } from '@/app/store/useOnboardingStore';
+import { useOptionCatalogStore } from '@/app/store/useOptionCatalogStore';
+import { useProductionPlanningStore } from '@/app/store/useProductionPlanningStore';
+import { usePurchasesStore } from '@/app/store/usePurchasesStore';
+import { useUiPreferencesStore } from '@/app/store/useUiPreferencesStore';
 import { fieldUnitMeta, formatCurrency, formatNumber } from '@/shared/lib/format';
 import {
   CenterModal,

@@ -1,5 +1,7 @@
 import { type ReactNode, useEffect } from 'react';
-import { useOnboardingStore, useUiPreferencesStore, useSetupStore } from '@/app/store';
+import { useOnboardingStore } from '@/app/store/useOnboardingStore';
+import { useUiPreferencesStore } from '@/app/store/useUiPreferencesStore';
+import { useSetupStore } from '@/app/store/useSetupStore';
 import { ProductTour } from '@/shared/ui';
 import { tourDefinitions } from '@/features/onboarding/tourDefinitions';
 

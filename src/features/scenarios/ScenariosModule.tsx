@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { useDemandChannelsStore, useScenariosStore } from '@/app/store';
+import { useDemandChannelsStore } from '@/app/store/useDemandChannelsStore';
+import { useScenariosStore } from '@/app/store/useScenariosStore';
 import { applyScenarioDemand } from '@/entities';
 import { formatNumber, formatPct, formatUnitLabel } from '@/shared/lib/format';
 import { DetailCard, ExecutiveCard, StatusChip } from '@/shared/ui';

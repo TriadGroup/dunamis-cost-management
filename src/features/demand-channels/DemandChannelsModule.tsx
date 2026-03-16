@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { useDemandChannelsStore } from '@/app/store';
+import { useDemandChannelsStore } from '@/app/store/useDemandChannelsStore';
 import { calculateChannelRevenue, kitchenSensitivity, sortChannelsByPriority } from '@/entities';
 import { formatCurrency, formatPct, formatPricePerUnit, formatUnitLabel } from '@/shared/lib/format';
 import { DetailCard, ExecutiveCard, MoneyField, NumberField, SmartEmptyState, StatusChip, UiIcon } from '@/shared/ui';

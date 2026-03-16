@@ -3,7 +3,7 @@ import { useFarmSnapshot } from '@/features/dashboard/model/useFarmSnapshot';
 import { calculateAppropriatedCostByLot, calculateMarketableUnits } from '@/entities';
 import { formatCurrency, formatNumber, formatUnitLabel } from '@/shared/lib/format';
 import { ContextHelp, DetailCard, ExecutiveCard, FilterPills, SmartEmptyState, StatusChip } from '@/shared/ui';
-import { useUiPreferencesStore } from '@/app/store';
+import { useUiPreferencesStore } from '@/app/store/useUiPreferencesStore';
 
 type CostView = 'cultura' | 'plano' | 'lote' | 'destino';
 

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { useDemandChannelsStore, useOptionCatalogStore } from '@/app/store';
+import { useDemandChannelsStore } from '@/app/store/useDemandChannelsStore';
+import { useOptionCatalogStore } from '@/app/store/useOptionCatalogStore';
 import { CreatableSelect, MoneyField } from '@/shared/ui';
 
 const resetOptionCatalogStore = () => {
