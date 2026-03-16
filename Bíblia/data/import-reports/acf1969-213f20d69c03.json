@@ -1,0 +1,5168 @@
+{
+  "translationId": "translation:acf1969",
+  "translationName": "Almeida Corrigida Fiel (1969)",
+  "shortCode": "acf1969",
+  "sourceFileName": "Bíblia Sagrada (Edição Almeida Corrigida Fiel - 1969).epub",
+  "sourceHash": "213f20d69c03ab6b08abfd14e9eb8ab4d919855c8c78ad9792de8a7a31113a09",
+  "parserProfile": "acf1969",
+  "metadata": {
+    "title": "Bíblia Almeida Revista e Corrigida 1969",
+    "publisher": "Sociedade Bíblica do Brasil",
+    "creator": "Sociedade Bíblica do Brasil",
+    "language": "pt",
+    "rights": "© 1969 Sociedade Bíblica do Brasil",
+    "date": "2016-03-30T22:00:00+00:00"
+  },
+  "licensing": {
+    "status": "restricted",
+    "notes": "Sinais explícitos de proteção autoral e/ou editora contemporânea detectados.",
+    "canDisplayPublicly": false,
+    "canUseForCompare": false
+  },
+  "totals": {
+    "booksDetected": 65,
+    "chaptersDetected": 1039,
+    "versesDetected": 28633,
+    "sectionHeadingsDetected": 1772,
+    "notesDetected": 3456,
+    "crossReferencesDetected": 4027,
+    "introductionsDetected": 0,
+    "uncertainSegments": 1733,
+    "reviewQueueItems": 937
+  },
+  "warnings": [
+    {
+      "code": "unknown_book",
+      "message": "Quantidade de livros detectados (65) difere do cânon esperado (66).",
+      "parserConfidence": 0.45
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre 1-tessalonicenses 5:8 e 1-tessalonicenses 5:11.",
+      "sourceDocument": "text/part1119.html",
+      "sourceReference": "1-tessalonicenses 5:11",
+      "parserConfidence": 0.87
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre 2-samuel 8:13 e 2-samuel 8:15.",
+      "sourceDocument": "text/part0278.html",
+      "sourceReference": "2-samuel 8:15",
+      "parserConfidence": 0.87
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre deuteronomio 7:5 e deuteronomio 7:7.",
+      "sourceDocument": "text/part0163.html",
+      "sourceReference": "deuteronomio 7:7",
+      "parserConfidence": 0.87
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre genesis 32:28 e genesis 32:30.",
+      "sourceDocument": "text/part0035.html",
+      "sourceReference": "genesis 32:30",
+      "parserConfidence": 0.87
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 1:5 e lucas 1:7.",
+      "sourceDocument": "text/part0977_split_001.html",
+      "sourceReference": "lucas 1:7",
+      "parserConfidence": 0.87
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 4:19 e lucas 4:21.",
+      "sourceDocument": "text/part0980.html",
+      "sourceReference": "lucas 4:21",
+      "parserConfidence": 0.87
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 3:29 e marcos 3:31.",
+      "sourceDocument": "text/part0963.html",
+      "sourceReference": "marcos 3:31",
+      "parserConfidence": 0.87
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 26:28 e mateus 26:30.",
+      "sourceDocument": "text/part0958.html",
+      "sourceReference": "mateus 26:30",
+      "parserConfidence": 0.87
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 27:51 e mateus 27:54.",
+      "sourceDocument": "text/part0959.html",
+      "sourceReference": "mateus 27:54",
+      "parserConfidence": 0.87
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0004_split_002.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Hb 4.4.",
+      "sourceDocument": "text/part0005.html",
+      "sourceReference": "2 Hb 4.4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: g.",
+      "sourceDocument": "text/part0005.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ap 12.9.",
+      "sourceDocument": "text/part0006.html",
+      "sourceReference": "1 Ap 12.9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Gn 1.27.",
+      "sourceDocument": "text/part0008.html",
+      "sourceReference": "2 Gn 1.27",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Jud 14.",
+      "sourceDocument": "text/part0008.html",
+      "sourceReference": "Jud 14",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0008.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Gn 1.28.",
+      "sourceDocument": "text/part0012.html",
+      "sourceReference": "1 Gn 1.28",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0012.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 At 7.2-3.",
+      "sourceDocument": "text/part0015.html",
+      "sourceReference": "1 At 7.2-3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Gl 3.8.",
+      "sourceDocument": "text/part0015.html",
+      "sourceReference": "3 Gl 3.8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0018.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: que significa pai da altura 1 17.",
+      "sourceDocument": "text/part0020.html",
+      "sourceReference": "que significa pai da altura 1 17",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0020.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Jud 7.",
+      "sourceDocument": "text/part0022.html",
+      "sourceReference": "Jud 7",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Gn 12.13.",
+      "sourceDocument": "text/part0023.html",
+      "sourceReference": "2 Gn 12.13",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Hb 11.11.",
+      "sourceDocument": "text/part0024.html",
+      "sourceReference": "2 Hb 11.11",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Hb 11.17-19.",
+      "sourceDocument": "text/part0025.html",
+      "sourceReference": "1 Hb 11.17-19",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0026.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: z.",
+      "sourceDocument": "text/part0028.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: m.",
+      "sourceDocument": "text/part0029.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0030.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: b.",
+      "sourceDocument": "text/part0033.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ver Jz 17.5.",
+      "sourceDocument": "text/part0034.html",
+      "sourceReference": "ver Jz 17.5",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: l.",
+      "sourceDocument": "text/part0034.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: que significa aquele que luta com Deus 29.",
+      "sourceDocument": "text/part0035.html",
+      "sourceReference": "que significa aquele que luta com Deus 29",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: o.",
+      "sourceDocument": "text/part0035.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: r.",
+      "sourceDocument": "text/part0036.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Gn 28.11-17.",
+      "sourceDocument": "text/part0038.html",
+      "sourceReference": "1 Gn 28.11-17",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0038.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Gn 26.34.",
+      "sourceDocument": "text/part0039.html",
+      "sourceReference": "2 Gn 26.34",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Gn 28.9.",
+      "sourceDocument": "text/part0039.html",
+      "sourceReference": "3 Gn 28.9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 At 7.9.",
+      "sourceDocument": "text/part0042.html",
+      "sourceReference": "2 At 7.9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 At 7.12.",
+      "sourceDocument": "text/part0045.html",
+      "sourceReference": "2 At 7.12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 At 7.13.",
+      "sourceDocument": "text/part0048.html",
+      "sourceReference": "1 At 7.13",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0051.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0052.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 At 7.20.",
+      "sourceDocument": "text/part0055.html",
+      "sourceReference": "2 At 7.20",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: e.",
+      "sourceDocument": "text/part0055.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 At 7.30-34.",
+      "sourceDocument": "text/part0056.html",
+      "sourceReference": "2 At 7.30-34",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou joias 4 3.",
+      "sourceDocument": "text/part0056.html",
+      "sourceReference": "ou joias 4 3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0056.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Êx 3.13-15.",
+      "sourceDocument": "text/part0059.html",
+      "sourceReference": "3 Êx 3.13-15",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0059.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 At 7.36.",
+      "sourceDocument": "text/part0060.html",
+      "sourceReference": "3 At 7.36",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0063.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: m.",
+      "sourceDocument": "text/part0064.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: que lhes pediam 5 12.",
+      "sourceDocument": "text/part0065.html",
+      "sourceReference": "que lhes pediam 5 12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0065.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Lc 2.23.",
+      "sourceDocument": "text/part0066.html",
+      "sourceReference": "2 Lc 2.23",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ap 15.3.",
+      "sourceDocument": "text/part0068.html",
+      "sourceReference": "1 Ap 15.3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Sl 118.14.",
+      "sourceDocument": "text/part0068.html",
+      "sourceReference": "2 Sl 118.14",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: s.",
+      "sourceDocument": "text/part0068.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Heb. tentação 1 17.",
+      "sourceDocument": "text/part0070.html",
+      "sourceReference": "Heb. tentação 1 17",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0070.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Êx 2.21-22.",
+      "sourceDocument": "text/part0071.html",
+      "sourceReference": "2 Êx 2.21-22",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0071.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0072.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 12.",
+      "sourceDocument": "text/part0073.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0074.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0075.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Êx 20.16.",
+      "sourceDocument": "text/part0076.html",
+      "sourceReference": "1 Êx 20.16",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 11.",
+      "sourceDocument": "text/part0076.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0077.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0085.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Gn 26.3.",
+      "sourceDocument": "text/part0086.html",
+      "sourceReference": "1 Gn 26.3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0086.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou cabrito 5 34.",
+      "sourceDocument": "text/part0087.html",
+      "sourceReference": "ou cabrito 5 34",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 10.",
+      "sourceDocument": "text/part0087.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Êx 20.8-11.",
+      "sourceDocument": "text/part0088.html",
+      "sourceReference": "3 Êx 20.8-11",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0088.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: w.",
+      "sourceDocument": "text/part0090.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0091.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: a.",
+      "sourceDocument": "text/part0092.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: b.",
+      "sourceDocument": "text/part0094_split_002.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0097.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0099.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0100.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0103.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0104.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Gn 17.12.",
+      "sourceDocument": "text/part0105.html",
+      "sourceReference": "3 Gn 17.12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Hb 6.19.",
+      "sourceDocument": "text/part0109.html",
+      "sourceReference": "2 Hb 6.19",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Hb 9.7.",
+      "sourceDocument": "text/part0109.html",
+      "sourceReference": "3 Hb 9.7",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0109.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou vida 1 17.",
+      "sourceDocument": "text/part0110.html",
+      "sourceReference": "ou vida 1 17",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou vida 2 17.",
+      "sourceDocument": "text/part0110.html",
+      "sourceReference": "ou vida 2 17",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0110.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0111.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Lv 11.44-45.",
+      "sourceDocument": "text/part0112.html",
+      "sourceReference": "2 Lv 11.44-45",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Êx 20.8.",
+      "sourceDocument": "text/part0112.html",
+      "sourceReference": "3 Êx 20.8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 19.",
+      "sourceDocument": "text/part0112.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0113.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Êx 20.8-11.",
+      "sourceDocument": "text/part0116.html",
+      "sourceReference": "3 Êx 20.8-11",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 8.",
+      "sourceDocument": "text/part0116.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0118.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Êx 20.4.",
+      "sourceDocument": "text/part0119.html",
+      "sourceReference": "1 Êx 20.4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0119.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0120.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0121_split_002.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0123.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0125.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0126.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0128.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0129.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0131.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0134.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0135.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0137.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0140.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Nm 33.40.",
+      "sourceDocument": "text/part0141.html",
+      "sourceReference": "1 Nm 33.40",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0144.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0146.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0147.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0148.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0149.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Mt 5.33.",
+      "sourceDocument": "text/part0150.html",
+      "sourceReference": "2 Mt 5.33",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0152.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0154.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Js 21.1-42.",
+      "sourceDocument": "text/part0155.html",
+      "sourceReference": "2 Js 21.1-42",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Nm 27.7.",
+      "sourceDocument": "text/part0156.html",
+      "sourceReference": "2 Nm 27.7",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0157_split_002.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Nm 21.4.",
+      "sourceDocument": "text/part0158.html",
+      "sourceReference": "1 Nm 21.4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0159.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Ap 22.18-19.",
+      "sourceDocument": "text/part0160.html",
+      "sourceReference": "2 Ap 22.18-19",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Nm 25.1-9.",
+      "sourceDocument": "text/part0160.html",
+      "sourceReference": "3 Nm 25.1-9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Heb. as dez palavras 4 4.",
+      "sourceDocument": "text/part0160.html",
+      "sourceReference": "Heb. as dez palavras 4 4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 13.",
+      "sourceDocument": "text/part0160.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 11.",
+      "sourceDocument": "text/part0161.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0162.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 At 13.19.",
+      "sourceDocument": "text/part0163.html",
+      "sourceReference": "1 At 13.19",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou os seus obeliscos 6.",
+      "sourceDocument": "text/part0163.html",
+      "sourceReference": "ou os seus obeliscos 6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: b.",
+      "sourceDocument": "text/part0163.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Mt 4.4.",
+      "sourceDocument": "text/part0164.html",
+      "sourceReference": "3 Mt 4.4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 8.",
+      "sourceDocument": "text/part0165.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0166.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Êx 7.8.",
+      "sourceDocument": "text/part0167.html",
+      "sourceReference": "3 Êx 7.8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0167.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Dt 7.5.",
+      "sourceDocument": "text/part0168.html",
+      "sourceReference": "3 Dt 7.5",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: d.",
+      "sourceDocument": "text/part0168.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Lv 19.28.",
+      "sourceDocument": "text/part0170.html",
+      "sourceReference": "1 Lv 19.28",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Êx 19.5-6.",
+      "sourceDocument": "text/part0170.html",
+      "sourceReference": "2 Êx 19.5-6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0170.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Êx 23.10-11.",
+      "sourceDocument": "text/part0171.html",
+      "sourceReference": "1 Êx 23.10-11",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0171.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: g.",
+      "sourceDocument": "text/part0172.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Nm 18.20.",
+      "sourceDocument": "text/part0174.html",
+      "sourceReference": "2 Nm 18.20",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Dt 4.41-43.",
+      "sourceDocument": "text/part0175.html",
+      "sourceReference": "2 Dt 4.41-43",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0178.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0179.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 5.31.",
+      "sourceDocument": "text/part0180.html",
+      "sourceReference": "1 Mt 5.31",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part0180.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0181.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Êx 23.19.",
+      "sourceDocument": "text/part0182.html",
+      "sourceReference": "2 Êx 23.19",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0183.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0186.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Nm 20.12.",
+      "sourceDocument": "text/part0187.html",
+      "sourceReference": "2 Nm 20.12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0187.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part0188.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0189.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0190.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0191_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Hb 11.31.",
+      "sourceDocument": "text/part0192.html",
+      "sourceReference": "1 Hb 11.31",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0192.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: que significa círculo ou roda 2 5.",
+      "sourceDocument": "text/part0195.html",
+      "sourceReference": "que significa círculo ou roda 2 5",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0195.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: vide Lv 27.28.",
+      "sourceDocument": "text/part0196.html",
+      "sourceReference": "vide Lv 27.28",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: vide Lv 27.28.",
+      "sourceDocument": "text/part0197.html",
+      "sourceReference": "vide Lv 27.28",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0198.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Heb. Jasher 1 10.",
+      "sourceDocument": "text/part0200.html",
+      "sourceReference": "Heb. Jasher 1 10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0200.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Nm 21.21-35.",
+      "sourceDocument": "text/part0202.html",
+      "sourceReference": "1 Nm 21.21-35",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: m.",
+      "sourceDocument": "text/part0202.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Nm 26.52-56.",
+      "sourceDocument": "text/part0204.html",
+      "sourceReference": "2 Nm 26.52-56",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: n.",
+      "sourceDocument": "text/part0204.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0205.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Nm 35.9-28.",
+      "sourceDocument": "text/part0210.html",
+      "sourceReference": "2 Nm 35.9-28",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Nm 35.1-8.",
+      "sourceDocument": "text/part0211.html",
+      "sourceReference": "2 Nm 35.1-8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Nm 32.20-32.",
+      "sourceDocument": "text/part0212.html",
+      "sourceReference": "2 Nm 32.20-32",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: u.",
+      "sourceDocument": "text/part0212.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0213.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Gn 11.27.",
+      "sourceDocument": "text/part0214.html",
+      "sourceReference": "2 Gn 11.27",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Gn 21.1-3.",
+      "sourceDocument": "text/part0214.html",
+      "sourceReference": "3 Gn 21.1-3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 16.",
+      "sourceDocument": "text/part0214.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Êx 34.12-13.",
+      "sourceDocument": "text/part0216.html",
+      "sourceReference": "2 Êx 34.12-13",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Dt 20.8.",
+      "sourceDocument": "text/part0221.html",
+      "sourceReference": "3 Dt 20.8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: c.",
+      "sourceDocument": "text/part0236_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Lv 19.9-10.",
+      "sourceDocument": "text/part0237.html",
+      "sourceReference": "2 Lv 19.9-10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0239.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Heb. chifre 1 2.",
+      "sourceDocument": "text/part0241.html",
+      "sourceReference": "Heb. chifre 1 2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0241.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0246.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0249.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 10.",
+      "sourceDocument": "text/part0251.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Êx 17.8-14.",
+      "sourceDocument": "text/part0254.html",
+      "sourceReference": "2 Êx 17.8-14",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 12.3-4.",
+      "sourceDocument": "text/part0260.html",
+      "sourceReference": "1 Mt 12.3-4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0261.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Sl 57.",
+      "sourceDocument": "text/part0263.html",
+      "sourceReference": "3 Sl 57",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Sl 54.",
+      "sourceDocument": "text/part0265.html",
+      "sourceReference": "1 Sl 54",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Lv 20.27.",
+      "sourceDocument": "text/part0267.html",
+      "sourceReference": "3 Lv 20.27",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0267.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0271_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Êx 25.22.",
+      "sourceDocument": "text/part0276.html",
+      "sourceReference": "2 Êx 25.22",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0276.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: título 14.",
+      "sourceDocument": "text/part0278.html",
+      "sourceReference": "título 14",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Sl 51.",
+      "sourceDocument": "text/part0282.html",
+      "sourceReference": "1 Sl 51",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Js 9.3-15.",
+      "sourceDocument": "text/part0291.html",
+      "sourceReference": "2 Js 9.3-15",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0296.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0301.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0302.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 12.42.",
+      "sourceDocument": "text/part0304.html",
+      "sourceReference": "1 Mt 12.42",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Dt 17.17.",
+      "sourceDocument": "text/part0305.html",
+      "sourceReference": "1 Dt 17.17",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Êx 34.16.",
+      "sourceDocument": "text/part0305.html",
+      "sourceReference": "2 Êx 34.16",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: e.",
+      "sourceDocument": "text/part0308.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Tg 5.17.",
+      "sourceDocument": "text/part0311.html",
+      "sourceReference": "1 Tg 5.17",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Lc 4.27.",
+      "sourceDocument": "text/part0321.html",
+      "sourceReference": "1 Lc 4.27",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0325.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0328.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Dt 12.31.",
+      "sourceDocument": "text/part0332.html",
+      "sourceReference": "3 Dt 12.31",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: h.",
+      "sourceDocument": "text/part0334.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Jr 15.4.",
+      "sourceDocument": "text/part0337.html",
+      "sourceReference": "2 Jr 15.4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Jr 3.6.",
+      "sourceDocument": "text/part0338.html",
+      "sourceReference": "1 Jr 3.6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0339.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Jr 25.1-38.",
+      "sourceDocument": "text/part0340.html",
+      "sourceReference": "1 Jr 25.1-38",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Jr 21.1-10.",
+      "sourceDocument": "text/part0341.html",
+      "sourceReference": "1 Jr 21.1-10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 8.",
+      "sourceDocument": "text/part0341.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou Acã 1 2.",
+      "sourceDocument": "text/part0343.html",
+      "sourceReference": "ou Acã 1 2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0343.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou Bate-Seba 2 3.",
+      "sourceDocument": "text/part0344.html",
+      "sourceReference": "ou Bate-Seba 2 3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0344.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Gn 35.22.",
+      "sourceDocument": "text/part0346.html",
+      "sourceReference": "1 Gn 35.22",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Gn 49.8-10.",
+      "sourceDocument": "text/part0346.html",
+      "sourceReference": "2 Gn 49.8-10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0346.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0347.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Ed 2.70.",
+      "sourceDocument": "text/part0350.html",
+      "sourceReference": "2 Ed 2.70",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0351.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Dt 10.8.",
+      "sourceDocument": "text/part0356.html",
+      "sourceReference": "2 Dt 10.8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: g.",
+      "sourceDocument": "text/part0356.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0357.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0363.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0364.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Lv 10.1-2.",
+      "sourceDocument": "text/part0365.html",
+      "sourceReference": "2 Lv 10.1-2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0369.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: c.",
+      "sourceDocument": "text/part0371_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0372.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou Casa Santíssima 1 3.",
+      "sourceDocument": "text/part0373.html",
+      "sourceReference": "ou Casa Santíssima 1 3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0373.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Êx 27.1-2.",
+      "sourceDocument": "text/part0374.html",
+      "sourceReference": "1 Êx 27.1-2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: k.",
+      "sourceDocument": "text/part0374.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0375.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0376.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Lv 9.23-24.",
+      "sourceDocument": "text/part0377.html",
+      "sourceReference": "1 Lv 9.23-24",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0378.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 12.42.",
+      "sourceDocument": "text/part0379.html",
+      "sourceReference": "1 Mt 12.42",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0390.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0392.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0394.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Nm 9.9-11.",
+      "sourceDocument": "text/part0400.html",
+      "sourceReference": "3 Nm 9.9-11",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0400.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Nm 28.1.",
+      "sourceDocument": "text/part0401.html",
+      "sourceReference": "3 Nm 28.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0401.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0402.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Jr 15.4.",
+      "sourceDocument": "text/part0403.html",
+      "sourceReference": "2 Jr 15.4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0403.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Jr 3.6.",
+      "sourceDocument": "text/part0404.html",
+      "sourceReference": "1 Jr 3.6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0406.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Jr 25.11.",
+      "sourceDocument": "text/part0407_split_001.html",
+      "sourceReference": "1 Jr 25.11",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Is 44.28.",
+      "sourceDocument": "text/part0407_split_001.html",
+      "sourceReference": "2 Is 44.28",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou governador 1 2.",
+      "sourceDocument": "text/part0408.html",
+      "sourceReference": "ou governador 1 2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0408.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Êx 27.1.",
+      "sourceDocument": "text/part0409.html",
+      "sourceReference": "2 Êx 27.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Zc 1.1.",
+      "sourceDocument": "text/part0411.html",
+      "sourceReference": "1 Zc 1.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Ag 1.12.",
+      "sourceDocument": "text/part0411.html",
+      "sourceReference": "2 Ag 1.12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0411.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0412.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou governador 1 7.",
+      "sourceDocument": "text/part0423.html",
+      "sourceReference": "ou governador 1 7",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0423.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0424.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 22.",
+      "sourceDocument": "text/part0425.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0426.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0427.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0428.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Nm 23.7.",
+      "sourceDocument": "text/part0429.html",
+      "sourceReference": "2 Nm 23.7",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part0429.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ed 4.6.",
+      "sourceDocument": "text/part0430.html",
+      "sourceReference": "1 Ed 4.6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Et 2.21-22.",
+      "sourceDocument": "text/part0435.html",
+      "sourceReference": "2 Et 2.21-22",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0442.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0461.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0474.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0477.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Sl 74.14.",
+      "sourceDocument": "text/part0480.html",
+      "sourceReference": "1 Sl 74.14",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0480.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0632_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0637.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Pv 1.20-21.",
+      "sourceDocument": "text/part0639.html",
+      "sourceReference": "3 Pv 1.20-21",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0639.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0655.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0656.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Tg 4.13-16.",
+      "sourceDocument": "text/part0658.html",
+      "sourceReference": "1 Tg 4.13-16",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0664.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part0683_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Mt 21.33.",
+      "sourceDocument": "text/part0687.html",
+      "sourceReference": "2 Mt 21.33",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: entre 20.",
+      "sourceDocument": "text/part0687.html",
+      "sourceReference": "entre 20",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0687.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Ap 4.8.",
+      "sourceDocument": "text/part0688.html",
+      "sourceReference": "3 Ap 4.8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0688.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: k.",
+      "sourceDocument": "text/part0689.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0690.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Mt 4.15-16.",
+      "sourceDocument": "text/part0691.html",
+      "sourceReference": "2 Mt 4.15-16",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0691.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0692.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ap 5.5.",
+      "sourceDocument": "text/part0693.html",
+      "sourceReference": "1 Ap 5.5",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 8.",
+      "sourceDocument": "text/part0693.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Êx 15.2.",
+      "sourceDocument": "text/part0694.html",
+      "sourceReference": "2 Êx 15.2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou dos porcos-espinhos 3 13.",
+      "sourceDocument": "text/part0696.html",
+      "sourceReference": "ou dos porcos-espinhos 3 13",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0696.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0698.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Jr 49.23-27.",
+      "sourceDocument": "text/part0699.html",
+      "sourceReference": "3 Jr 49.23-27",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0699.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0700.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0701.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0705.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0707.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0710.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: j.",
+      "sourceDocument": "text/part0711.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou consumirá 1 34.",
+      "sourceDocument": "text/part0716.html",
+      "sourceReference": "ou consumirá 1 34",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0716.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Hb 12.12.",
+      "sourceDocument": "text/part0717.html",
+      "sourceReference": "3 Hb 12.12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0717.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0719.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0721.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Mt 3.3.",
+      "sourceDocument": "text/part0722.html",
+      "sourceReference": "3 Mt 3.3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0722.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 3.17.",
+      "sourceDocument": "text/part0724.html",
+      "sourceReference": "1 Mt 3.17",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0724.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0729.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: meu chamado 1 48.",
+      "sourceDocument": "text/part0730.html",
+      "sourceReference": "meu chamado 1 48",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0730.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: c.",
+      "sourceDocument": "text/part0733.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ap 21.2.",
+      "sourceDocument": "text/part0734.html",
+      "sourceReference": "1 Ap 21.2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou espargirá 5 52.",
+      "sourceDocument": "text/part0734.html",
+      "sourceReference": "ou espargirá 5 52",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0734.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: quinhão dos grandes 6 53.",
+      "sourceDocument": "text/part0735.html",
+      "sourceReference": "quinhão dos grandes 6 53",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0735.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Gl 4.27.",
+      "sourceDocument": "text/part0736.html",
+      "sourceReference": "1 Gl 4.27",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0736.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ap 21.6.",
+      "sourceDocument": "text/part0737.html",
+      "sourceReference": "1 Ap 21.6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 At 13.34.",
+      "sourceDocument": "text/part0737.html",
+      "sourceReference": "3 At 13.34",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0741.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 11.5.",
+      "sourceDocument": "text/part0743.html",
+      "sourceReference": "1 Mt 11.5",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Lc 4.18-19.",
+      "sourceDocument": "text/part0743.html",
+      "sourceReference": "2 Lc 4.18-19",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0743.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Ap 14.20.",
+      "sourceDocument": "text/part0745.html",
+      "sourceReference": "3 Ap 14.20",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: seu sangue 2 63.",
+      "sourceDocument": "text/part0745.html",
+      "sourceReference": "seu sangue 2 63",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0745.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Rm 10.20-21.",
+      "sourceDocument": "text/part0747.html",
+      "sourceReference": "2 Rm 10.20-21",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0747.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 5.34-35.",
+      "sourceDocument": "text/part0748.html",
+      "sourceReference": "1 Mt 5.34-35",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0749_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Os 10.12.",
+      "sourceDocument": "text/part0752.html",
+      "sourceReference": "3 Os 10.12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0755.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Êx 32.11-14.",
+      "sourceDocument": "text/part0763.html",
+      "sourceReference": "1 Êx 32.11-14",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Ap 13.10.",
+      "sourceDocument": "text/part0763.html",
+      "sourceReference": "2 Ap 13.10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Ap 6.8.",
+      "sourceDocument": "text/part0763.html",
+      "sourceReference": "3 Ap 6.8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0763.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0765.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0768.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0771.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0777.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0779.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0781.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0794.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0795.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0796.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0797.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0799.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ap 19.11.",
+      "sourceDocument": "text/part0806_split_001.html",
+      "sourceReference": "1 Ap 19.11",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou criaturas viventes 3 1.",
+      "sourceDocument": "text/part0806_split_001.html",
+      "sourceReference": "ou criaturas viventes 3 1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou gelo 8 1.",
+      "sourceDocument": "text/part0806_split_001.html",
+      "sourceReference": "ou gelo 8 1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 8.",
+      "sourceDocument": "text/part0806_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ap 10.9-10.",
+      "sourceDocument": "text/part0808.html",
+      "sourceReference": "1 Ap 10.9-10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0808.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Ez 1.27.",
+      "sourceDocument": "text/part0813.html",
+      "sourceReference": "2 Ez 1.27",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ez 1.26.",
+      "sourceDocument": "text/part0815.html",
+      "sourceReference": "1 Ez 1.26",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Ap 8.5.",
+      "sourceDocument": "text/part0815.html",
+      "sourceReference": "2 Ap 8.5",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: k.",
+      "sourceDocument": "text/part0815.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0816.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0822.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Jr 31.29.",
+      "sourceDocument": "text/part0823.html",
+      "sourceReference": "2 Jr 31.29",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0823.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0825.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0826.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0827.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0830.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0833.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0837.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0838.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0840.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Ap 20.8.",
+      "sourceDocument": "text/part0843.html",
+      "sourceReference": "2 Ap 20.8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Ap 21.10.",
+      "sourceDocument": "text/part0845.html",
+      "sourceReference": "2 Ap 21.10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Ap 11.1.",
+      "sourceDocument": "text/part0845.html",
+      "sourceReference": "3 Ap 11.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Ez 10.3-4.",
+      "sourceDocument": "text/part0848.html",
+      "sourceReference": "2 Ez 10.3-4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: m.",
+      "sourceDocument": "text/part0848.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ver Lv 25.10.",
+      "sourceDocument": "text/part0851.html",
+      "sourceReference": "ver Lv 25.10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Zc 14.8.",
+      "sourceDocument": "text/part0852.html",
+      "sourceReference": "1 Zc 14.8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Ap 13.1.",
+      "sourceDocument": "text/part0860.html",
+      "sourceReference": "3 Ap 13.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: nos versículos que se seguem 3 7.",
+      "sourceDocument": "text/part0860.html",
+      "sourceReference": "nos versículos que se seguem 3 7",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 18.",
+      "sourceDocument": "text/part0860.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Jr 25.11.",
+      "sourceDocument": "text/part0862.html",
+      "sourceReference": "2 Jr 25.11",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou braços haverá por seu lado 1 11.",
+      "sourceDocument": "text/part0864.html",
+      "sourceReference": "ou braços haverá por seu lado 1 11",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0864.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 24.21.",
+      "sourceDocument": "text/part0865.html",
+      "sourceReference": "1 Mt 24.21",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Mt 25.46.",
+      "sourceDocument": "text/part0865.html",
+      "sourceReference": "2 Mt 25.46",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0865.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0866_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Lc 24.46.",
+      "sourceDocument": "text/part0871.html",
+      "sourceReference": "2 Lc 24.46",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 2.15.",
+      "sourceDocument": "text/part0876.html",
+      "sourceReference": "1 Mt 2.15",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Gn 32.24-26.",
+      "sourceDocument": "text/part0877.html",
+      "sourceReference": "3 Gn 32.24-26",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Heb. de Aram 5 12.",
+      "sourceDocument": "text/part0877.html",
+      "sourceReference": "Heb. de Aram 5 12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0877.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0881.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0882.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Jl 3.16.",
+      "sourceDocument": "text/part0883_split_001.html",
+      "sourceReference": "2 Jl 3.16",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 8.",
+      "sourceDocument": "text/part0883_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Is 15.1.",
+      "sourceDocument": "text/part0884.html",
+      "sourceReference": "3 Is 15.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0884.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0887.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0891.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Êx 34.6.",
+      "sourceDocument": "text/part0896.html",
+      "sourceReference": "2 Êx 34.6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0897_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Jl 3.10.",
+      "sourceDocument": "text/part0900.html",
+      "sourceReference": "3 Jl 3.10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Mt 2.6.",
+      "sourceDocument": "text/part0901.html",
+      "sourceReference": "2 Mt 2.6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0902.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Is 10.5-34.",
+      "sourceDocument": "text/part0904_split_001.html",
+      "sourceReference": "1 Is 10.5-34",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0904_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Hb 10.37.",
+      "sourceDocument": "text/part0908.html",
+      "sourceReference": "3 Hb 10.37",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0911.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ed 4.24.",
+      "sourceDocument": "text/part0913_split_001.html",
+      "sourceReference": "1 Ed 4.24",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Ed 3.12.",
+      "sourceDocument": "text/part0914.html",
+      "sourceReference": "3 Ed 3.12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ed 4.24.",
+      "sourceDocument": "text/part0915_split_001.html",
+      "sourceReference": "1 Ed 4.24",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0915_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ap 12.10.",
+      "sourceDocument": "text/part0917.html",
+      "sourceReference": "1 Ap 12.10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Jud 9.",
+      "sourceDocument": "text/part0917.html",
+      "sourceReference": "2 Jud 9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0917.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Ap 11.4.",
+      "sourceDocument": "text/part0918.html",
+      "sourceReference": "3 Ap 11.4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Ap 6.5.",
+      "sourceDocument": "text/part0920.html",
+      "sourceReference": "2 Ap 6.5",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Ap 6.2.",
+      "sourceDocument": "text/part0920.html",
+      "sourceReference": "3 Ap 6.2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0920.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Is 17.1-3.",
+      "sourceDocument": "text/part0923.html",
+      "sourceReference": "1 Is 17.1-3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Is 23.1-18.",
+      "sourceDocument": "text/part0923.html",
+      "sourceReference": "2 Is 23.1-18",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0923.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: j.",
+      "sourceDocument": "text/part0925.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Rm 9.13.",
+      "sourceDocument": "text/part0929_split_001.html",
+      "sourceReference": "3 Rm 9.13",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0929_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 11.10.",
+      "sourceDocument": "text/part0931.html",
+      "sourceReference": "1 Mt 11.10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Ap 6.17.",
+      "sourceDocument": "text/part0931.html",
+      "sourceReference": "2 Ap 6.17",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0931.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ACF encontrada sem marcador ou verso identificável.",
+      "sourceDocument": "text/part0934.html",
+      "parserConfidence": 0.45
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou príncipes 1 2.",
+      "sourceDocument": "text/part0934.html",
+      "sourceReference": "ou príncipes 1 2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0934.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Dn 2.44.",
+      "sourceDocument": "text/part0935.html",
+      "sourceReference": "2 Dn 2.44",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Is 40.3.",
+      "sourceDocument": "text/part0935.html",
+      "sourceReference": "3 Is 40.3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part0935.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Hb 2.18.",
+      "sourceDocument": "text/part0936.html",
+      "sourceReference": "1 Hb 2.18",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 11.",
+      "sourceDocument": "text/part0936.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 23.",
+      "sourceDocument": "text/part0937.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 23.5.",
+      "sourceDocument": "text/part0938.html",
+      "sourceReference": "1 Mt 23.5",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0938.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Mc 4.24.",
+      "sourceDocument": "text/part0939.html",
+      "sourceReference": "2 Mc 4.24",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0939.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0940.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part0941.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou alma 13 10.",
+      "sourceDocument": "text/part0942.html",
+      "sourceReference": "ou alma 13 10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 15.",
+      "sourceDocument": "text/part0942.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 10.",
+      "sourceDocument": "text/part0943.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Dt 23.25.",
+      "sourceDocument": "text/part0944.html",
+      "sourceReference": "1 Dt 23.25",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 17.",
+      "sourceDocument": "text/part0944.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Lc 5.1-3.",
+      "sourceDocument": "text/part0945.html",
+      "sourceReference": "2 Lc 5.1-3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0945.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0946.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0947.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 12.",
+      "sourceDocument": "text/part0948.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0949.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Lc 22.24.",
+      "sourceDocument": "text/part0950.html",
+      "sourceReference": "1 Lc 22.24",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Mc 10.15.",
+      "sourceDocument": "text/part0950.html",
+      "sourceReference": "3 Mc 10.15",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 12.",
+      "sourceDocument": "text/part0951.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou escravo 3 20.",
+      "sourceDocument": "text/part0952.html",
+      "sourceReference": "ou escravo 3 20",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0952.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0953.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part0954.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 11.",
+      "sourceDocument": "text/part0955.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part0956.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0957.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou Novo Concerto 29.",
+      "sourceDocument": "text/part0958.html",
+      "sourceReference": "ou Novo Concerto 29",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 11.",
+      "sourceDocument": "text/part0958.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou rochas 52.",
+      "sourceDocument": "text/part0959.html",
+      "sourceReference": "ou rochas 52",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 11.",
+      "sourceDocument": "text/part0959.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Ml 3.1.",
+      "sourceDocument": "text/part0961_split_001.html",
+      "sourceReference": "2 Ml 3.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Is 40.3.",
+      "sourceDocument": "text/part0961_split_001.html",
+      "sourceReference": "3 Is 40.3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part0961_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0962.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou flagelo 1 3.",
+      "sourceDocument": "text/part0963.html",
+      "sourceReference": "ou flagelo 1 3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: réu de um eterno pecado 30.",
+      "sourceDocument": "text/part0963.html",
+      "sourceReference": "réu de um eterno pecado 30",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: d.",
+      "sourceDocument": "text/part0963.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Lc 5.1-3.",
+      "sourceDocument": "text/part0964.html",
+      "sourceReference": "1 Lc 5.1-3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0966.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou me adoram 1 7.",
+      "sourceDocument": "text/part0967.html",
+      "sourceReference": "ou me adoram 1 7",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0967.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou alma 7 8.",
+      "sourceDocument": "text/part0968.html",
+      "sourceReference": "ou alma 7 8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part0968.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part0969.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou escravo 13 10.",
+      "sourceDocument": "text/part0970.html",
+      "sourceReference": "ou escravo 13 10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 14.",
+      "sourceDocument": "text/part0970.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0971.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Is 5.1-2.",
+      "sourceDocument": "text/part0972.html",
+      "sourceReference": "1 Is 5.1-2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 10.",
+      "sourceDocument": "text/part0972.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0973.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part0974.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part0975.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Heb. Elizabeth 6.",
+      "sourceDocument": "text/part0977_split_001.html",
+      "sourceReference": "Heb. Elizabeth 6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 10.",
+      "sourceDocument": "text/part0977_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0978.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 8.",
+      "sourceDocument": "text/part0979.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Gr. remissão 20.",
+      "sourceDocument": "text/part0980.html",
+      "sourceReference": "Gr. remissão 20",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0980.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Mt 13.1-2.",
+      "sourceDocument": "text/part0981.html",
+      "sourceReference": "3 Mt 13.1-2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0981.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Dt 23.25.",
+      "sourceDocument": "text/part0982.html",
+      "sourceReference": "1 Dt 23.25",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 10.",
+      "sourceDocument": "text/part0982.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0983.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou alma 6 9.",
+      "sourceDocument": "text/part0985.html",
+      "sourceReference": "ou alma 6 9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part0985.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Mt 9.37-38.",
+      "sourceDocument": "text/part0986.html",
+      "sourceReference": "2 Mt 9.37-38",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 15.",
+      "sourceDocument": "text/part0986.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part0987.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 16.6.",
+      "sourceDocument": "text/part0988.html",
+      "sourceReference": "1 Mt 16.6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Mc 4.22.",
+      "sourceDocument": "text/part0988.html",
+      "sourceReference": "2 Mc 4.22",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part0988.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part0990.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Lc 5.29-30.",
+      "sourceDocument": "text/part0991.html",
+      "sourceReference": "2 Lc 5.29-30",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part0991.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: m.",
+      "sourceDocument": "text/part0992.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0993.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part0994.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0995.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part0996.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part0997.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou Pacto 3 22.",
+      "sourceDocument": "text/part0998.html",
+      "sourceReference": "ou Pacto 3 22",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part0998.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part1000.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part1001_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1006.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Lv 23.34.",
+      "sourceDocument": "text/part1007.html",
+      "sourceReference": "2 Lv 23.34",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part1007.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Lc 10.38-39.",
+      "sourceDocument": "text/part1011.html",
+      "sourceReference": "1 Lc 10.38-39",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1013.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1019.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1021.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Lc 1.1-4.",
+      "sourceDocument": "text/part1022_split_001.html",
+      "sourceReference": "1 Lc 1.1-4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 10.",
+      "sourceDocument": "text/part1022_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Lv 23.15-21.",
+      "sourceDocument": "text/part1023.html",
+      "sourceReference": "1 Lv 23.15-21",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part1023.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1024.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part1025.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Gn 12.1.",
+      "sourceDocument": "text/part1028.html",
+      "sourceReference": "3 Gn 12.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 41.",
+      "sourceDocument": "text/part1028.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: sua sentença 2 8.",
+      "sourceDocument": "text/part1029.html",
+      "sourceReference": "sua sentença 2 8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1029.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: santas 19 13.",
+      "sourceDocument": "text/part1034.html",
+      "sourceReference": "santas 19 13",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 19.",
+      "sourceDocument": "text/part1034.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Lv 12.3.",
+      "sourceDocument": "text/part1036.html",
+      "sourceReference": "1 Lv 12.3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 8.",
+      "sourceDocument": "text/part1036.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1038.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 At 5.34-39.",
+      "sourceDocument": "text/part1043.html",
+      "sourceReference": "3 At 5.34-39",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part1043.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Mt 23.27-28.",
+      "sourceDocument": "text/part1044.html",
+      "sourceReference": "3 Mt 23.27-28",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1045.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part1047.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1049.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 7.1.",
+      "sourceDocument": "text/part1051.html",
+      "sourceReference": "1 Mt 7.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part1052.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Gn 15.6.",
+      "sourceDocument": "text/part1053.html",
+      "sourceReference": "3 Gn 15.6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1053.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1056.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1057.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou de Sebaoth 11 9.",
+      "sourceDocument": "text/part1058.html",
+      "sourceReference": "ou de Sebaoth 11 9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 11.",
+      "sourceDocument": "text/part1058.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part1059.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Fp 3.5.",
+      "sourceDocument": "text/part1060.html",
+      "sourceReference": "1 Fp 3.5",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part1060.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1061.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part1062.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Sl 69.9.",
+      "sourceDocument": "text/part1064.html",
+      "sourceReference": "3 Sl 69.9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 8.",
+      "sourceDocument": "text/part1064.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 At 18.2.",
+      "sourceDocument": "text/part1065.html",
+      "sourceReference": "3 At 18.2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part1065.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 At 18.1.",
+      "sourceDocument": "text/part1066_split_001.html",
+      "sourceReference": "2 At 18.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1066_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 At 18.9.",
+      "sourceDocument": "text/part1067.html",
+      "sourceReference": "3 At 18.9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Hb 5.12-13.",
+      "sourceDocument": "text/part1068.html",
+      "sourceReference": "2 Hb 5.12-13",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part1068.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Dt 22.30.",
+      "sourceDocument": "text/part1070.html",
+      "sourceReference": "1 Dt 22.30",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1072.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Êx 14.22-29.",
+      "sourceDocument": "text/part1075.html",
+      "sourceReference": "1 Êx 14.22-29",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Êx 16.35.",
+      "sourceDocument": "text/part1075.html",
+      "sourceReference": "3 Êx 16.35",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1075.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part1076.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1077.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Mt 17.20.",
+      "sourceDocument": "text/part1078.html",
+      "sourceReference": "2 Mt 17.20",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Is 53.5-12.",
+      "sourceDocument": "text/part1080.html",
+      "sourceReference": "3 Is 53.5-12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou morte 12 15.",
+      "sourceDocument": "text/part1080.html",
+      "sourceReference": "ou morte 12 15",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 13.",
+      "sourceDocument": "text/part1080.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1081.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 At 18.1.",
+      "sourceDocument": "text/part1082_split_001.html",
+      "sourceReference": "1 At 18.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1082_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1083.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Êx 24.12.",
+      "sourceDocument": "text/part1084.html",
+      "sourceReference": "3 Êx 24.12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou Concerto 2 3.",
+      "sourceDocument": "text/part1084.html",
+      "sourceReference": "ou Concerto 2 3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1084.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Is 49.8.",
+      "sourceDocument": "text/part1087.html",
+      "sourceReference": "2 Is 49.8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1087.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1089.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Gn 3.4-13.",
+      "sourceDocument": "text/part1092.html",
+      "sourceReference": "3 Gn 3.4-13",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part1092.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Dt 17.6.",
+      "sourceDocument": "text/part1094.html",
+      "sourceReference": "1 Dt 17.6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part1095_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 At 11.30.",
+      "sourceDocument": "text/part1096.html",
+      "sourceReference": "1 At 11.30",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1096.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou as nações 2 3.",
+      "sourceDocument": "text/part1097.html",
+      "sourceReference": "ou as nações 2 3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part1097.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1098.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part1099.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 At 18.19-21.",
+      "sourceDocument": "text/part1101_split_001.html",
+      "sourceReference": "1 At 18.19-21",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part1101_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part1102.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1103.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 8.",
+      "sourceDocument": "text/part1104.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Êx 29.18.",
+      "sourceDocument": "text/part1105.html",
+      "sourceReference": "2 Êx 29.18",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part1105.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Êx 20.12.",
+      "sourceDocument": "text/part1106.html",
+      "sourceReference": "3 Êx 20.12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 8.",
+      "sourceDocument": "text/part1106.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 At 16.12.",
+      "sourceDocument": "text/part1107_split_001.html",
+      "sourceReference": "1 At 16.12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1108.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1109.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part1110.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part1111_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part1112.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Sl 110.1.",
+      "sourceDocument": "text/part1113.html",
+      "sourceReference": "1 Sl 110.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part1113.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ef 5.21.",
+      "sourceDocument": "text/part1114.html",
+      "sourceReference": "1 Ef 5.21",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Fm 24 6.",
+      "sourceDocument": "text/part1114.html",
+      "sourceReference": "Fm 24 6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Fm 24 9.",
+      "sourceDocument": "text/part1114.html",
+      "sourceReference": "Fm 24 9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part1114.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 At 17.1.",
+      "sourceDocument": "text/part1115_split_001.html",
+      "sourceReference": "1 At 17.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 At 17.1-9.",
+      "sourceDocument": "text/part1116.html",
+      "sourceReference": "2 At 17.1-9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1116.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 At 17.15.",
+      "sourceDocument": "text/part1117.html",
+      "sourceReference": "1 At 17.15",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1118.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Mt 24.43.",
+      "sourceDocument": "text/part1119.html",
+      "sourceReference": "2 Mt 24.43",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou do amor 9.",
+      "sourceDocument": "text/part1119.html",
+      "sourceReference": "ou do amor 9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: c.",
+      "sourceDocument": "text/part1119.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 At 17.1.",
+      "sourceDocument": "text/part1120_split_001.html",
+      "sourceReference": "1 At 17.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1121.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 At 16.1.",
+      "sourceDocument": "text/part1123_split_001.html",
+      "sourceReference": "2 At 16.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1123_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1124.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1127.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 At 16.1.",
+      "sourceDocument": "text/part1129_split_001.html",
+      "sourceReference": "2 At 16.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Fm 24 3.",
+      "sourceDocument": "text/part1132.html",
+      "sourceReference": "Fm 24 3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 10.",
+      "sourceDocument": "text/part1132.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1133_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1134.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Cl 4.17.",
+      "sourceDocument": "text/part1136_split_001.html",
+      "sourceReference": "2 Cl 4.17",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part1136_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part1137_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1138.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Nm 12.7.",
+      "sourceDocument": "text/part1139.html",
+      "sourceReference": "2 Nm 12.7",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1139.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Sl 95.11.",
+      "sourceDocument": "text/part1140.html",
+      "sourceReference": "3 Sl 95.11",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Lv 9.7.",
+      "sourceDocument": "text/part1141.html",
+      "sourceReference": "3 Lv 9.7",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part1141.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou rejeitada 1 6.",
+      "sourceDocument": "text/part1142.html",
+      "sourceReference": "ou rejeitada 1 6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1142.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1143.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Sl 110.1.",
+      "sourceDocument": "text/part1144.html",
+      "sourceReference": "1 Sl 110.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part1144.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 8.",
+      "sourceDocument": "text/part1145.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou comum 9 10.",
+      "sourceDocument": "text/part1146.html",
+      "sourceReference": "ou comum 9 10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 12.",
+      "sourceDocument": "text/part1146.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Gn 1.1.",
+      "sourceDocument": "text/part1147.html",
+      "sourceReference": "3 Gn 1.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou aparelhou 4 11.",
+      "sourceDocument": "text/part1147.html",
+      "sourceReference": "ou aparelhou 4 11",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Gr. semente 11 11.",
+      "sourceDocument": "text/part1147.html",
+      "sourceReference": "Gr. semente 11 11",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 30.",
+      "sourceDocument": "text/part1147.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: que se via 9 12.",
+      "sourceDocument": "text/part1148.html",
+      "sourceReference": "que se via 9 12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou os avisou dos céus 11 12.",
+      "sourceDocument": "text/part1148.html",
+      "sourceReference": "ou os avisou dos céus 11 12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou prometeu 12 12.",
+      "sourceDocument": "text/part1148.html",
+      "sourceReference": "ou prometeu 12 12",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 12.",
+      "sourceDocument": "text/part1148.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Gn 18.1-8.",
+      "sourceDocument": "text/part1149.html",
+      "sourceReference": "2 Gn 18.1-8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou Sede livres do amor ao dinheiro 2 13.",
+      "sourceDocument": "text/part1149.html",
+      "sourceReference": "ou Sede livres do amor ao dinheiro 2 13",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1149.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 13.55.",
+      "sourceDocument": "text/part1150_split_001.html",
+      "sourceReference": "1 Mt 13.55",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1150_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part1151.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1153.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Mt 6.19.",
+      "sourceDocument": "text/part1154.html",
+      "sourceReference": "3 Mt 6.19",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part1154.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1155_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Sl 34.8.",
+      "sourceDocument": "text/part1156.html",
+      "sourceReference": "3 Sl 34.8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou envergonhado 2 2.",
+      "sourceDocument": "text/part1156.html",
+      "sourceReference": "ou envergonhado 2 2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou superintendente 9 2.",
+      "sourceDocument": "text/part1156.html",
+      "sourceReference": "ou superintendente 9 2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part1156.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ef 5.22.",
+      "sourceDocument": "text/part1157.html",
+      "sourceReference": "1 Ef 5.22",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part1157.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou amor 1 4.",
+      "sourceDocument": "text/part1158.html",
+      "sourceReference": "ou amor 1 4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1158.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1160_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part1161.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 ou amor 1 3.",
+      "sourceDocument": "text/part1165.html",
+      "sourceReference": "1 ou amor 1 3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1165.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: o.",
+      "sourceDocument": "text/part1166.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: amor 1 5.",
+      "sourceDocument": "text/part1167.html",
+      "sourceReference": "amor 1 5",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1167.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1168_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 At 19.29.",
+      "sourceDocument": "text/part1169_split_001.html",
+      "sourceReference": "1 At 19.29",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1169_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Mt 13.55.",
+      "sourceDocument": "text/part1170_split_001.html",
+      "sourceReference": "1 Mt 13.55",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 12.",
+      "sourceDocument": "text/part1170_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 11.",
+      "sourceDocument": "text/part1171_split_001.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou pestilência 7 2.",
+      "sourceDocument": "text/part1172.html",
+      "sourceReference": "ou pestilência 7 2",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 8.",
+      "sourceDocument": "text/part1172.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Mt 24.43-44.",
+      "sourceDocument": "text/part1173.html",
+      "sourceReference": "3 Mt 24.43-44",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1173.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Ez 1.26-28.",
+      "sourceDocument": "text/part1174.html",
+      "sourceReference": "3 Ez 1.26-28",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part1174.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ez 2.9-10.",
+      "sourceDocument": "text/part1175.html",
+      "sourceReference": "1 Ez 2.9-10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou taças 6 5.",
+      "sourceDocument": "text/part1175.html",
+      "sourceReference": "ou taças 6 5",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part1175.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Zc 1.8.",
+      "sourceDocument": "text/part1176.html",
+      "sourceReference": "2 Zc 1.8",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Gr. Hades 4 6.",
+      "sourceDocument": "text/part1176.html",
+      "sourceReference": "Gr. Hades 4 6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: ou rolo 6 6.",
+      "sourceDocument": "text/part1176.html",
+      "sourceReference": "ou rolo 6 6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part1176.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Zc 6.5.",
+      "sourceDocument": "text/part1177.html",
+      "sourceReference": "1 Zc 6.5",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Ez 9.4.",
+      "sourceDocument": "text/part1177.html",
+      "sourceReference": "3 Ez 9.4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 7.",
+      "sourceDocument": "text/part1177.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Êx 30.1.",
+      "sourceDocument": "text/part1178.html",
+      "sourceReference": "3 Êx 30.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1178.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Êx 10.12-15.",
+      "sourceDocument": "text/part1179.html",
+      "sourceReference": "3 Êx 10.12-15",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: k.",
+      "sourceDocument": "text/part1179.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 1.",
+      "sourceDocument": "text/part1180.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ez 40.3.",
+      "sourceDocument": "text/part1181.html",
+      "sourceReference": "1 Ez 40.3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Lc 21.24.",
+      "sourceDocument": "text/part1181.html",
+      "sourceReference": "2 Lc 21.24",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 5.",
+      "sourceDocument": "text/part1181.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Gn 37.9.",
+      "sourceDocument": "text/part1182.html",
+      "sourceReference": "1 Gn 37.9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Mq 4.10.",
+      "sourceDocument": "text/part1182.html",
+      "sourceReference": "2 Mq 4.10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Dn 7.7.",
+      "sourceDocument": "text/part1182.html",
+      "sourceReference": "3 Dn 7.7",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part1182.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Dn 7.3.",
+      "sourceDocument": "text/part1183.html",
+      "sourceReference": "1 Dn 7.3",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Dn 7.4-6.",
+      "sourceDocument": "text/part1183.html",
+      "sourceReference": "2 Dn 7.4-6",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part1183.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ez 9.4.",
+      "sourceDocument": "text/part1184.html",
+      "sourceReference": "1 Ez 9.4",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 9.",
+      "sourceDocument": "text/part1184.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Êx 15.1.",
+      "sourceDocument": "text/part1185.html",
+      "sourceReference": "3 Êx 15.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 3.",
+      "sourceDocument": "text/part1185.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Êx 9.10.",
+      "sourceDocument": "text/part1186.html",
+      "sourceReference": "2 Êx 9.10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 2.",
+      "sourceDocument": "text/part1186.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Jr 51.13.",
+      "sourceDocument": "text/part1187.html",
+      "sourceReference": "1 Jr 51.13",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Jr 51.7.",
+      "sourceDocument": "text/part1187.html",
+      "sourceReference": "2 Jr 51.7",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Ap 13.1.",
+      "sourceDocument": "text/part1187.html",
+      "sourceReference": "3 Ap 13.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 6.",
+      "sourceDocument": "text/part1187.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Jr 50.39.",
+      "sourceDocument": "text/part1188.html",
+      "sourceReference": "2 Jr 50.39",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Jr 51.7.",
+      "sourceDocument": "text/part1188.html",
+      "sourceReference": "3 Jr 51.7",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 13.",
+      "sourceDocument": "text/part1188.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Dt 32.43.",
+      "sourceDocument": "text/part1189.html",
+      "sourceReference": "2 Dt 32.43",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Is 34.10.",
+      "sourceDocument": "text/part1189.html",
+      "sourceReference": "3 Is 34.10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: Gr. apascentará 9 19.",
+      "sourceDocument": "text/part1189.html",
+      "sourceReference": "Gr. apascentará 9 19",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 10.",
+      "sourceDocument": "text/part1189.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Gn 3.1.",
+      "sourceDocument": "text/part1190.html",
+      "sourceReference": "2 Gn 3.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 4.",
+      "sourceDocument": "text/part1190.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Is 65.17.",
+      "sourceDocument": "text/part1191.html",
+      "sourceReference": "1 Is 65.17",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Is 61.10.",
+      "sourceDocument": "text/part1191.html",
+      "sourceReference": "2 Is 61.10",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Ez 37.27.",
+      "sourceDocument": "text/part1191.html",
+      "sourceReference": "3 Ez 37.27",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 14.",
+      "sourceDocument": "text/part1191.html",
+      "parserConfidence": 0.48
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 1 Ez 47.1.",
+      "sourceDocument": "text/part1192.html",
+      "sourceReference": "1 Ez 47.1",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 2 Gn 2.9.",
+      "sourceDocument": "text/part1192.html",
+      "sourceReference": "2 Gn 2.9",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: 3 Zc 14.11.",
+      "sourceDocument": "text/part1192.html",
+      "sourceReference": "3 Zc 14.11",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_cross_reference",
+      "message": "Referência cruzada não normalizada automaticamente: para que tenham poder na árvore da vida 10 22.",
+      "sourceDocument": "text/part1192.html",
+      "sourceReference": "para que tenham poder na árvore da vida 10 22",
+      "parserConfidence": 0.56
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Marcador de nota sem conteúdo associado: 13.",
+      "sourceDocument": "text/part1192.html",
+      "parserConfidence": 0.48
+    }
+  ],
+  "overview": "Almeida Corrigida Fiel (1969) importada via perfil acf1969. 65 livros, 1039 capítulos, 28633 versos. 3456 notas, 4027 referências cruzadas e 937 itens em revisão. Confiança média de versos: 87.3%. Licenciamento: Restrita."
+}

@@ -1,0 +1,565 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TranslationStatus {
+  active
+  hidden
+  pending_license
+  demo_only
+  unavailable
+}
+
+enum RightsStatus {
+  public_domain
+  licensed
+  restricted
+  unknown
+}
+
+enum SourceTrustLevel {
+  primary_high
+  primary_standard
+  secondary_high
+  secondary_standard
+  review_required
+}
+
+enum WorkType {
+  commentary
+  sermon
+  homily
+  treatise
+  lexicon
+  study_note
+}
+
+enum CommentaryContentKind {
+  primary_quote
+  translated_quote
+  editorial_summary
+  exegesis
+  hermeneutics
+  language_note
+  historical_note
+  cross_reference_note
+}
+
+enum ScopeType {
+  verse
+  pericope
+  chapter
+  book
+}
+
+enum DirectnessType {
+  direct
+  indirect
+  editorial
+}
+
+enum ReviewState {
+  draft
+  parsed
+  needs_review
+  approved
+  published
+  rejected
+}
+
+enum RelationType {
+  allusion
+  quotation
+  thematic
+  fulfillment
+  parallel
+}
+
+model Canon {
+  id         String      @id @default(cuid())
+  slug       String      @unique
+  name       String
+  testaments Testament[]
+  books      Book[]
+}
+
+model Testament {
+  id        String @id @default(cuid())
+  canonId   String
+  slug      String
+  name      String
+  sortOrder Int
+  canon     Canon  @relation(fields: [canonId], references: [id])
+  books     Book[]
+
+  @@unique([canonId, slug])
+}
+
+model Book {
+  id              String      @id @default(cuid())
+  canonId         String
+  testamentId     String
+  osisId          String      @unique
+  slugPt          String      @unique
+  slugEn          String      @unique
+  namePt          String
+  nameEn          String
+  abbreviationPt  String
+  abbreviationEn  String
+  sortOrder       Int
+  chapterCount    Int
+  canon           Canon       @relation(fields: [canonId], references: [id])
+  testament       Testament   @relation(fields: [testamentId], references: [id])
+  aliases         BookAlias[]
+  chapters        Chapter[]
+}
+
+model BookAlias {
+  id              String @id @default(cuid())
+  bookId          String
+  locale          String
+  alias           String
+  normalizedAlias String
+  book            Book   @relation(fields: [bookId], references: [id])
+
+  @@index([normalizedAlias])
+}
+
+model Chapter {
+  id          String  @id @default(cuid())
+  bookId      String
+  number      Int
+  verseCount  Int
+  reference   String
+  book        Book    @relation(fields: [bookId], references: [id])
+  verses      Verse[]
+
+  @@unique([bookId, number])
+}
+
+model Verse {
+  id                  String              @id @default(cuid())
+  chapterId           String
+  number              Int
+  osisId              String              @unique
+  normalizedReference String              @unique
+  globalVerseIndex    Int                 @unique
+  chapter             Chapter             @relation(fields: [chapterId], references: [id])
+  texts               VerseText[]
+}
+
+model Translation {
+  id                 String             @id @default(cuid())
+  code               String             @unique
+  name               String
+  language           String
+  publisher          String
+  rightsHolder       String
+  licenseStatus      RightsStatus
+  activationStatus   TranslationStatus
+  providerKind       String
+  canBundle          Boolean            @default(false)
+  requiresAttribution Boolean           @default(true)
+  notes              String?
+  providers          TranslationProvider[]
+  texts              VerseText[]
+}
+
+model TranslationProvider {
+  id              String       @id @default(cuid())
+  translationId   String
+  adapter         String
+  configJson      Json?
+  supportsSearch  Boolean      @default(false)
+  supportsCompare Boolean      @default(true)
+  translation     Translation  @relation(fields: [translationId], references: [id])
+}
+
+model VerseText {
+  id            String      @id @default(cuid())
+  translationId String
+  verseId       String
+  text          String
+  sourceKind    String
+  isComplete    Boolean     @default(false)
+  translation   Translation @relation(fields: [translationId], references: [id])
+  verse         Verse       @relation(fields: [verseId], references: [id])
+
+  @@unique([translationId, verseId])
+}
+
+model Source {
+  id               String           @id @default(cuid())
+  name             String
+  sourceUrl        String?
+  sourceType       String
+  trustLevel       SourceTrustLevel
+  primarySecondary String
+  rightsStatus     RightsStatus
+  canBundle        Boolean          @default(false)
+  attributionNotes String?
+  notes            String?
+  items            SourceItem[]
+}
+
+model SourceItem {
+  id                  String                @id @default(cuid())
+  sourceId            String
+  title               String
+  language            String
+  publicationYear     Int?
+  editionNotes        String?
+  url                 String?
+  rightsStatus        RightsStatus
+  source              Source                @relation(fields: [sourceId], references: [id])
+  works               Work[]
+  commentaryEntries   CommentaryEntry[]
+  editorialNoteLinks  EditorialNoteSource[]
+  languageNotes       LanguageNote[]
+  crossReferences     CrossReference[]
+  ingestionSources    IngestionSource[]
+}
+
+model Tradition {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  family    String
+  authors   Author[]
+}
+
+model Author {
+  id               String             @id @default(cuid())
+  slug             String             @unique
+  displayName      String
+  sortName         String
+  birthYear        Int?
+  deathYear        Int?
+  eraLabel         String
+  centuryLabel     String
+  biography        String
+  sourceStatus     RightsStatus
+  imageUrl         String?
+  traditionId      String
+  tradition        Tradition          @relation(fields: [traditionId], references: [id])
+  aliases          AuthorAlias[]
+  works            Work[]
+  commentaryEntries CommentaryEntry[]
+}
+
+model AuthorAlias {
+  id              String @id @default(cuid())
+  authorId        String
+  alias           String
+  normalizedAlias String
+  author          Author @relation(fields: [authorId], references: [id])
+
+  @@index([normalizedAlias])
+}
+
+model Work {
+  id              String       @id @default(cuid())
+  slug            String       @unique
+  title           String
+  workType        WorkType
+  publicationYear Int?
+  originalLanguage String
+  editionNotes    String?
+  rightsStatus    RightsStatus
+  sourceItemId    String?
+  authorId        String
+  author          Author       @relation(fields: [authorId], references: [id])
+  sourceItem      SourceItem?  @relation(fields: [sourceItemId], references: [id])
+  commentaryEntries CommentaryEntry[]
+}
+
+model CommentaryEntry {
+  id                String                @id @default(cuid())
+  authorId          String
+  workId            String
+  sourceItemId      String?
+  contentKind       CommentaryContentKind
+  scopeType         ScopeType
+  directness        DirectnessType
+  startReference    String
+  endReference      String
+  scopeLabel        String
+  excerptOriginal   String?
+  excerptDisplay    String?
+  editorialSummary  String?
+  qualityScore      Float
+  confidenceScore   Float
+  reviewState       ReviewState
+  locator           String?
+  provenanceNotes   String?
+  author            Author                @relation(fields: [authorId], references: [id])
+  work              Work                  @relation(fields: [workId], references: [id])
+  sourceItem        SourceItem?           @relation(fields: [sourceItemId], references: [id])
+  themes            CommentaryTheme[]
+  doctrines         CommentaryDoctrine[]
+  revisions         ContentRevision[]
+
+  @@index([startReference])
+  @@index([endReference])
+}
+
+model Theme {
+  id          String             @id @default(cuid())
+  slug        String             @unique
+  name        String
+  description String
+  entries     CommentaryTheme[]
+}
+
+model Doctrine {
+  id          String                @id @default(cuid())
+  slug        String                @unique
+  name        String
+  description String
+  entries     CommentaryDoctrine[]
+}
+
+model CommentaryTheme {
+  commentaryEntryId String
+  themeId           String
+  commentaryEntry   CommentaryEntry @relation(fields: [commentaryEntryId], references: [id])
+  theme             Theme           @relation(fields: [themeId], references: [id])
+
+  @@id([commentaryEntryId, themeId])
+}
+
+model CommentaryDoctrine {
+  commentaryEntryId String
+  doctrineId        String
+  commentaryEntry   CommentaryEntry @relation(fields: [commentaryEntryId], references: [id])
+  doctrine          Doctrine        @relation(fields: [doctrineId], references: [id])
+
+  @@id([commentaryEntryId, doctrineId])
+}
+
+model EditorialNote {
+  id             String             @id @default(cuid())
+  noteType       CommentaryContentKind
+  scopeType      ScopeType
+  startReference String
+  endReference   String
+  title          String
+  bodyMarkdown   String
+  reviewState    ReviewState
+  sources        EditorialNoteSource[]
+}
+
+model EditorialNoteSource {
+  editorialNoteId String
+  sourceItemId    String
+  editorialNote   EditorialNote @relation(fields: [editorialNoteId], references: [id])
+  sourceItem      SourceItem    @relation(fields: [sourceItemId], references: [id])
+
+  @@id([editorialNoteId, sourceItemId])
+}
+
+model Lemma {
+  id             String         @id @default(cuid())
+  language       String
+  lemma          String
+  transliteration String?
+  strongNumber   String?
+  gloss          String?
+  notes          LanguageNote[]
+}
+
+model LanguageNote {
+  id                String      @id @default(cuid())
+  verseId           String?
+  lemmaId           String?
+  startReference    String
+  endReference      String
+  morphologyCode    String?
+  grammaticalParsing String?
+  semanticDomain    String?
+  lexicalNote       String
+  sourceItemId      String?
+  lemma             Lemma?      @relation(fields: [lemmaId], references: [id])
+  sourceItem        SourceItem? @relation(fields: [sourceItemId], references: [id])
+}
+
+model CrossReference {
+  id             String       @id @default(cuid())
+  fromReference  String
+  toReference    String
+  relationType   RelationType
+  relevanceScore Float
+  rationale      String?
+  sourceItemId   String?
+  sourceItem     SourceItem?  @relation(fields: [sourceItemId], references: [id])
+}
+
+model Profile {
+  id            String         @id @default(cuid())
+  userId        String         @unique
+  displayName   String?
+  bookmarks     Bookmark[]
+  highlights    Highlight[]
+  notes         UserNote[]
+  history       ReadingHistory[]
+  collections   Collection[]
+  savedSearches SavedSearch[]
+}
+
+model Bookmark {
+  id         String   @id @default(cuid())
+  profileId  String
+  reference  String
+  translationCode String
+  createdAt  DateTime @default(now())
+  profile    Profile  @relation(fields: [profileId], references: [id])
+}
+
+model Highlight {
+  id         String   @id @default(cuid())
+  profileId  String
+  reference  String
+  color      String
+  note       String?
+  createdAt  DateTime @default(now())
+  profile    Profile  @relation(fields: [profileId], references: [id])
+}
+
+model UserNote {
+  id         String   @id @default(cuid())
+  profileId  String
+  reference  String
+  body       String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  profile    Profile  @relation(fields: [profileId], references: [id])
+}
+
+model ReadingHistory {
+  id              String   @id @default(cuid())
+  profileId       String
+  reference       String
+  translationCode String
+  viewedAt        DateTime @default(now())
+  profile         Profile  @relation(fields: [profileId], references: [id])
+}
+
+model Collection {
+  id          String           @id @default(cuid())
+  profileId   String
+  slug        String
+  title       String
+  description String?
+  profile     Profile          @relation(fields: [profileId], references: [id])
+  items       CollectionItem[]
+
+  @@unique([profileId, slug])
+}
+
+model CollectionItem {
+  id           String     @id @default(cuid())
+  collectionId String
+  itemType     String
+  itemRef      String
+  collection   Collection @relation(fields: [collectionId], references: [id])
+}
+
+model SavedSearch {
+  id         String   @id @default(cuid())
+  profileId  String
+  query      String
+  filters    Json?
+  createdAt  DateTime @default(now())
+  profile    Profile  @relation(fields: [profileId], references: [id])
+}
+
+model IngestionSource {
+  id           String         @id @default(cuid())
+  sourceItemId String?
+  label        String
+  inputType    String
+  status       ReviewState
+  createdAt    DateTime       @default(now())
+  sourceItem   SourceItem?    @relation(fields: [sourceItemId], references: [id])
+  jobs         IngestionJob[]
+}
+
+model IngestionJob {
+  id                String             @id @default(cuid())
+  ingestionSourceId String
+  jobType           String
+  status            ReviewState
+  payload           Json?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  ingestionSource   IngestionSource    @relation(fields: [ingestionSourceId], references: [id])
+  items             IngestionItem[]
+}
+
+model IngestionItem {
+  id             String         @id @default(cuid())
+  ingestionJobId String
+  externalKey    String?
+  contentPreview String?
+  confidence     Float?
+  status         ReviewState
+  ingestionJob   IngestionJob   @relation(fields: [ingestionJobId], references: [id])
+  suggestions    MappingSuggestion[]
+}
+
+model MappingSuggestion {
+  id              String         @id @default(cuid())
+  ingestionItemId String
+  startReference  String
+  endReference    String
+  scopeType       ScopeType
+  confidence      Float
+  status          ReviewState
+  ingestionItem   IngestionItem  @relation(fields: [ingestionItemId], references: [id])
+}
+
+model ReviewTask {
+  id          String      @id @default(cuid())
+  taskType    String
+  subjectId   String
+  status      ReviewState
+  assignedTo  String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model DuplicateCandidate {
+  id            String   @id @default(cuid())
+  primaryId     String
+  duplicateId   String
+  similarity    Float
+  status        ReviewState
+  createdAt     DateTime @default(now())
+}
+
+model ContentRevision {
+  id                 String           @id @default(cuid())
+  commentaryEntryId  String
+  revisionNumber     Int
+  summary            String
+  payload            Json?
+  createdAt          DateTime         @default(now())
+  commentaryEntry    CommentaryEntry  @relation(fields: [commentaryEntryId], references: [id])
+
+  @@unique([commentaryEntryId, revisionNumber])
+}
+
+model AuditLog {
+  id          String   @id @default(cuid())
+  actorId     String?
+  action      String
+  entityType  String
+  entityId    String
+  payload     Json?
+  createdAt   DateTime @default(now())
+}

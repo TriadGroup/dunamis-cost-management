@@ -1,0 +1,2267 @@
+{
+  "translationId": "translation:ara",
+  "translationName": "Almeida Revista e Atualizada",
+  "shortCode": "ara",
+  "sourceFileName": "A Bíblia Sagrada. Traduzida em Português por João Ferreira de Almeida Revista e Atualizada.epub",
+  "sourceHash": "cdc75df7faf64251f89b2b007eca158c3f0fd0ec1ea285113560179cbe3c3106",
+  "parserProfile": "ara",
+  "metadata": {
+    "title": "Bíblia Almeida Revista e Atualizada 1993 2.2",
+    "publisher": "Sociedade Bíblica do Brasil",
+    "creator": "Sociedade Bíblica do Brasil",
+    "language": "pt-BR",
+    "rights": "© 1993 Sociedade Bíblica do Brasil. Todos os direitos reservados / All rights reserved.",
+    "date": "2018-11-08"
+  },
+  "licensing": {
+    "status": "restricted",
+    "notes": "Sinais explícitos de proteção autoral e/ou editora contemporânea detectados.",
+    "canDisplayPublicly": false,
+    "canUseForCompare": false
+  },
+  "totals": {
+    "booksDetected": 59,
+    "chaptersDetected": 1026,
+    "versesDetected": 26985,
+    "sectionHeadingsDetected": 2656,
+    "notesDetected": 2515,
+    "crossReferencesDetected": 3206,
+    "introductionsDetected": 0,
+    "uncertainSegments": 523,
+    "reviewQueueItems": 204
+  },
+  "warnings": [
+    {
+      "code": "unknown_book",
+      "message": "Quantidade de livros detectados (59) difere do cânon esperado (66).",
+      "parserConfidence": 0.45
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre atos 1:4 e atos 1:6.",
+      "sourceDocument": "OEBPS/Text/34.xhtml",
+      "sourceReference": "atos 1:6",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre atos 1:7 e atos 1:9.",
+      "sourceDocument": "OEBPS/Text/34.xhtml",
+      "sourceReference": "atos 1:9",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre atos 9:5 e atos 9:7.",
+      "sourceDocument": "OEBPS/Text/61.xhtml",
+      "sourceReference": "atos 9:7",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre atos 9:11 e atos 9:13.",
+      "sourceDocument": "OEBPS/Text/61.xhtml",
+      "sourceReference": "atos 9:13",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre atos 9:15 e atos 9:17.",
+      "sourceDocument": "OEBPS/Text/61.xhtml",
+      "sourceReference": "atos 9:17",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre atos 18:9 e atos 18:11.",
+      "sourceDocument": "OEBPS/Text/43.xhtml",
+      "sourceReference": "atos 18:11",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre atos 26:15 e atos 26:19.",
+      "sourceDocument": "OEBPS/Text/52.xhtml",
+      "sourceReference": "atos 26:19",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 3:5 e joao 3:9.",
+      "sourceDocument": "OEBPS/Text/497.xhtml",
+      "sourceReference": "joao 3:9",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 3:9 e joao 3:22.",
+      "sourceDocument": "OEBPS/Text/497.xhtml",
+      "sourceReference": "joao 3:22",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 4:13 e joao 4:15.",
+      "sourceDocument": "OEBPS/Text/498.xhtml",
+      "sourceReference": "joao 4:15",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 4:17 e joao 4:19.",
+      "sourceDocument": "OEBPS/Text/498.xhtml",
+      "sourceReference": "joao 4:19",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 4:21 e joao 4:25.",
+      "sourceDocument": "OEBPS/Text/498.xhtml",
+      "sourceReference": "joao 4:25",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 4:34 e joao 4:39.",
+      "sourceDocument": "OEBPS/Text/498.xhtml",
+      "sourceReference": "joao 4:39",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 4:49 e joao 4:51.",
+      "sourceDocument": "OEBPS/Text/498.xhtml",
+      "sourceReference": "joao 4:51",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em joao 5:19: 1333 caracteres.",
+      "sourceDocument": "OEBPS/Text/499.xhtml",
+      "sourceReference": "joao 5:19",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 6:26 e joao 6:28.",
+      "sourceDocument": "OEBPS/Text/500.xhtml",
+      "sourceReference": "joao 6:28",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 6:32 e joao 6:34.",
+      "sourceDocument": "OEBPS/Text/500.xhtml",
+      "sourceReference": "joao 6:34",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 6:35 e joao 6:41.",
+      "sourceDocument": "OEBPS/Text/500.xhtml",
+      "sourceReference": "joao 6:41",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 6:43 e joao 6:52.",
+      "sourceDocument": "OEBPS/Text/500.xhtml",
+      "sourceReference": "joao 6:52",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 6:53 e joao 6:59.",
+      "sourceDocument": "OEBPS/Text/500.xhtml",
+      "sourceReference": "joao 6:59",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 6:61 e joao 6:65.",
+      "sourceDocument": "OEBPS/Text/500.xhtml",
+      "sourceReference": "joao 6:65",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 7:6 e joao 7:9.",
+      "sourceDocument": "OEBPS/Text/501.xhtml",
+      "sourceReference": "joao 7:9",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 7:16 e joao 7:20.",
+      "sourceDocument": "OEBPS/Text/501.xhtml",
+      "sourceReference": "joao 7:20",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 7:21 e joao 7:25.",
+      "sourceDocument": "OEBPS/Text/501.xhtml",
+      "sourceReference": "joao 7:25",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 7:28 e joao 7:30.",
+      "sourceDocument": "OEBPS/Text/501.xhtml",
+      "sourceReference": "joao 7:30",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 7:33 e joao 7:35.",
+      "sourceDocument": "OEBPS/Text/501.xhtml",
+      "sourceReference": "joao 7:35",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 7:37 e joao 7:39.",
+      "sourceDocument": "OEBPS/Text/501.xhtml",
+      "sourceReference": "joao 7:39",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 8:14 e joao 8:19.",
+      "sourceDocument": "OEBPS/Text/502.xhtml",
+      "sourceReference": "joao 8:19",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 8:23 e joao 8:25.",
+      "sourceDocument": "OEBPS/Text/502.xhtml",
+      "sourceReference": "joao 8:25",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 8:25 e joao 8:27.",
+      "sourceDocument": "OEBPS/Text/502.xhtml",
+      "sourceReference": "joao 8:27",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 8:28 e joao 8:30.",
+      "sourceDocument": "OEBPS/Text/502.xhtml",
+      "sourceReference": "joao 8:30",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 8:31 e joao 8:33.",
+      "sourceDocument": "OEBPS/Text/502.xhtml",
+      "sourceReference": "joao 8:33",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 8:34 e joao 8:39.",
+      "sourceDocument": "OEBPS/Text/502.xhtml",
+      "sourceReference": "joao 8:39",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 8:39 e joao 8:42.",
+      "sourceDocument": "OEBPS/Text/502.xhtml",
+      "sourceReference": "joao 8:42",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 8:42 e joao 8:48.",
+      "sourceDocument": "OEBPS/Text/502.xhtml",
+      "sourceReference": "joao 8:48",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 8:49 e joao 8:52.",
+      "sourceDocument": "OEBPS/Text/502.xhtml",
+      "sourceReference": "joao 8:52",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 8:54 e joao 8:57.",
+      "sourceDocument": "OEBPS/Text/502.xhtml",
+      "sourceReference": "joao 8:57",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 9:3 e joao 9:6.",
+      "sourceDocument": "OEBPS/Text/503.xhtml",
+      "sourceReference": "joao 9:6",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em joao 10:7: 1225 caracteres.",
+      "sourceDocument": "OEBPS/Text/484.xhtml",
+      "sourceReference": "joao 10:7",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 10:7 e joao 10:19.",
+      "sourceDocument": "OEBPS/Text/484.xhtml",
+      "sourceReference": "joao 10:19",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 10:25 e joao 10:31.",
+      "sourceDocument": "OEBPS/Text/484.xhtml",
+      "sourceReference": "joao 10:31",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 10:34 e joao 10:39.",
+      "sourceDocument": "OEBPS/Text/484.xhtml",
+      "sourceReference": "joao 10:39",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 11:9 e joao 11:11.",
+      "sourceDocument": "OEBPS/Text/485.xhtml",
+      "sourceReference": "joao 11:11",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 11:14 e joao 11:16.",
+      "sourceDocument": "OEBPS/Text/485.xhtml",
+      "sourceReference": "joao 11:16",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 11:25 e joao 11:27.",
+      "sourceDocument": "OEBPS/Text/485.xhtml",
+      "sourceReference": "joao 11:27",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 11:41 e joao 11:43.",
+      "sourceDocument": "OEBPS/Text/485.xhtml",
+      "sourceReference": "joao 11:43",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 12:7 e joao 12:9.",
+      "sourceDocument": "OEBPS/Text/486.xhtml",
+      "sourceReference": "joao 12:9",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 12:23 e joao 12:29.",
+      "sourceDocument": "OEBPS/Text/486.xhtml",
+      "sourceReference": "joao 12:29",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 12:30 e joao 12:33.",
+      "sourceDocument": "OEBPS/Text/486.xhtml",
+      "sourceReference": "joao 12:33",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 12:35 e joao 12:37.",
+      "sourceDocument": "OEBPS/Text/486.xhtml",
+      "sourceReference": "joao 12:37",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 13:12 e joao 13:21.",
+      "sourceDocument": "OEBPS/Text/487.xhtml",
+      "sourceReference": "joao 13:21",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 13:31 e joao 13:36.",
+      "sourceDocument": "OEBPS/Text/487.xhtml",
+      "sourceReference": "joao 13:36",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 14:6 e joao 14:8.",
+      "sourceDocument": "OEBPS/Text/488.xhtml",
+      "sourceReference": "joao 14:8",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em joao 14:9: 1158 caracteres.",
+      "sourceDocument": "OEBPS/Text/488.xhtml",
+      "sourceReference": "joao 14:9",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 14:9 e joao 14:22.",
+      "sourceDocument": "OEBPS/Text/488.xhtml",
+      "sourceReference": "joao 14:22",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em joao 16:19: 915 caracteres.",
+      "sourceDocument": "OEBPS/Text/490.xhtml",
+      "sourceReference": "joao 16:19",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 16:19 e joao 16:29.",
+      "sourceDocument": "OEBPS/Text/490.xhtml",
+      "sourceReference": "joao 16:29",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em joao 17:1: 2951 caracteres.",
+      "sourceDocument": "OEBPS/Text/491.xhtml",
+      "sourceReference": "joao 17:1",
+      "parserConfidence": 0.97
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 18:20 e joao 18:22.",
+      "sourceDocument": "OEBPS/Text/492.xhtml",
+      "sourceReference": "joao 18:22",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 20:22 e joao 20:24.",
+      "sourceDocument": "OEBPS/Text/495.xhtml",
+      "sourceReference": "joao 20:24",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre joao 21:17 e joao 21:19.",
+      "sourceDocument": "OEBPS/Text/496.xhtml",
+      "sourceReference": "joao 21:19",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 4:17 e lucas 4:20.",
+      "sourceDocument": "OEBPS/Text/607.xhtml",
+      "sourceReference": "lucas 4:20",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 4:24 e lucas 4:28.",
+      "sourceDocument": "OEBPS/Text/607.xhtml",
+      "sourceReference": "lucas 4:28",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 5:22 e lucas 5:25.",
+      "sourceDocument": "OEBPS/Text/608.xhtml",
+      "sourceReference": "lucas 5:25",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 5:31 e lucas 5:33.",
+      "sourceDocument": "OEBPS/Text/608.xhtml",
+      "sourceReference": "lucas 5:33",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 5:34 e lucas 5:36.",
+      "sourceDocument": "OEBPS/Text/608.xhtml",
+      "sourceReference": "lucas 5:36",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 6:3 e lucas 6:5.",
+      "sourceDocument": "OEBPS/Text/609.xhtml",
+      "sourceReference": "lucas 6:5",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 7:22 e lucas 7:24.",
+      "sourceDocument": "OEBPS/Text/610.xhtml",
+      "sourceReference": "lucas 7:24",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 7:24 e lucas 7:29.",
+      "sourceDocument": "OEBPS/Text/610.xhtml",
+      "sourceReference": "lucas 7:29",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 7:30 e lucas 7:36.",
+      "sourceDocument": "OEBPS/Text/610.xhtml",
+      "sourceReference": "lucas 7:36",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 7:40 e lucas 7:43.",
+      "sourceDocument": "OEBPS/Text/610.xhtml",
+      "sourceReference": "lucas 7:43",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 7:44 e lucas 7:48.",
+      "sourceDocument": "OEBPS/Text/610.xhtml",
+      "sourceReference": "lucas 7:48",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 8:4 e lucas 8:9.",
+      "sourceDocument": "OEBPS/Text/611.xhtml",
+      "sourceReference": "lucas 8:9",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 8:10 e lucas 8:19.",
+      "sourceDocument": "OEBPS/Text/611.xhtml",
+      "sourceReference": "lucas 8:19",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 8:38 e lucas 8:40.",
+      "sourceDocument": "OEBPS/Text/611.xhtml",
+      "sourceReference": "lucas 8:40",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 9:3 e lucas 9:6.",
+      "sourceDocument": "OEBPS/Text/612.xhtml",
+      "sourceReference": "lucas 9:6",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 9:19 e lucas 9:21.",
+      "sourceDocument": "OEBPS/Text/612.xhtml",
+      "sourceReference": "lucas 9:21",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 9:23 e lucas 9:28.",
+      "sourceDocument": "OEBPS/Text/612.xhtml",
+      "sourceReference": "lucas 9:28",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 9:43 e lucas 9:45.",
+      "sourceDocument": "OEBPS/Text/612.xhtml",
+      "sourceReference": "lucas 9:45",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 9:55 e lucas 9:57.",
+      "sourceDocument": "OEBPS/Text/612.xhtml",
+      "sourceReference": "lucas 9:57",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 10:2: 1117 caracteres.",
+      "sourceDocument": "OEBPS/Text/590.xhtml",
+      "sourceReference": "lucas 10:2",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 10:2 e lucas 10:17.",
+      "sourceDocument": "OEBPS/Text/590.xhtml",
+      "sourceReference": "lucas 10:17",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 10:18 e lucas 10:21.",
+      "sourceDocument": "OEBPS/Text/590.xhtml",
+      "sourceReference": "lucas 10:21",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 10:21 e lucas 10:23.",
+      "sourceDocument": "OEBPS/Text/590.xhtml",
+      "sourceReference": "lucas 10:23",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 10:23 e lucas 10:25.",
+      "sourceDocument": "OEBPS/Text/590.xhtml",
+      "sourceReference": "lucas 10:25",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 10:30: 911 caracteres.",
+      "sourceDocument": "OEBPS/Text/590.xhtml",
+      "sourceReference": "lucas 10:30",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 10:30 e lucas 10:37.",
+      "sourceDocument": "OEBPS/Text/590.xhtml",
+      "sourceReference": "lucas 10:37",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 11:2 e lucas 11:5.",
+      "sourceDocument": "OEBPS/Text/591.xhtml",
+      "sourceReference": "lucas 11:5",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 11:5 e lucas 11:14.",
+      "sourceDocument": "OEBPS/Text/591.xhtml",
+      "sourceReference": "lucas 11:14",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 11:17 e lucas 11:27.",
+      "sourceDocument": "OEBPS/Text/591.xhtml",
+      "sourceReference": "lucas 11:27",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 11:29 e lucas 11:37.",
+      "sourceDocument": "OEBPS/Text/591.xhtml",
+      "sourceReference": "lucas 11:37",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 11:39 e lucas 11:45.",
+      "sourceDocument": "OEBPS/Text/591.xhtml",
+      "sourceReference": "lucas 11:45",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 11:46: 932 caracteres.",
+      "sourceDocument": "OEBPS/Text/591.xhtml",
+      "sourceReference": "lucas 11:46",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 11:46 e lucas 11:53.",
+      "sourceDocument": "OEBPS/Text/591.xhtml",
+      "sourceReference": "lucas 11:53",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 12:1: 1542 caracteres.",
+      "sourceDocument": "OEBPS/Text/592.xhtml",
+      "sourceReference": "lucas 12:1",
+      "parserConfidence": 0.97
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 12:1 e lucas 12:13.",
+      "sourceDocument": "OEBPS/Text/592.xhtml",
+      "sourceReference": "lucas 12:13",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 12:16 e lucas 12:22.",
+      "sourceDocument": "OEBPS/Text/592.xhtml",
+      "sourceReference": "lucas 12:22",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 12:22: 2246 caracteres.",
+      "sourceDocument": "OEBPS/Text/592.xhtml",
+      "sourceReference": "lucas 12:22",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 12:22 e lucas 12:41.",
+      "sourceDocument": "OEBPS/Text/592.xhtml",
+      "sourceReference": "lucas 12:41",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 12:42: 944 caracteres.",
+      "sourceDocument": "OEBPS/Text/592.xhtml",
+      "sourceReference": "lucas 12:42",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 12:42 e lucas 12:54.",
+      "sourceDocument": "OEBPS/Text/592.xhtml",
+      "sourceReference": "lucas 12:54",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 13:2 e lucas 13:6.",
+      "sourceDocument": "OEBPS/Text/593.xhtml",
+      "sourceReference": "lucas 13:6",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 13:6 e lucas 13:10.",
+      "sourceDocument": "OEBPS/Text/593.xhtml",
+      "sourceReference": "lucas 13:10",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 13:15 e lucas 13:17.",
+      "sourceDocument": "OEBPS/Text/593.xhtml",
+      "sourceReference": "lucas 13:17",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 13:18 e lucas 13:20.",
+      "sourceDocument": "OEBPS/Text/593.xhtml",
+      "sourceReference": "lucas 13:20",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 13:20 e lucas 13:22.",
+      "sourceDocument": "OEBPS/Text/593.xhtml",
+      "sourceReference": "lucas 13:22",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 13:24 e lucas 13:31.",
+      "sourceDocument": "OEBPS/Text/593.xhtml",
+      "sourceReference": "lucas 13:31",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 14:7 e lucas 14:12.",
+      "sourceDocument": "OEBPS/Text/594.xhtml",
+      "sourceReference": "lucas 14:12",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 14:12 e lucas 14:15.",
+      "sourceDocument": "OEBPS/Text/594.xhtml",
+      "sourceReference": "lucas 14:15",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 14:16: 978 caracteres.",
+      "sourceDocument": "OEBPS/Text/594.xhtml",
+      "sourceReference": "lucas 14:16",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 14:16 e lucas 14:25.",
+      "sourceDocument": "OEBPS/Text/594.xhtml",
+      "sourceReference": "lucas 14:25",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 14:25: 984 caracteres.",
+      "sourceDocument": "OEBPS/Text/594.xhtml",
+      "sourceReference": "lucas 14:25",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 15:3 e lucas 15:11.",
+      "sourceDocument": "OEBPS/Text/595.xhtml",
+      "sourceReference": "lucas 15:11",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 15:11: 1484 caracteres.",
+      "sourceDocument": "OEBPS/Text/595.xhtml",
+      "sourceReference": "lucas 15:11",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 16:1: 1219 caracteres.",
+      "sourceDocument": "OEBPS/Text/596.xhtml",
+      "sourceReference": "lucas 16:1",
+      "parserConfidence": 0.97
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 16:1 e lucas 16:14.",
+      "sourceDocument": "OEBPS/Text/596.xhtml",
+      "sourceReference": "lucas 16:14",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 17:1 e lucas 17:5.",
+      "sourceDocument": "OEBPS/Text/597.xhtml",
+      "sourceReference": "lucas 17:5",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 17:6 e lucas 17:11.",
+      "sourceDocument": "OEBPS/Text/597.xhtml",
+      "sourceReference": "lucas 17:11",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 17:17 e lucas 17:19.",
+      "sourceDocument": "OEBPS/Text/597.xhtml",
+      "sourceReference": "lucas 17:19",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 17:20 e lucas 17:22.",
+      "sourceDocument": "OEBPS/Text/597.xhtml",
+      "sourceReference": "lucas 17:22",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 17:22: 1346 caracteres.",
+      "sourceDocument": "OEBPS/Text/597.xhtml",
+      "sourceReference": "lucas 17:22",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 17:22 e lucas 17:37.",
+      "sourceDocument": "OEBPS/Text/597.xhtml",
+      "sourceReference": "lucas 17:37",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 18:1 e lucas 18:6.",
+      "sourceDocument": "OEBPS/Text/598.xhtml",
+      "sourceReference": "lucas 18:6",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 18:6 e lucas 18:9.",
+      "sourceDocument": "OEBPS/Text/598.xhtml",
+      "sourceReference": "lucas 18:9",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 18:9 e lucas 18:15.",
+      "sourceDocument": "OEBPS/Text/598.xhtml",
+      "sourceReference": "lucas 18:15",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 18:16 e lucas 18:18.",
+      "sourceDocument": "OEBPS/Text/598.xhtml",
+      "sourceReference": "lucas 18:18",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 18:19 e lucas 18:21.",
+      "sourceDocument": "OEBPS/Text/598.xhtml",
+      "sourceReference": "lucas 18:21",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 18:24 e lucas 18:26.",
+      "sourceDocument": "OEBPS/Text/598.xhtml",
+      "sourceReference": "lucas 18:26",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 18:29 e lucas 18:31.",
+      "sourceDocument": "OEBPS/Text/598.xhtml",
+      "sourceReference": "lucas 18:31",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 18:31 e lucas 18:34.",
+      "sourceDocument": "OEBPS/Text/598.xhtml",
+      "sourceReference": "lucas 18:34",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 18:40 e lucas 18:42.",
+      "sourceDocument": "OEBPS/Text/598.xhtml",
+      "sourceReference": "lucas 18:42",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 19:9 e lucas 19:11.",
+      "sourceDocument": "OEBPS/Text/599.xhtml",
+      "sourceReference": "lucas 19:11",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 19:12: 1578 caracteres.",
+      "sourceDocument": "OEBPS/Text/599.xhtml",
+      "sourceReference": "lucas 19:12",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 19:12 e lucas 19:28.",
+      "sourceDocument": "OEBPS/Text/599.xhtml",
+      "sourceReference": "lucas 19:28",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 19:30 e lucas 19:32.",
+      "sourceDocument": "OEBPS/Text/599.xhtml",
+      "sourceReference": "lucas 19:32",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 19:42 e lucas 19:45.",
+      "sourceDocument": "OEBPS/Text/599.xhtml",
+      "sourceReference": "lucas 19:45",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 20:3 e lucas 20:5.",
+      "sourceDocument": "OEBPS/Text/601.xhtml",
+      "sourceReference": "lucas 20:5",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 20:9: 935 caracteres.",
+      "sourceDocument": "OEBPS/Text/601.xhtml",
+      "sourceReference": "lucas 20:9",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 20:9 e lucas 20:17.",
+      "sourceDocument": "OEBPS/Text/601.xhtml",
+      "sourceReference": "lucas 20:17",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 20:17 e lucas 20:19.",
+      "sourceDocument": "OEBPS/Text/601.xhtml",
+      "sourceReference": "lucas 20:19",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 20:23 e lucas 20:26.",
+      "sourceDocument": "OEBPS/Text/601.xhtml",
+      "sourceReference": "lucas 20:26",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 20:34 e lucas 20:39.",
+      "sourceDocument": "OEBPS/Text/601.xhtml",
+      "sourceReference": "lucas 20:39",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 20:41 e lucas 20:45.",
+      "sourceDocument": "OEBPS/Text/601.xhtml",
+      "sourceReference": "lucas 20:45",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 21:3 e lucas 21:5.",
+      "sourceDocument": "OEBPS/Text/602.xhtml",
+      "sourceReference": "lucas 21:5",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 21:5 e lucas 21:7.",
+      "sourceDocument": "OEBPS/Text/602.xhtml",
+      "sourceReference": "lucas 21:7",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 21:8 e lucas 21:10.",
+      "sourceDocument": "OEBPS/Text/602.xhtml",
+      "sourceReference": "lucas 21:10",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em lucas 21:10: 909 caracteres.",
+      "sourceDocument": "OEBPS/Text/602.xhtml",
+      "sourceReference": "lucas 21:10",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 21:10 e lucas 21:29.",
+      "sourceDocument": "OEBPS/Text/602.xhtml",
+      "sourceReference": "lucas 21:29",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 21:29 e lucas 21:37.",
+      "sourceDocument": "OEBPS/Text/602.xhtml",
+      "sourceReference": "lucas 21:37",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 22:10 e lucas 22:13.",
+      "sourceDocument": "OEBPS/Text/603.xhtml",
+      "sourceReference": "lucas 22:13",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 22:15 e lucas 22:17.",
+      "sourceDocument": "OEBPS/Text/603.xhtml",
+      "sourceReference": "lucas 22:17",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 22:17 e lucas 22:19.",
+      "sourceDocument": "OEBPS/Text/603.xhtml",
+      "sourceReference": "lucas 22:19",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 22:20 e lucas 22:23.",
+      "sourceDocument": "OEBPS/Text/603.xhtml",
+      "sourceReference": "lucas 22:23",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 22:25 e lucas 22:33.",
+      "sourceDocument": "OEBPS/Text/603.xhtml",
+      "sourceReference": "lucas 22:33",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 22:36 e lucas 22:38.",
+      "sourceDocument": "OEBPS/Text/603.xhtml",
+      "sourceReference": "lucas 22:38",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 22:52 e lucas 22:54.",
+      "sourceDocument": "OEBPS/Text/603.xhtml",
+      "sourceReference": "lucas 22:54",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 22:67 e lucas 22:70.",
+      "sourceDocument": "OEBPS/Text/603.xhtml",
+      "sourceReference": "lucas 22:70",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 23:28 e lucas 23:32.",
+      "sourceDocument": "OEBPS/Text/604.xhtml",
+      "sourceReference": "lucas 23:32",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 24:25 e lucas 24:27.",
+      "sourceDocument": "OEBPS/Text/605.xhtml",
+      "sourceReference": "lucas 24:27",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 24:38 e lucas 24:40.",
+      "sourceDocument": "OEBPS/Text/605.xhtml",
+      "sourceReference": "lucas 24:40",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 24:46 e lucas 24:50.",
+      "sourceDocument": "OEBPS/Text/605.xhtml",
+      "sourceReference": "lucas 24:50",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 2:8 e marcos 2:12.",
+      "sourceDocument": "OEBPS/Text/625.xhtml",
+      "sourceReference": "marcos 2:12",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 2:19 e marcos 2:23.",
+      "sourceDocument": "OEBPS/Text/625.xhtml",
+      "sourceReference": "marcos 2:23",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 2:25 e marcos 2:27.",
+      "sourceDocument": "OEBPS/Text/625.xhtml",
+      "sourceReference": "marcos 2:27",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 3:23 e marcos 3:30.",
+      "sourceDocument": "OEBPS/Text/626.xhtml",
+      "sourceReference": "marcos 3:30",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 4:2 e marcos 4:9.",
+      "sourceDocument": "OEBPS/Text/627.xhtml",
+      "sourceReference": "marcos 4:9",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 4:11 e marcos 4:13.",
+      "sourceDocument": "OEBPS/Text/627.xhtml",
+      "sourceReference": "marcos 4:13",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 4:13 e marcos 4:21.",
+      "sourceDocument": "OEBPS/Text/627.xhtml",
+      "sourceReference": "marcos 4:21",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 4:21 e marcos 4:24.",
+      "sourceDocument": "OEBPS/Text/627.xhtml",
+      "sourceReference": "marcos 4:24",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 4:24 e marcos 4:26.",
+      "sourceDocument": "OEBPS/Text/627.xhtml",
+      "sourceReference": "marcos 4:26",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 4:26 e marcos 4:30.",
+      "sourceDocument": "OEBPS/Text/627.xhtml",
+      "sourceReference": "marcos 4:30",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 4:30 e marcos 4:33.",
+      "sourceDocument": "OEBPS/Text/627.xhtml",
+      "sourceReference": "marcos 4:33",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 6:10 e marcos 6:12.",
+      "sourceDocument": "OEBPS/Text/629.xhtml",
+      "sourceReference": "marcos 6:12",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 7:6 e marcos 7:9.",
+      "sourceDocument": "OEBPS/Text/630.xhtml",
+      "sourceReference": "marcos 7:9",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 7:9 e marcos 7:14.",
+      "sourceDocument": "OEBPS/Text/630.xhtml",
+      "sourceReference": "marcos 7:14",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 7:14 e marcos 7:17.",
+      "sourceDocument": "OEBPS/Text/630.xhtml",
+      "sourceReference": "marcos 7:17",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 7:18 e marcos 7:20.",
+      "sourceDocument": "OEBPS/Text/630.xhtml",
+      "sourceReference": "marcos 7:20",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 7:20 e marcos 7:24.",
+      "sourceDocument": "OEBPS/Text/630.xhtml",
+      "sourceReference": "marcos 7:24",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 8:1 e marcos 8:4.",
+      "sourceDocument": "OEBPS/Text/631.xhtml",
+      "sourceReference": "marcos 8:4",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 8:17 e marcos 8:21.",
+      "sourceDocument": "OEBPS/Text/631.xhtml",
+      "sourceReference": "marcos 8:21",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 9:12 e marcos 9:14.",
+      "sourceDocument": "OEBPS/Text/632.xhtml",
+      "sourceReference": "marcos 9:14",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 9:36 e marcos 9:38.",
+      "sourceDocument": "OEBPS/Text/632.xhtml",
+      "sourceReference": "marcos 9:38",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 10:5 e marcos 10:10.",
+      "sourceDocument": "OEBPS/Text/618.xhtml",
+      "sourceReference": "marcos 10:10",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 10:11 e marcos 10:13.",
+      "sourceDocument": "OEBPS/Text/618.xhtml",
+      "sourceReference": "marcos 10:13",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 10:14 e marcos 10:16.",
+      "sourceDocument": "OEBPS/Text/618.xhtml",
+      "sourceReference": "marcos 10:16",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 10:18 e marcos 10:20.",
+      "sourceDocument": "OEBPS/Text/618.xhtml",
+      "sourceReference": "marcos 10:20",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 10:24 e marcos 10:26.",
+      "sourceDocument": "OEBPS/Text/618.xhtml",
+      "sourceReference": "marcos 10:26",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 10:29 e marcos 10:32.",
+      "sourceDocument": "OEBPS/Text/618.xhtml",
+      "sourceReference": "marcos 10:32",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 10:32 e marcos 10:35.",
+      "sourceDocument": "OEBPS/Text/618.xhtml",
+      "sourceReference": "marcos 10:35",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 10:39 e marcos 10:41.",
+      "sourceDocument": "OEBPS/Text/618.xhtml",
+      "sourceReference": "marcos 10:41",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 10:42 e marcos 10:46.",
+      "sourceDocument": "OEBPS/Text/618.xhtml",
+      "sourceReference": "marcos 10:46",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 11:2 e marcos 11:4.",
+      "sourceDocument": "OEBPS/Text/619.xhtml",
+      "sourceReference": "marcos 11:4",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 11:22 e marcos 11:27.",
+      "sourceDocument": "OEBPS/Text/619.xhtml",
+      "sourceReference": "marcos 11:27",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 11:29 e marcos 11:31.",
+      "sourceDocument": "OEBPS/Text/619.xhtml",
+      "sourceReference": "marcos 11:31",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em marcos 12:1: 961 caracteres.",
+      "sourceDocument": "OEBPS/Text/620.xhtml",
+      "sourceReference": "marcos 12:1",
+      "parserConfidence": 0.97
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 12:1 e marcos 12:12.",
+      "sourceDocument": "OEBPS/Text/620.xhtml",
+      "sourceReference": "marcos 12:12",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 12:24 e marcos 12:28.",
+      "sourceDocument": "OEBPS/Text/620.xhtml",
+      "sourceReference": "marcos 12:28",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 12:29 e marcos 12:32.",
+      "sourceDocument": "OEBPS/Text/620.xhtml",
+      "sourceReference": "marcos 12:32",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 12:35 e marcos 12:38.",
+      "sourceDocument": "OEBPS/Text/620.xhtml",
+      "sourceReference": "marcos 12:38",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 12:38 e marcos 12:41.",
+      "sourceDocument": "OEBPS/Text/620.xhtml",
+      "sourceReference": "marcos 12:41",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 14:6 e marcos 14:10.",
+      "sourceDocument": "OEBPS/Text/622.xhtml",
+      "sourceReference": "marcos 14:10",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 14:13 e marcos 14:16.",
+      "sourceDocument": "OEBPS/Text/622.xhtml",
+      "sourceReference": "marcos 14:16",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 14:20 e marcos 14:22.",
+      "sourceDocument": "OEBPS/Text/622.xhtml",
+      "sourceReference": "marcos 14:22",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 14:24 e marcos 14:26.",
+      "sourceDocument": "OEBPS/Text/622.xhtml",
+      "sourceReference": "marcos 14:26",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 14:27 e marcos 14:29.",
+      "sourceDocument": "OEBPS/Text/622.xhtml",
+      "sourceReference": "marcos 14:29",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 14:37 e marcos 14:39.",
+      "sourceDocument": "OEBPS/Text/622.xhtml",
+      "sourceReference": "marcos 14:39",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 14:41 e marcos 14:43.",
+      "sourceDocument": "OEBPS/Text/622.xhtml",
+      "sourceReference": "marcos 14:43",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 14:48 e marcos 14:50.",
+      "sourceDocument": "OEBPS/Text/622.xhtml",
+      "sourceReference": "marcos 14:50",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre marcos 16:15 e marcos 16:19.",
+      "sourceDocument": "OEBPS/Text/624.xhtml",
+      "sourceReference": "marcos 16:19",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 8:10 e mateus 8:13.",
+      "sourceDocument": "OEBPS/Text/659.xhtml",
+      "sourceReference": "mateus 8:13",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 8:31 e mateus 8:33.",
+      "sourceDocument": "OEBPS/Text/659.xhtml",
+      "sourceReference": "mateus 8:33",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 9:4 e mateus 9:7.",
+      "sourceDocument": "OEBPS/Text/660.xhtml",
+      "sourceReference": "mateus 9:7",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 9:12 e mateus 9:14.",
+      "sourceDocument": "OEBPS/Text/660.xhtml",
+      "sourceReference": "mateus 9:14",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 9:15 e mateus 9:18.",
+      "sourceDocument": "OEBPS/Text/660.xhtml",
+      "sourceReference": "mateus 9:18",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 9:23 e mateus 9:25.",
+      "sourceDocument": "OEBPS/Text/660.xhtml",
+      "sourceReference": "mateus 9:25",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em mateus 10:5: 1103 caracteres.",
+      "sourceDocument": "OEBPS/Text/634.xhtml",
+      "sourceReference": "mateus 10:5",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 11:4 e mateus 11:7.",
+      "sourceDocument": "OEBPS/Text/635.xhtml",
+      "sourceReference": "mateus 11:7",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 11:7 e mateus 11:20.",
+      "sourceDocument": "OEBPS/Text/635.xhtml",
+      "sourceReference": "mateus 11:20",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 11:20 e mateus 11:25.",
+      "sourceDocument": "OEBPS/Text/635.xhtml",
+      "sourceReference": "mateus 11:25",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 12:3 e mateus 12:9.",
+      "sourceDocument": "OEBPS/Text/636.xhtml",
+      "sourceReference": "mateus 12:9",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 12:11 e mateus 12:13.",
+      "sourceDocument": "OEBPS/Text/636.xhtml",
+      "sourceReference": "mateus 12:13",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em mateus 12:25: 1011 caracteres.",
+      "sourceDocument": "OEBPS/Text/636.xhtml",
+      "sourceReference": "mateus 12:25",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 12:25 e mateus 12:38.",
+      "sourceDocument": "OEBPS/Text/636.xhtml",
+      "sourceReference": "mateus 12:38",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 12:39 e mateus 12:46.",
+      "sourceDocument": "OEBPS/Text/636.xhtml",
+      "sourceReference": "mateus 12:46",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 13:3 e mateus 13:10.",
+      "sourceDocument": "OEBPS/Text/637.xhtml",
+      "sourceReference": "mateus 13:10",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 13:11 e mateus 13:24.",
+      "sourceDocument": "OEBPS/Text/637.xhtml",
+      "sourceReference": "mateus 13:24",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 13:24 e mateus 13:31.",
+      "sourceDocument": "OEBPS/Text/637.xhtml",
+      "sourceReference": "mateus 13:31",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 13:31 e mateus 13:33.",
+      "sourceDocument": "OEBPS/Text/637.xhtml",
+      "sourceReference": "mateus 13:33",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 13:37 e mateus 13:52.",
+      "sourceDocument": "OEBPS/Text/637.xhtml",
+      "sourceReference": "mateus 13:52",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 15:3 e mateus 15:10.",
+      "sourceDocument": "OEBPS/Text/639.xhtml",
+      "sourceReference": "mateus 15:10",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 15:10 e mateus 15:12.",
+      "sourceDocument": "OEBPS/Text/639.xhtml",
+      "sourceReference": "mateus 15:12",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 15:13 e mateus 15:15.",
+      "sourceDocument": "OEBPS/Text/639.xhtml",
+      "sourceReference": "mateus 15:15",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 15:16 e mateus 15:21.",
+      "sourceDocument": "OEBPS/Text/639.xhtml",
+      "sourceReference": "mateus 15:21",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 16:2 e mateus 16:5.",
+      "sourceDocument": "OEBPS/Text/640.xhtml",
+      "sourceReference": "mateus 16:5",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 16:8 e mateus 16:12.",
+      "sourceDocument": "OEBPS/Text/640.xhtml",
+      "sourceReference": "mateus 16:12",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 16:14 e mateus 16:16.",
+      "sourceDocument": "OEBPS/Text/640.xhtml",
+      "sourceReference": "mateus 16:16",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 16:17 e mateus 16:20.",
+      "sourceDocument": "OEBPS/Text/640.xhtml",
+      "sourceReference": "mateus 16:20",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 17:11 e mateus 17:13.",
+      "sourceDocument": "OEBPS/Text/641.xhtml",
+      "sourceReference": "mateus 17:13",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 17:20 e mateus 17:22.",
+      "sourceDocument": "OEBPS/Text/641.xhtml",
+      "sourceReference": "mateus 17:22",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 17:22 e mateus 17:24.",
+      "sourceDocument": "OEBPS/Text/641.xhtml",
+      "sourceReference": "mateus 17:24",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 18:3 e mateus 18:21.",
+      "sourceDocument": "OEBPS/Text/642.xhtml",
+      "sourceReference": "mateus 18:21",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 19:4 e mateus 19:7.",
+      "sourceDocument": "OEBPS/Text/643.xhtml",
+      "sourceReference": "mateus 19:7",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 19:8 e mateus 19:10.",
+      "sourceDocument": "OEBPS/Text/643.xhtml",
+      "sourceReference": "mateus 19:10",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 19:11 e mateus 19:13.",
+      "sourceDocument": "OEBPS/Text/643.xhtml",
+      "sourceReference": "mateus 19:13",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 19:18 e mateus 19:20.",
+      "sourceDocument": "OEBPS/Text/643.xhtml",
+      "sourceReference": "mateus 19:20",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 19:23 e mateus 19:25.",
+      "sourceDocument": "OEBPS/Text/643.xhtml",
+      "sourceReference": "mateus 19:25",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 20:17 e mateus 20:20.",
+      "sourceDocument": "OEBPS/Text/645.xhtml",
+      "sourceReference": "mateus 20:20",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 20:25 e mateus 20:29.",
+      "sourceDocument": "OEBPS/Text/645.xhtml",
+      "sourceReference": "mateus 20:29",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 21:1 e mateus 21:4.",
+      "sourceDocument": "OEBPS/Text/646.xhtml",
+      "sourceReference": "mateus 21:4",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 21:21 e mateus 21:23.",
+      "sourceDocument": "OEBPS/Text/646.xhtml",
+      "sourceReference": "mateus 21:23",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 21:24 e mateus 21:26.",
+      "sourceDocument": "OEBPS/Text/646.xhtml",
+      "sourceReference": "mateus 21:26",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em mateus 21:27: 945 caracteres.",
+      "sourceDocument": "OEBPS/Text/646.xhtml",
+      "sourceReference": "mateus 21:27",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 21:27 e mateus 21:41.",
+      "sourceDocument": "OEBPS/Text/646.xhtml",
+      "sourceReference": "mateus 21:41",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 21:42 e mateus 21:45.",
+      "sourceDocument": "OEBPS/Text/646.xhtml",
+      "sourceReference": "mateus 21:45",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em mateus 22:1: 1381 caracteres.",
+      "sourceDocument": "OEBPS/Text/647.xhtml",
+      "sourceReference": "mateus 22:1",
+      "parserConfidence": 0.97
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 22:1 e mateus 22:15.",
+      "sourceDocument": "OEBPS/Text/647.xhtml",
+      "sourceReference": "mateus 22:15",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 22:18 e mateus 22:20.",
+      "sourceDocument": "OEBPS/Text/647.xhtml",
+      "sourceReference": "mateus 22:20",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 22:29 e mateus 22:33.",
+      "sourceDocument": "OEBPS/Text/647.xhtml",
+      "sourceReference": "mateus 22:33",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 22:37 e mateus 22:41.",
+      "sourceDocument": "OEBPS/Text/647.xhtml",
+      "sourceReference": "mateus 22:41",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 22:41 e mateus 22:43.",
+      "sourceDocument": "OEBPS/Text/647.xhtml",
+      "sourceReference": "mateus 22:43",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 22:43 e mateus 22:46.",
+      "sourceDocument": "OEBPS/Text/647.xhtml",
+      "sourceReference": "mateus 22:46",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em mateus 23:1: 1052 caracteres.",
+      "sourceDocument": "OEBPS/Text/648.xhtml",
+      "sourceReference": "mateus 23:1",
+      "parserConfidence": 0.97
+    },
+    {
+      "code": "suspicious_length",
+      "message": "Comprimento suspeito em mateus 24:4: 929 caracteres.",
+      "sourceDocument": "OEBPS/Text/649.xhtml",
+      "sourceReference": "mateus 24:4",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 26:1 e mateus 26:3.",
+      "sourceDocument": "OEBPS/Text/651.xhtml",
+      "sourceReference": "mateus 26:3",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 26:10 e mateus 26:14.",
+      "sourceDocument": "OEBPS/Text/651.xhtml",
+      "sourceReference": "mateus 26:14",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 26:23 e mateus 26:25.",
+      "sourceDocument": "OEBPS/Text/651.xhtml",
+      "sourceReference": "mateus 26:25",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 26:27 e mateus 26:30.",
+      "sourceDocument": "OEBPS/Text/651.xhtml",
+      "sourceReference": "mateus 26:30",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 26:31 e mateus 26:33.",
+      "sourceDocument": "OEBPS/Text/651.xhtml",
+      "sourceReference": "mateus 26:33",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 26:40 e mateus 26:42.",
+      "sourceDocument": "OEBPS/Text/651.xhtml",
+      "sourceReference": "mateus 26:42",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 26:45 e mateus 26:47.",
+      "sourceDocument": "OEBPS/Text/651.xhtml",
+      "sourceReference": "mateus 26:47",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 26:52 e mateus 26:55.",
+      "sourceDocument": "OEBPS/Text/651.xhtml",
+      "sourceReference": "mateus 26:55",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 26:55 e mateus 26:57.",
+      "sourceDocument": "OEBPS/Text/651.xhtml",
+      "sourceReference": "mateus 26:57",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre apocalipse 1:7 e apocalipse 1:9.",
+      "sourceDocument": "OEBPS/Text/12.xhtml",
+      "sourceReference": "apocalipse 1:9",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre apocalipse 16:14 e apocalipse 16:16.",
+      "sourceDocument": "OEBPS/Text/19.xhtml",
+      "sourceReference": "apocalipse 16:16",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre apocalipse 22:6 e apocalipse 22:8.",
+      "sourceDocument": "OEBPS/Text/26.xhtml",
+      "sourceReference": "apocalipse 22:8",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre apocalipse 22:11 e apocalipse 22:14.",
+      "sourceDocument": "OEBPS/Text/26.xhtml",
+      "sourceReference": "apocalipse 22:14",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre apocalipse 22:15 e apocalipse 22:17.",
+      "sourceDocument": "OEBPS/Text/26.xhtml",
+      "sourceReference": "apocalipse 22:17",
+      "parserConfidence": 0.9
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0051.xhtml#footnote-3-11.",
+      "sourceDocument": "OEBPS/Text/654.xhtml",
+      "sourceReference": "OEBPS/Text/notas0051.xhtml#footnote-3-11",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0050.xhtml#footnote-1-8.",
+      "sourceDocument": "OEBPS/Text/617.xhtml",
+      "sourceReference": "OEBPS/Text/notas0050.xhtml#footnote-1-8",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0050.xhtml#footnote-14-36.",
+      "sourceDocument": "OEBPS/Text/622.xhtml",
+      "sourceReference": "OEBPS/Text/notas0050.xhtml#footnote-14-36",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0050.xhtml#footnote-14-45.",
+      "sourceDocument": "OEBPS/Text/622.xhtml",
+      "sourceReference": "OEBPS/Text/notas0050.xhtml#footnote-14-45",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0048.xhtml#footnote-3-16.",
+      "sourceDocument": "OEBPS/Text/606.xhtml",
+      "sourceReference": "OEBPS/Text/notas0048.xhtml#footnote-3-16",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0048.xhtml#footnote-12-25.",
+      "sourceDocument": "OEBPS/Text/592.xhtml",
+      "sourceReference": "OEBPS/Text/notas0048.xhtml#footnote-12-25",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0048.xhtml#footnote-14-26.",
+      "sourceDocument": "OEBPS/Text/594.xhtml",
+      "sourceReference": "OEBPS/Text/notas0048.xhtml#footnote-14-26",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0048.xhtml#footnote-23-33.",
+      "sourceDocument": "OEBPS/Text/604.xhtml",
+      "sourceReference": "OEBPS/Text/notas0048.xhtml#footnote-23-33",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0040.xhtml#footnote-1-26.",
+      "sourceDocument": "OEBPS/Text/483.xhtml",
+      "sourceReference": "OEBPS/Text/notas0040.xhtml#footnote-1-26",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0040.xhtml#footnote-1-31.",
+      "sourceDocument": "OEBPS/Text/483.xhtml",
+      "sourceReference": "OEBPS/Text/notas0040.xhtml#footnote-1-31",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0040.xhtml#footnote-1-33.",
+      "sourceDocument": "OEBPS/Text/483.xhtml",
+      "sourceReference": "OEBPS/Text/notas0040.xhtml#footnote-1-33",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0040.xhtml#footnote-19-14.",
+      "sourceDocument": "OEBPS/Text/493.xhtml",
+      "sourceReference": "OEBPS/Text/notas0040.xhtml#footnote-19-14",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0020.xhtml#footnote-1-12.",
+      "sourceDocument": "OEBPS/Text/34.xhtml",
+      "sourceReference": "OEBPS/Text/notas0020.xhtml#footnote-1-12",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0020.xhtml#footnote-11-16.",
+      "sourceDocument": "OEBPS/Text/36.xhtml",
+      "sourceReference": "OEBPS/Text/notas0020.xhtml#footnote-11-16",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0020.xhtml#footnote-14-21.",
+      "sourceDocument": "OEBPS/Text/39.xhtml",
+      "sourceReference": "OEBPS/Text/notas0020.xhtml#footnote-14-21",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0020.xhtml#footnote-14-26.",
+      "sourceDocument": "OEBPS/Text/39.xhtml",
+      "sourceReference": "OEBPS/Text/notas0020.xhtml#footnote-14-26",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0020.xhtml#footnote-15-23.",
+      "sourceDocument": "OEBPS/Text/40.xhtml",
+      "sourceReference": "OEBPS/Text/notas0020.xhtml#footnote-15-23",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0059.xhtml#footnote-6-20.",
+      "sourceDocument": "OEBPS/Text/778.xhtml",
+      "sourceReference": "OEBPS/Text/notas0059.xhtml#footnote-6-20",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0059.xhtml#footnote-8-15.",
+      "sourceDocument": "OEBPS/Text/780.xhtml",
+      "sourceReference": "OEBPS/Text/notas0059.xhtml#footnote-8-15",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0059.xhtml#footnote-12-19.",
+      "sourceDocument": "OEBPS/Text/769.xhtml",
+      "sourceReference": "OEBPS/Text/notas0059.xhtml#footnote-12-19",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas.xhtml#footnote-4-3.",
+      "sourceDocument": "OEBPS/Text/971.xhtml",
+      "sourceReference": "OEBPS/Text/notas.xhtml#footnote-4-3",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas.xhtml#footnote-11-4.",
+      "sourceDocument": "OEBPS/Text/963.xhtml",
+      "sourceReference": "OEBPS/Text/notas.xhtml#footnote-11-4",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas.xhtml#footnote-11-7.",
+      "sourceDocument": "OEBPS/Text/963.xhtml",
+      "sourceReference": "OEBPS/Text/notas.xhtml#footnote-11-7",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas.xhtml#footnote-12-30.",
+      "sourceDocument": "OEBPS/Text/964.xhtml",
+      "sourceReference": "OEBPS/Text/notas.xhtml#footnote-12-30",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas.xhtml#footnote-16-22.",
+      "sourceDocument": "OEBPS/Text/968.xhtml",
+      "sourceReference": "OEBPS/Text/notas.xhtml#footnote-16-22",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0008.xhtml#footnote-5-17.",
+      "sourceDocument": "OEBPS/Text/1088.xhtml",
+      "sourceReference": "OEBPS/Text/notas0008.xhtml#footnote-5-17",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0008.xhtml#footnote-6-7.",
+      "sourceDocument": "OEBPS/Text/1089.xhtml",
+      "sourceReference": "OEBPS/Text/notas0008.xhtml#footnote-6-7",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0033.xhtml#footnote-4-6.",
+      "sourceDocument": "OEBPS/Text/254.xhtml",
+      "sourceReference": "OEBPS/Text/notas0033.xhtml#footnote-4-6",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0026.xhtml#footnote-2-14.",
+      "sourceDocument": "OEBPS/Text/133.xhtml",
+      "sourceReference": "OEBPS/Text/notas0026.xhtml#footnote-2-14",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0026.xhtml#footnote-4-9.",
+      "sourceDocument": "OEBPS/Text/135.xhtml",
+      "sourceReference": "OEBPS/Text/notas0026.xhtml#footnote-4-9",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0032.xhtml#footnote-1-27.",
+      "sourceDocument": "OEBPS/Text/247.xhtml",
+      "sourceReference": "OEBPS/Text/notas0032.xhtml#footnote-1-27",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0032.xhtml#footnote-3-2.",
+      "sourceDocument": "OEBPS/Text/249.xhtml",
+      "sourceReference": "OEBPS/Text/notas0032.xhtml#footnote-3-2",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0007.xhtml#footnote-2-15.",
+      "sourceDocument": "OEBPS/Text/1075.xhtml",
+      "sourceReference": "OEBPS/Text/notas0007.xhtml#footnote-2-15",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0007.xhtml#footnote-4-13.",
+      "sourceDocument": "OEBPS/Text/1077.xhtml",
+      "sourceReference": "OEBPS/Text/notas0007.xhtml#footnote-4-13",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0064.xhtml#footnote-3-14.",
+      "sourceDocument": "OEBPS/Text/946.xhtml",
+      "sourceReference": "OEBPS/Text/notas0064.xhtml#footnote-3-14",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0036.xhtml#footnote-4-9.",
+      "sourceDocument": "OEBPS/Text/317.xhtml",
+      "sourceReference": "OEBPS/Text/notas0036.xhtml#footnote-4-9",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0036.xhtml#footnote-9-16.",
+      "sourceDocument": "OEBPS/Text/322.xhtml",
+      "sourceReference": "OEBPS/Text/notas0036.xhtml#footnote-9-16",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0036.xhtml#footnote-10-22.",
+      "sourceDocument": "OEBPS/Text/311.xhtml",
+      "sourceReference": "OEBPS/Text/notas0036.xhtml#footnote-10-22",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0036.xhtml#footnote-10-34.",
+      "sourceDocument": "OEBPS/Text/311.xhtml",
+      "sourceReference": "OEBPS/Text/notas0036.xhtml#footnote-10-34",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0063.xhtml#footnote-4-4.",
+      "sourceDocument": "OEBPS/Text/942.xhtml",
+      "sourceReference": "OEBPS/Text/notas0063.xhtml#footnote-4-4",
+      "parserConfidence": 0.53
+    },
+    {
+      "code": "unresolved_note_marker",
+      "message": "Nota ARA sem destino correspondente: OEBPS/Text/notas0011.xhtml#footnote-2-4.",
+      "sourceDocument": "OEBPS/Text/1131.xhtml",
+      "sourceReference": "OEBPS/Text/notas0011.xhtml#footnote-2-4",
+      "parserConfidence": 0.53
+    }
+  ],
+  "overview": "Almeida Revista e Atualizada importada via perfil ara. 59 livros, 1026 capítulos, 26985 versos. 2515 notas, 3206 referências cruzadas e 204 itens em revisão. Confiança média de versos: 90.0%. Licenciamento: Restrita."
+}

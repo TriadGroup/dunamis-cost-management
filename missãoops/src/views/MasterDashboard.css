@@ -1,0 +1,326 @@
+.master-dashboard {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 5rem;
+}
+
+.last-sync-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(163, 230, 53, 0.05);
+    color: var(--text-glow);
+    padding: 0.5rem 1rem;
+    border-radius: 24px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(163, 230, 53, 0.15);
+    backdrop-filter: blur(4px);
+}
+
+.zap-icon {
+    animation: pulse 2s infinite;
+}
+
+/* Master Stats Grid */
+.master-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+.metric-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.metric-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(163, 230, 53, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(163, 230, 53, 0.1);
+}
+
+.metric-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.02));
+    pointer-events: none;
+}
+
+.metric-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.metric-card.green .metric-icon-box {
+    background: rgba(34, 197, 94, 0.1);
+    color: #4ade80;
+}
+
+.metric-card.blue .metric-icon-box {
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+}
+
+.metric-card.orange .metric-icon-box {
+    background: rgba(249, 115, 22, 0.1);
+    color: #fb923c;
+}
+
+.metric-card.purple .metric-icon-box {
+    background: rgba(168, 85, 247, 0.1);
+    color: #c084fc;
+}
+
+.metric-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.metric-value-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin: 0.25rem 0;
+}
+
+.metric-value {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.trend-pill {
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.trend-pill.up {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.trend-pill.down {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.metric-subvalue {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.metric-sparkline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    pointer-events: none;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.metric-card.green {
+    color: #4ade80;
+}
+
+.metric-card.blue {
+    color: #60a5fa;
+}
+
+.metric-card.orange {
+    color: #fb923c;
+}
+
+.metric-card.purple {
+    color: #c084fc;
+}
+
+/* Secondary Section Grid */
+.master-grid-secondary {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+}
+
+/* Area Health Map */
+.area-health-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.area-health-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: all var(--transition-normal);
+}
+
+.area-health-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.area-health-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.area-main h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.head-badge {
+    font-size: 0.65rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    color: var(--text-secondary);
+}
+
+.health-percentage {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.health-bar-bg {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.health-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 12px currentColor;
+}
+
+.area-sub-metrics {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* Audit Feed */
+.master-logs-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.mini-log-item {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.mini-log-item:hover {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.log-icon-blob {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-green-500);
+    opacity: 0.1;
+    flex-shrink: 0;
+}
+
+.log-desc {
+    font-size: 0.8rem;
+    margin: 0;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.log-time {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 1024px) {
+    .master-grid-secondary {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .master-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}

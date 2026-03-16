@@ -1,241 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    /* Core — warm off-white beauty palette */
-    --background: 18 33% 95%; /* #F6F1EE */
-    --background-dark: 300 6% 4%; /* #0B0B0C */
-    --foreground: 310 7% 8%; /* #141214 */
-    --foreground-light: 18 33% 95%;
-
-    /* Cards */
-    --card: 0 0% 100%;
-    --card-foreground: 310 7% 8%;
-    --card-dark: 300 10% 7%;
-    --card-dark-foreground: 18 33% 95%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 310 7% 8%;
-
-    /* Rosé nude accent */
-    --primary: 10 30% 84%; /* #E6D3CE */
-    --primary-foreground: 310 7% 8%;
-    
-    /* Rosé deeper */
-    --secondary: 4 20% 71%; /* #C8A3A0 */
-    --secondary-foreground: 310 7% 8%;
-
-    /* Gold subtle */
-    --accent: 37 32% 66%; /* #C9B18A */
-    --accent-foreground: 310 7% 8%;
-
-    --muted: 18 20% 90%;
-    --muted-foreground: 25 10% 39%; /* #6E625C */
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 18 15% 87%;
-    --border-dark: 0 0% 15%;
-    --input: 18 15% 87%;
-    --ring: 10 30% 84%;
-
-    --radius: 0.5rem;
-
-    /* Typography */
-    --font-display: 'Playfair Display', Georgia, serif;
-    --font-body: 'Lato', system-ui, sans-serif;
-
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px rgba(0, 0, 0, 0.06);
-    --shadow-card: 0 8px 30px -8px rgba(0, 0, 0, 0.08);
-
-    /* Sidebar defaults */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 300 6% 4%;
-    --foreground: 18 33% 95%;
-    --card: 300 10% 7%;
-    --card-foreground: 18 33% 95%;
-    --popover: 300 10% 7%;
-    --popover-foreground: 18 33% 95%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-  }
+@theme {
+  --color-primary: #2F5E3B;
+  --color-primary-dark: #224A2D;
+  --color-primary-light: #5F8F6A;
+  --color-background: #F7FAF7;
+  --color-surface: #FFFFFF;
+  --color-accent: #D97706;
+  --color-danger: #B91C1C;
+  --color-success: #15803D;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-    box-sizing: border-box;
-  }
-
-  html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    overscroll-behavior-x: none;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    @apply bg-background text-foreground font-body antialiased;
-  }
-
-  img, video, svg, canvas {
-    max-width: 100%;
-    height: auto;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    @apply tracking-tight;
-  }
+body {
+  background-color: var(--color-background);
+  color: #0F172A;
+  -webkit-tap-highlight-color: transparent;
 }
 
-@layer components {
-  .section-light {
-    @apply bg-background text-foreground;
-  }
-
-  .section-dark {
-    background-color: hsl(var(--background-dark));
-    color: hsl(var(--foreground-light));
-  }
-
-  .section-rose {
-    background-color: hsl(var(--primary));
-    color: hsl(var(--foreground));
-  }
-
-  /* Typography scale */
-  .text-display-xl {
-    font-family: var(--font-display);
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] tracking-tight;
-  }
-
-  .text-display-lg {
-    font-family: var(--font-display);
-    @apply text-3xl sm:text-4xl md:text-5xl font-normal leading-[1.15] tracking-tight;
-  }
-
-  .text-display-md {
-    font-family: var(--font-display);
-    @apply text-2xl sm:text-3xl md:text-4xl font-normal leading-[1.2];
-  }
-
-  .text-body-lg {
-    @apply text-lg md:text-xl font-light leading-relaxed;
-  }
-
-  .text-body {
-    @apply text-base font-light leading-relaxed;
-  }
-
-  .text-body-sm {
-    @apply text-sm font-light leading-relaxed;
-  }
-
-  /* Buttons */
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-primary-foreground font-medium rounded-full transition-all duration-300 hover:opacity-90 hover:shadow-lg;
-  }
-
-  .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-accent rounded-full font-medium transition-all duration-300 hover:bg-accent hover:text-accent-foreground;
-  }
-
-  .btn-secondary-dark {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-white/30 text-white rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-black;
-  }
-
-  .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 px-4 py-2 font-medium transition-all duration-300 hover:opacity-70;
-  }
-
-  /* Cards */
-  .card-light {
-    @apply bg-card rounded-2xl p-6 shadow-[var(--shadow-soft)] border border-border/50;
-  }
-
-  .card-dark {
-    background-color: hsl(var(--card-dark));
-    @apply rounded-2xl p-6 border border-white/10;
-  }
-
-  /* Service chip */
-  .chip {
-    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-full border transition-all duration-300 cursor-pointer select-none;
-  }
-
-  .chip-default {
-    @apply chip border-border bg-white hover:border-primary hover:bg-primary/5;
-  }
-
-  .chip-selected {
-    @apply chip border-secondary bg-secondary text-secondary-foreground;
-  }
-
-  /* Container */
-  .container-narrow {
-    @apply max-w-5xl mx-auto px-5 sm:px-8;
-  }
-
-  .container-wide {
-    @apply max-w-7xl mx-auto px-5 sm:px-8;
-  }
-
-  /* Scroll indicator */
-  .scroll-indicator {
-    @apply w-6 h-10 rounded-full border-2 border-white/40 flex items-start justify-center pt-2;
-  }
-
-  .scroll-indicator::after {
-    content: '';
-    @apply w-1 h-2 bg-white/60 rounded-full animate-bounce;
-  }
-
-  /* Link underline */
-  .link-underline {
-    @apply relative inline-block;
-  }
-
-  .link-underline::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-full h-px bg-current origin-left scale-x-0 transition-transform duration-300;
-  }
-
-  .link-underline:hover::after {
-    @apply scale-x-100;
-  }
+/* Safe area utilities for PWA on iOS */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .text-gradient-gold {
-    @apply bg-gradient-to-r from-accent via-secondary to-accent bg-clip-text text-transparent;
-  }
-
-  .bg-gradient-warm {
-    @apply bg-gradient-to-br from-primary/20 via-transparent to-secondary/10;
-  }
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
 }

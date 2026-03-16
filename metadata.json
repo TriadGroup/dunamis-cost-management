@@ -1,0 +1,8 @@
+{
+  "name": "MissãoOps",
+  "description": "Gestão offline-first de equipes missionárias em campo com antifraude e delegação de liderança.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}

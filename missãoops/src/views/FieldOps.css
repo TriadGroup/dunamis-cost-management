@@ -1,0 +1,238 @@
+.field-ops-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.page-header {
+    margin-bottom: 0.5rem;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    color: var(--text-primary);
+}
+
+.page-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.action-card {
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.status-indicator {
+    margin-bottom: 1rem;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-badge .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-badge.warning {
+    background-color: var(--color-warning-bg);
+    color: var(--color-warning);
+}
+
+.status-badge.warning .dot {
+    background-color: var(--color-warning);
+}
+
+.status-badge.success {
+    background-color: var(--color-success-bg);
+    color: var(--color-success);
+}
+
+.status-badge.success .dot {
+    background-color: var(--color-success);
+}
+
+.action-heading {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.big-action-button {
+    width: 100%;
+    padding: 1.25rem;
+    border-radius: var(--radius-full);
+    color: var(--color-gray-900);
+    font-weight: 700;
+    font-size: 1.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    transition: transform 0.1s, box-shadow var(--transition-fast), background-color var(--transition-fast);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.big-action-button:active {
+    transform: scale(0.98);
+}
+
+.big-action-button.check-in {
+    background-color: var(--color-green-300);
+    color: var(--color-green-900);
+    box-shadow: 0 0 20px rgba(163, 230, 53, 0.4);
+}
+
+.big-action-button.check-in:hover {
+    background-color: var(--color-green-200);
+    box-shadow: 0 0 30px rgba(163, 230, 53, 0.6);
+}
+
+.big-action-button.check-out {
+    background-color: var(--color-danger);
+    color: white;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+}
+
+.big-action-button.check-out:hover {
+    background-color: #dc2626;
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.6);
+}
+
+/* Secondary Card */
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.required-tag {
+    font-size: 0.7rem;
+    background-color: var(--color-danger);
+    color: white;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.section-desc {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 1.25rem;
+}
+
+.upload-button {
+    width: 100%;
+    padding: 2rem 1rem;
+    border: 2px dashed rgba(163, 230, 53, 0.3);
+    border-radius: var(--radius-md);
+    background-color: rgba(163, 230, 53, 0.05);
+    /* very soft neon tinge */
+    color: var(--color-green-300);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all var(--transition-fast);
+}
+
+.upload-button:hover {
+    background-color: rgba(163, 230, 53, 0.1);
+    border-color: rgba(163, 230, 53, 0.5);
+}
+
+.upload-button span {
+    font-weight: 600;
+}
+
+/* Today Summary */
+.today-summary {
+    padding-top: 1rem;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.activity-item.completed {
+    opacity: 0.7;
+}
+
+.activity-icon {
+    color: var(--color-success);
+    margin-top: 0.125rem;
+}
+
+.activity-icon-placeholder {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-gray-300);
+    border-radius: 50%;
+    margin-top: 0.125rem;
+}
+
+.activity-details h4 {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.activity-item.completed .activity-details h4 {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+}
+
+.activity-details span {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+/* Extra CSS for photo preview in FieldOps */
+.photo-preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.photo-preview {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}

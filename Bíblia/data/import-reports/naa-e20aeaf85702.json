@@ -1,0 +1,40 @@
+{
+  "translationId": "translation:naa",
+  "translationName": "Nova Almeida Atualizada",
+  "shortCode": "naa",
+  "sourceFileName": "Bíblia Sagrada Nova Almeida Atualizada.epub",
+  "sourceHash": "e20aeaf85702c891e1801bd06ff7f0e41fd61d821f1d0454bead49931c224060",
+  "parserProfile": "naa",
+  "metadata": {
+    "title": "Bíblia Sagrada Nova Almeida Atualizada",
+    "publisher": "Sociedade Bíblica do Brasil",
+    "creator": "Brasil, Sociedade Bíblica do",
+    "language": "pt",
+    "date": "2017-11-08"
+  },
+  "licensing": {
+    "status": "restricted",
+    "notes": "Sinais explícitos de proteção autoral e/ou editora contemporânea detectados.",
+    "canDisplayPublicly": false,
+    "canUseForCompare": false
+  },
+  "totals": {
+    "booksDetected": 61,
+    "chaptersDetected": 1184,
+    "versesDetected": 31006,
+    "sectionHeadingsDetected": 2777,
+    "notesDetected": 0,
+    "crossReferencesDetected": 0,
+    "introductionsDetected": 386,
+    "uncertainSegments": 2,
+    "reviewQueueItems": 1
+  },
+  "warnings": [
+    {
+      "code": "unknown_book",
+      "message": "Quantidade de livros detectados (61) difere do cânon esperado (66).",
+      "parserConfidence": 0.45
+    }
+  ],
+  "overview": "Nova Almeida Atualizada importada via perfil naa. 61 livros, 1184 capítulos, 31006 versos. 0 notas, 0 referências cruzadas e 1 itens em revisão. Confiança média de versos: 93.6%. Licenciamento: Restrita."
+}

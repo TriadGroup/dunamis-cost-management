@@ -1,0 +1,181 @@
+{
+  "translationId": "translation:bkj",
+  "translationName": "Bíblia King James Atualizada",
+  "shortCode": "bkj",
+  "sourceFileName": "Bíblia King James Atualizada.epub",
+  "sourceHash": "abac1892ff1c9e025031b4d124dc7be0660e206db5c29c9a8602c71d7369f3a9",
+  "parserProfile": "bkj",
+  "metadata": {
+    "title": "Bíblia King James Atualizada",
+    "publisher": "LeYa",
+    "creator": "King James",
+    "language": "pt",
+    "date": "2017-09-08T03:00:00+00:00"
+  },
+  "licensing": {
+    "status": "pending_review",
+    "notes": "Editora detectada nos metadados: LeYa. Sem declaração pública suficiente para liberar exibição pública automática.",
+    "canDisplayPublicly": false,
+    "canUseForCompare": false
+  },
+  "totals": {
+    "booksDetected": 65,
+    "chaptersDetected": 936,
+    "versesDetected": 24523,
+    "sectionHeadingsDetected": 2464,
+    "notesDetected": 0,
+    "crossReferencesDetected": 0,
+    "introductionsDetected": 65,
+    "uncertainSegments": 221,
+    "reviewQueueItems": 195
+  },
+  "warnings": [
+    {
+      "code": "unknown_book",
+      "message": "Quantidade de livros detectados (65) difere do cânon esperado (66).",
+      "parserConfidence": 0.45
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro Gênesis importado com 26 capítulos; esperado 50.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro Êxodo importado com 22 capítulos; esperado 40.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro Números importado com 17 capítulos; esperado 36.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro 1 Samuel importado com 30 capítulos; esperado 31.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro Salmos importado com 78 capítulos; esperado 150.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro Isaías importado com 33 capítulos; esperado 66.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro Jeremias importado com 28 capítulos; esperado 52.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro Ezequiel importado com 26 capítulos; esperado 48.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro Obadias importado com 0 capítulos; esperado 1.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro 1 Coríntios importado com 15 capítulos; esperado 16.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro 2 Coríntios importado com 9 capítulos; esperado 13.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro Colossenses importado com 3 capítulos; esperado 4.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro Filemom importado com 0 capítulos; esperado 1.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro 1 João importado com 4 capítulos; esperado 5.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro 2 João importado com 0 capítulos; esperado 1.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro 3 João importado com 0 capítulos; esperado 1.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "unknown_chapter",
+      "message": "Livro Judas importado com 0 capítulos; esperado 1.",
+      "parserConfidence": 0.62
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre exodo 15:1 e exodo 15:19.",
+      "sourceDocument": "OEBPS/text00009.html",
+      "sourceReference": "exodo 15:19",
+      "parserConfidence": 0.91
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre exodo 15:20 e exodo 15:22.",
+      "sourceDocument": "OEBPS/text00009.html",
+      "sourceReference": "exodo 15:22",
+      "parserConfidence": 0.91
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre genesis 22:22 e genesis 22:24.",
+      "sourceDocument": "OEBPS/text00007.html",
+      "sourceReference": "genesis 22:24",
+      "parserConfidence": 0.91
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre genesis 25:19 e genesis 25:21.",
+      "sourceDocument": "OEBPS/text00007.html",
+      "sourceReference": "genesis 25:21",
+      "parserConfidence": 0.91
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre genesis 26:19 e genesis 26:21.",
+      "sourceDocument": "OEBPS/text00007.html",
+      "sourceReference": "genesis 26:21",
+      "parserConfidence": 0.91
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre lucas 19:29 e lucas 19:31.",
+      "sourceDocument": "OEBPS/text00059.html",
+      "sourceReference": "lucas 19:31",
+      "parserConfidence": 0.91
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 6:8 e mateus 6:14.",
+      "sourceDocument": "OEBPS/text00055.html",
+      "sourceReference": "mateus 6:14",
+      "parserConfidence": 0.91
+    },
+    {
+      "code": "missing_verse_gap",
+      "message": "Lacuna de versificação entre mateus 22:36 e mateus 22:40.",
+      "sourceDocument": "OEBPS/text00055.html",
+      "sourceReference": "mateus 22:40",
+      "parserConfidence": 0.82
+    }
+  ],
+  "overview": "Bíblia King James Atualizada importada via perfil bkj. 65 livros, 936 capítulos, 24523 versos. 0 notas, 0 referências cruzadas e 195 itens em revisão. Confiança média de versos: 90.9%. Licenciamento: Pendente de revisão."
+}
