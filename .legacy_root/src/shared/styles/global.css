@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #122717;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(63, 132, 74, 0.14) 0%, transparent 38%),
+    radial-gradient(circle at 85% 5%, rgba(150, 136, 79, 0.18) 0%, transparent 34%),
+    linear-gradient(135deg, #f5f5ea 0%, #ebe9d8 45%, #f0f4ea 100%);
+  font-family: Manrope, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.slider-range {
+  background: linear-gradient(90deg, #244f2d 0%, #82bc89 45%, #c7c08f 100%);
+}
+
+.slider-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #122717;
+  border: 2px solid #f5f5ea;
+  box-shadow: 0 0 0 2px rgba(18, 39, 23, 0.22);
+}
+
+.slider-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #122717;
+  border: 2px solid #f5f5ea;
+  box-shadow: 0 0 0 2px rgba(18, 39, 23, 0.22);
+}

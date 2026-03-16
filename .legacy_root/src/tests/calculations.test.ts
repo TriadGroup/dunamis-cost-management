@@ -8,43 +8,33 @@ import {
 import { DEFAULT_APP_STATE } from '@/entities/finance/defaultData';
 
 describe('finance calculations', () => {
-  it('calculates monthly totals from base values', () => {
+  it('applies category and item sliders together', () => {
     const state = structuredClone(DEFAULT_APP_STATE);
-    const totals = calculateMonthlyTotals(
-      state.items,
-      state.categories,
-      state.expectedRevenueCents,
-      state.investments,
-      state.purchases,
-      state.maintenance
-    );
+    const category = state.categories[0];
+    const item = state.items.find((entry) => entry.categoryId === category.id)!;
+
+    category.categorySliderPct = 20;
+    item.itemSliderPct = 10;
+
+    const totals = calculateMonthlyTotals(state.items, state.categories, state.expectedRevenueCents, state.investments);
 
     expect(totals.totalCostCents).toBeGreaterThan(0);
-    expect(totals.totalCostCents).toBeGreaterThan(500000);
+    expect(totals.totalCostCents).toBeGreaterThan(1000000);
   });
 
   it('handles ROI and payback edge cases', () => {
-    const investment = {
-      id: '1',
-      name: 'Financiamento trator',
-      kind: 'financiamento' as const,
-      assetType: 'Maquinario',
-      assetValueCents: 100000,
-      upfrontCents: 0,
-      monthlyInterestPct: 0,
-      consortiumFeePct: 0,
-      termMonths: 10,
-      expectedMonthlyReturnCents: 20000,
-      riskLevel: 'low' as const,
-      notes: ''
-    };
+    const roi = calculateRoi([
+      { id: '1', name: 'A', amountCents: 100000, expectedMonthlyReturnCents: 20000, horizonMonths: 10, riskLevel: 'low' }
+    ]);
 
-    const roi = calculateRoi([investment]);
     expect(roi.roiPct).toBeCloseTo(100, 4);
 
     const payback = calculatePayback({
-      ...investment,
+      id: '1',
+      name: 'A',
+      amountCents: 100000,
       expectedMonthlyReturnCents: 0,
+      horizonMonths: 12,
       riskLevel: 'medium'
     });
 
