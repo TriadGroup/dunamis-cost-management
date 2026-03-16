@@ -1,4 +1,4 @@
-import { useUiPreferencesStore } from '@/app/store';
+import { useUiPreferencesStore } from '@/app/store/useUiPreferencesStore';
 import { useSetupStore } from '@/app/store/useSetupStore';
 import { useFarmSnapshot } from '@/features/dashboard/model/useFarmSnapshot';
 import { AttentionBanner, DetailCard, ExecutiveCard } from '@/shared/ui';

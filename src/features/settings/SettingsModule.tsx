@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { restartIntroTutorial, resetFarmDataAndRestart } from '@/app/store/farmReset';
-import { useSyncQueueStore } from '@/app/store';
+import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
 import { useSetupStore } from '@/app/store/useSetupStore';
 import { useFarmSnapshot } from '@/features/dashboard/model/useFarmSnapshot';
 import { acceptanceChecklist } from '@/features/settings/acceptanceChecklist';
@@ -31,8 +31,8 @@ export const SettingsModule = () => {
     const computed = [
       kpi.monthlyOutflowCents > 0 && implantationTotals.totalCents > 0,
       implantationTotals.totalCents > 0,
-      channels.some((entry) => entry.type === 'kitchen') && channels.some((entry) => entry.type === 'box'),
-      channels.some((entry) => entry.type === 'kitchen'),
+      channels.some((entry: any) => entry.type === 'kitchen') && channels.some((entry: any) => entry.type === 'box'),
+      channels.some((entry: any) => entry.type === 'kitchen'),
       true,
       continuityByPlan.length > 0,
       economics.rows.length > 0 && economics.marginByChannel.length > 0,
@@ -53,7 +53,7 @@ export const SettingsModule = () => {
     }));
   }, [channels, continuityByPlan.length, economics.marginByChannel.length, economics.rows.length, implantationTotals.totalCents, kpi.monthlyOutflowCents, lots.length, syncStatus]);
 
-  const doneCount = checklist.filter((entry) => entry.done).length;
+  const doneCount = checklist.filter((entry: any) => entry.done).length;
 
   return (
     <div className="page-stack">

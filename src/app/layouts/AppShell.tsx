@@ -1,17 +1,15 @@
 import { Suspense, useMemo } from 'react';
 import clsx from 'clsx';
 import { buildVisibleRoutes, findGroupByRoute, findRouteById, navGroups, type NavGroupId } from '@/app/router/routes';
-import {
-  useDemandChannelsStore,
-  useFinanceStore,
-  useInvestmentsStore,
-  useMaintenanceStore,
-  useProductionPlanningStore,
-  useTraceabilityStore,
-  useSyncQueueStore,
-  useUiPreferencesStore,
-  useOnboardingStore
-} from '@/app/store';
+import { useDemandChannelsStore } from '@/app/store/useDemandChannelsStore';
+import { useFinanceStore } from '@/app/store/useFinanceStore';
+import { useInvestmentsStore } from '@/app/store/useInvestmentsStore';
+import { useMaintenanceStore } from '@/app/store/useMaintenanceStore';
+import { useProductionPlanningStore } from '@/app/store/useProductionPlanningStore';
+import { useTraceabilityStore } from '@/app/store/useTraceabilityStore';
+import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
+import { useUiPreferencesStore } from '@/app/store/useUiPreferencesStore';
+import { useOnboardingStore } from '@/app/store/useOnboardingStore';
 import { useSetupStore } from '@/app/store/useSetupStore';
 import { WeatherPanel } from '@/features/dashboard/components/WeatherPanel';
 import { ExportWorkbookButton } from '@/features/export';
