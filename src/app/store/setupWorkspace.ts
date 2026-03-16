@@ -1,22 +1,20 @@
-import {
-  useCostAllocationStore,
-  useDemandChannelsStore,
-  useEquipmentUsageStore,
-  useFinanceStore,
-  useFieldOperationsStore,
-  useImplantationStore,
-  useInventoryStore,
-  useInvestmentsStore,
-  useLaborStore,
-  useMaintenanceStore,
-  useProductionPlanningStore,
-  usePurchasesStore,
-  useScenariosStore,
-  useSetupStore,
-  useSyncQueueStore,
-  useTraceabilityStore,
-  useUiPreferencesStore
-} from '@/app/store';
+import { useCostAllocationStore } from '@/app/store/useCostAllocationStore';
+import { useDemandChannelsStore } from '@/app/store/useDemandChannelsStore';
+import { useEquipmentUsageStore } from '@/app/store/useEquipmentUsageStore';
+import { useFinanceStore } from '@/app/store/useFinanceStore';
+import { useFieldOperationsStore } from '@/app/store/useFieldOperationsStore';
+import { useImplantationStore } from '@/app/store/useImplantationStore';
+import { useInventoryStore } from '@/app/store/useInventoryStore';
+import { useInvestmentsStore } from '@/app/store/useInvestmentsStore';
+import { useLaborStore } from '@/app/store/useLaborStore';
+import { useMaintenanceStore } from '@/app/store/useMaintenanceStore';
+import { useProductionPlanningStore } from '@/app/store/useProductionPlanningStore';
+import { usePurchasesStore } from '@/app/store/usePurchasesStore';
+import { useScenariosStore } from '@/app/store/useScenariosStore';
+import { useSetupStore } from '@/app/store/useSetupStore';
+import { useSyncQueueStore } from '@/app/store/useSyncQueueStore';
+import { useTraceabilityStore } from '@/app/store/useTraceabilityStore';
+import { useUiPreferencesStore } from '@/app/store/useUiPreferencesStore';
 import type {
   ApplicationEvent,
   Bed,
