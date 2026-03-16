@@ -10,9 +10,12 @@ if (!supabaseUrl || !supabaseAnonKey) {
 }
 
 // Create a single supabase client for interacting with your database
+// We use a proxy-like approach or null checks to prevent top-level crashes if variables are missing
+const isConfigured = Boolean(supabaseUrl && supabaseAnonKey);
+
 export const supabase = createClient(
-  supabaseUrl || '',
-  supabaseAnonKey || '',
+  supabaseUrl || 'https://placeholder-url.supabase.co',
+  supabaseAnonKey || 'placeholder-key',
   {
     auth: {
       persistSession: true,
@@ -21,3 +24,7 @@ export const supabase = createClient(
     }
   }
 );
+
+if (!isConfigured) {
+  console.error('CRITICAL: Supabase is NOT configured. Database operations will fail.');
+}

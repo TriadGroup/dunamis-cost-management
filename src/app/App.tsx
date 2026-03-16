@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { PinGate } from '@/features/auth/PinGate';
 import { AppShell } from '@/app/layouts/AppShell';
+import { ErrorBoundary } from '@/shared/ui/ErrorBoundary';
 import { StoreProvider } from '@/app/providers/StoreProvider';
 import { SyncStatusProvider } from '@/app/providers/SyncStatusProvider';
 import { OnboardingProvider } from '@/app/providers/OnboardingProvider';
@@ -25,16 +26,18 @@ export const App = () => {
   }
 
   return (
-    <StoreProvider>
-      <SyncStatusProvider>
-        {session ? (
-          <OnboardingProvider>
-            {setupStatus === 'completed' ? <AppShell /> : <SetupExperience />}
-          </OnboardingProvider>
-        ) : (
-          <PinGate />
-        )}
-      </SyncStatusProvider>
-    </StoreProvider>
+    <ErrorBoundary>
+      <StoreProvider>
+        <SyncStatusProvider>
+          {session ? (
+            <OnboardingProvider>
+              {setupStatus === 'completed' ? <AppShell /> : <SetupExperience />}
+            </OnboardingProvider>
+          ) : (
+            <PinGate />
+          )}
+        </SyncStatusProvider>
+      </StoreProvider>
+    </ErrorBoundary>
   );
 };

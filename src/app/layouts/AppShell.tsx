@@ -65,13 +65,17 @@ export const AppShell = () => {
     }
   };
 
-  const route = visibleRoutes.find((entry) => entry.id === activeRouteId) ?? findRouteById(visibleRoutes[0]?.id ?? 'dashboard');
-// ... (omitting some lines for clarity, will use multi_replace if needed)
-// Actually, let's keep the sequence clear.
+  const route = useMemo(() => {
+    return visibleRoutes.find((entry) => entry.id === activeRouteId) ?? 
+           findRouteById(activeRouteId) ?? 
+           visibleRoutes[0] ?? 
+           findRouteById('dashboard');
+  }, [visibleRoutes, activeRouteId]);
+
   const activeGroupId = findGroupByRoute(route.id);
   const activeGroup = navGroups.find((group) => group.id === activeGroupId) ?? navGroups[0];
   const groupRoutes = visibleRoutes.filter((entry) => entry.group === activeGroupId);
-  const ActiveComponent = route.component;
+  const ActiveComponent = route.component || (() => <div className="detail-card">Modulo nao carregado</div>);
 
   const setupPct = useMemo(() => {
     const count = setupSignals([
