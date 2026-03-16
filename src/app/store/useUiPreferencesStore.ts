@@ -33,7 +33,7 @@ export const useUiPreferencesStore = create<UiPreferencesState>()(
       activeRouteId: 'dashboard',
       executiveMode: true,
       navCollapsed: false,
-      pinHash: null,
+      pinHash: hash('1234'),
       unlocked: false,
       authError: null,
       setActiveRoute: (routeId) => set({ activeRouteId: routeId }),
@@ -64,13 +64,14 @@ export const useUiPreferencesStore = create<UiPreferencesState>()(
     }),
     {
       name: 'dunamis-farm-os-ui-v2',
-      version: 2,
+      version: 3,
       storage: createJSONStorage(() => localStorage),
       migrate: (persistedState) => {
         const state = (persistedState as Partial<UiPreferencesState> | undefined) ?? {};
         return {
           ...state,
-          productName: 'Dunamis Farm Agro'
+          productName: 'Dunamis Farm Agro',
+          pinHash: state.pinHash ?? hash('1234')
         };
       },
       partialize: (state) => ({

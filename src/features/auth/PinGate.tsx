@@ -1,17 +1,26 @@
 import { useState } from 'react';
-import { useAuthStore } from '@/app/store/useAuthStore';
+import { useUiPreferencesStore } from '@/app/store/useUiPreferencesStore';
 import { BrandLogo } from '@/shared/ui';
 
 export const PinGate = () => {
-  const { signIn, isLoading, error } = useAuthStore();
-  const [email, setEmail] = useState('');
-  const [sent, setSent] = useState(false);
+  const pinHash = useUiPreferencesStore((state) => state.pinHash);
+  const authError = useUiPreferencesStore((state) => state.authError);
+  const setPin = useUiPreferencesStore((state) => state.setPin);
+  const unlockWithPin = useUiPreferencesStore((state) => state.unlockWithPin);
+  const [pin, setPinValue] = useState('');
 
-  const submit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const needsSetup = !pinHash;
+
+  const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!email) return;
-    await signIn(email);
-    setSent(true);
+
+    if (needsSetup) {
+      setPin(pin);
+      return;
+    }
+
+    unlockWithPin(pin);
+    setPinValue('');
   };
 
   return (
@@ -22,45 +31,40 @@ export const PinGate = () => {
         <BrandLogo variant="hero" />
         <h1 className="mt-4 text-3xl font-semibold text-[#2f4e2f]">Dunamis Farm</h1>
         <p className="mt-2 text-sm text-[#5c7c66]">
-          Acesse o painel agro-financeiro com segurança via e-mail.
+          {needsSetup
+            ? 'Defina a senha de acesso inicial da operação.'
+            : 'Digite a senha para abrir o painel da fazenda.'}
         </p>
 
-        {sent ? (
-          <div className="mt-6 space-y-4 text-center">
-            <div className="text-sm font-medium text-[#2f4e2f]">Link de acesso enviado!</div>
-            <p className="text-xs text-[#5c7c66]">Verifique sua caixa de entrada em {email}.</p>
-            <button 
-              onClick={() => setSent(false)}
-              className="text-xs font-semibold text-[#2f4e2f] hover:underline"
-            >
-              Tentar outro e-mail
-            </button>
+        <form onSubmit={submit} className="mt-6 space-y-4">
+          <div className="space-y-1">
+            <label className="ml-4 text-[10px] font-bold uppercase tracking-wider text-[#5c7c66]">
+              {needsSetup ? 'Nova senha' : 'Senha de acesso'}
+            </label>
+            <input
+              type="password"
+              inputMode="numeric"
+              autoComplete="current-password"
+              placeholder={needsSetup ? 'Crie uma senha numerica' : 'Use a senha 1234'}
+              value={pin}
+              onChange={(event) => setPinValue(event.target.value)}
+              className="input-dark w-full"
+              required
+            />
           </div>
-        ) : (
-          <form onSubmit={submit} className="mt-6 space-y-4">
-            <div className="space-y-1">
-              <label className="text-[10px] font-bold uppercase tracking-wider text-[#5c7c66] ml-4">
-                E-mail Profissional
-              </label>
-              <input
-                type="email"
-                placeholder="nome@fazenda.com"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                className="input-dark w-full"
-                required
-              />
-            </div>
-            {error && <p className="text-sm text-[#d45e6e]">{error}</p>}
-            <button 
-              type="submit" 
-              disabled={isLoading}
-              className="cta-btn w-full disabled:opacity-50"
-            >
-              {isLoading ? 'Enviando...' : 'Receber link de acesso'}
-            </button>
-          </form>
-        )}
+
+          {!needsSetup && (
+            <p className="text-xs text-[#5c7c66]">
+              Senha padrao da fazenda: <strong>1234</strong>
+            </p>
+          )}
+
+          {authError && <p className="text-sm text-[#d45e6e]">{authError}</p>}
+
+          <button type="submit" className="cta-btn w-full">
+            {needsSetup ? 'Salvar senha' : 'Entrar no painel'}
+          </button>
+        </form>
       </section>
     </main>
   );
