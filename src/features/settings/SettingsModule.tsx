@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { restartIntroTutorial, resetFarmDataAndRestart } from '@/app/store/farmReset';
 import { useSyncQueueStore } from '@/app/store';
+import { useSetupStore } from '@/app/store/useSetupStore';
 import { useFarmSnapshot } from '@/features/dashboard/model/useFarmSnapshot';
 import { acceptanceChecklist } from '@/features/settings/acceptanceChecklist';
 import { formatDate } from '@/shared/lib/format';
@@ -9,8 +10,22 @@ import { CenterModal, DetailCard, ExecutiveCard, StatusChip } from '@/shared/ui'
 export const SettingsModule = () => {
   const { kpi, attentionPoints, implantationTotals, economics, channels, continuityByPlan, lots } = useFarmSnapshot();
   const syncStatus = useSyncQueueStore((state) => state.status);
-  const lastSavedAt = useSyncQueueStore((state) => state.lastSavedAt);
+  const lastSyncedAt = useSyncQueueStore((state) => state.lastSyncedAt);
+  const isDemo = useSetupStore((state) => state.isDemo);
+  const setIsDemo = useSetupStore((state) => state.setIsDemo);
   const [resetModal, setResetModal] = useState<'tutorial' | 'all' | null>(null);
+
+  const handleToggleDemo = () => {
+    if (isDemo) {
+      if (window.confirm("Deseja sair do MODO TESTE e começar a SALVAR no Supabase?")) {
+        setIsDemo(false);
+      }
+    } else {
+      if (window.confirm("Ativar MODO TESTE? Suas alterações NÃO serão salvas no banco de dados.")) {
+        setIsDemo(true);
+      }
+    }
+  };
 
   const checklist = useMemo(() => {
     const computed = [
@@ -27,7 +42,7 @@ export const SettingsModule = () => {
       true,
       true,
       true,
-      syncStatus !== 'reconnecting' || syncStatus === 'reconnecting',
+      syncStatus === 'saved',
       true
     ];
 
@@ -46,7 +61,35 @@ export const SettingsModule = () => {
         <div className="executive-grid">
           <ExecutiveCard title="Critérios atendidos" value={`${doneCount}/${checklist.length}`} helper="Checklist da fase" tone={doneCount >= checklist.length - 1 ? 'positive' : 'warning'} />
           <ExecutiveCard title="Pontos de atenção" value={String(attentionPoints.length)} helper="Alertas acionáveis" tone={attentionPoints.length > 3 ? 'warning' : 'positive'} />
-          <ExecutiveCard title="Status de sincronização" value={syncStatus} helper={`Último save: ${formatDate(lastSavedAt)}`} tone={syncStatus === 'saved' ? 'positive' : syncStatus === 'pending' ? 'warning' : 'danger'} />
+          <ExecutiveCard title="Status de sincronização" value={syncStatus} helper={`Último save: ${lastSyncedAt ? formatDate(lastSyncedAt) : 'Nunca'}`} tone={syncStatus === 'saved' ? 'positive' : syncStatus === 'pending' ? 'warning' : 'danger'} />
+        </div>
+      </DetailCard>
+
+      <DetailCard title="Sincronização & Segurança" subtitle="Controle de persistência de dados">
+        <div className="settings-reset-card">
+          <div className="settings-reset-copy">
+            <strong>Modo de Persistência</strong>
+            <p>
+              {isDemo 
+                ? 'Você está no MODO TESTE. Nada está sendo salvo no Supabase. Ideal para simulações.' 
+                : 'Você está no MODO PRODUÇÃO. Todas as alterações são salvas automaticamente na nuvem.'}
+            </p>
+          </div>
+          <div className="settings-reset-actions">
+            <div className="sync-mode-toggle" style={{ margin: 0, background: 'transparent', border: 'none' }}>
+              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--forest)' }}>
+                {isDemo ? 'Ativar Produção' : 'Ativar Teste'}
+              </span>
+              <label className="toggle-switch">
+                <input 
+                  type="checkbox" 
+                  checked={!isDemo} 
+                  onChange={handleToggleDemo} 
+                />
+                <span className="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
         </div>
       </DetailCard>
 

@@ -232,18 +232,6 @@ export const AppShell = () => {
               </button>
             </div>
 
-            <div className="sync-mode-mini-toggle" title={isDemo ? 'Ativar Modo Produção (Salvar na nuvem)' : 'Ativar Modo Teste (Não salvar)'}>
-              <span className="sync-mode-label">{isDemo ? 'TESTE' : 'PROD'}</span>
-              <label className="toggle-switch is-mini">
-                <input 
-                  type="checkbox" 
-                  checked={!isDemo} 
-                  onChange={() => handleToggleDemo()} 
-                />
-                <span className="toggle-slider"></span>
-              </label>
-            </div>
-
             <WeatherPanel variant="topbar" />
 
             <span className={clsx('sync-pill', status)}>

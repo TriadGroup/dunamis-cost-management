@@ -21,7 +21,7 @@ import {
   LazyUnitEconomicsModule
 } from '@/app/router/lazyModules';
 
-export type NavGroupId = 'home' | 'setup' | 'operate' | 'track' | 'advanced';
+export type NavGroupId = 'home' | 'setup' | 'operate' | 'track' | 'advanced' | 'settings';
 
 export interface AppRoute {
   id: string;
@@ -45,7 +45,8 @@ export const navGroups: NavGroup[] = [
   { id: 'setup', label: 'Base', icon: 'magic' },
   { id: 'operate', label: 'Operar', icon: 'seed' },
   { id: 'track', label: 'Acompanhar', icon: 'trace' },
-  { id: 'advanced', label: 'Resultados', icon: 'target' }
+  { id: 'advanced', label: 'Resultados', icon: 'target' },
+  { id: 'settings', label: 'Ajustes', icon: 'gear' }
 ];
 
 export const appRoutes: AppRoute[] = [
@@ -214,7 +215,7 @@ export const appRoutes: AppRoute[] = [
     label: 'Ajustes',
     subtitle: 'Sistema',
     section: 'intelligence',
-    group: 'setup',
+    group: 'settings',
     icon: 'gear',
     accent: 'setup',
     component: LazySettingsModule
