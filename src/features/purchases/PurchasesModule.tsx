@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type SetStateAction } from 'react';
 import { useInventoryStore } from '@/app/store/useInventoryStore';
 import { useOnboardingStore } from '@/app/store/useOnboardingStore';
 import { useOptionCatalogStore } from '@/app/store/useOptionCatalogStore';
@@ -6,6 +6,7 @@ import { useProductionPlanningStore } from '@/app/store/useProductionPlanningSto
 import { usePurchasesStore } from '@/app/store/usePurchasesStore';
 import type { InventoryProduct, PurchaseItem, PurchasePaymentStatus, PurchaseStatus } from '@/entities';
 import { formatCurrency, formatDate, formatUnitLabel } from '@/shared/lib/format';
+import { usePersistentDraftState } from '@/shared/lib/usePersistentDraftState';
 import { CenterModal, CreatableSelect, DetailCard, ExecutiveCard, MoneyField, NumberField, SearchBar, SmartEmptyState, StatusChip } from '@/shared/ui';
 
 const purchaseCategoryOptions = [
@@ -61,6 +62,16 @@ const buildDraft = (purchase?: PurchaseItem) => ({
   inventoryProductId: purchase?.inventoryProductId ?? ''
 });
 
+interface PurchaseEditorState {
+  modalOpen: boolean;
+  draft: ReturnType<typeof buildDraft>;
+}
+
+const buildEditorState = (): PurchaseEditorState => ({
+  modalOpen: false,
+  draft: buildDraft()
+});
+
 const lotTone = (linkedLotCount: number): 'low' | 'medium' | 'neutral' => (linkedLotCount > 0 ? 'low' : 'neutral');
 
 export const PurchasesModule = () => {
@@ -79,8 +90,19 @@ export const PurchasesModule = () => {
   const startTour = useOnboardingStore((state) => state.startTour);
 
   const [query, setQuery] = useState('');
-  const [modalOpen, setModalOpen] = useState(false);
-  const [draft, setDraft] = useState(buildDraft());
+  const {
+    value: editorState,
+    setValue: setEditorState,
+    clear: clearEditorState
+  } = usePersistentDraftState<PurchaseEditorState>('dunamis-farm-os-purchase-editor-draft-v1', buildEditorState);
+  const { modalOpen, draft } = editorState;
+
+  const setDraft = (nextValue: SetStateAction<ReturnType<typeof buildDraft>>) => {
+    setEditorState((state) => ({
+      ...state,
+      draft: typeof nextValue === 'function' ? nextValue(state.draft) : nextValue
+    }));
+  };
 
   const visible = useMemo(
     () => purchases.filter((entry) => [entry.name, entry.category, entry.subcategory, entry.supplier].some((value) => value.toLowerCase().includes(query.toLowerCase()))),
@@ -108,18 +130,21 @@ export const PurchasesModule = () => {
   const categoryCatalog = optionCatalog['cost-category'] ?? purchaseCategoryOptions.map((option) => ({ value: option.value, label: option.value }));
 
   const openCreateModal = () => {
-    setDraft(buildDraft());
-    setModalOpen(true);
+    setEditorState({
+      modalOpen: true,
+      draft: buildDraft()
+    });
   };
 
   const openEditModal = (purchase: PurchaseItem) => {
-    setDraft(buildDraft(purchase));
-    setModalOpen(true);
+    setEditorState({
+      modalOpen: true,
+      draft: buildDraft(purchase)
+    });
   };
 
   const closeModal = () => {
-    setDraft(buildDraft());
-    setModalOpen(false);
+    clearEditorState();
   };
 
   const savePurchase = () => {

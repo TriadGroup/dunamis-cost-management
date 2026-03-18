@@ -1,6 +1,7 @@
 import { resetWorkspaceToEmpty } from '@/app/store/setupWorkspace';
 import { useSetupStore } from '@/app/store/useSetupStore';
 import { useUiPreferencesStore } from '@/app/store/useUiPreferencesStore';
+import { WORKSPACE_BACKUP_KEY } from '@/app/store/workspaceBackup';
 
 const RESET_KEYS = [
   'dunamis-farm-os-setup-v1',
@@ -18,7 +19,8 @@ const RESET_KEYS = [
   'dunamis-farm-os-investments-v2',
   'dunamis-farm-os-implantation-v2',
   'dunamis-farm-agro-traceability-v3',
-  'dunamis-farm-os-agronomic-calendar-v2'
+  'dunamis-farm-os-agronomic-calendar-v2',
+  WORKSPACE_BACKUP_KEY
 ] as const;
 
 export const restartIntroTutorial = () => {

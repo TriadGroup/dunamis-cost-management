@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type SetStateAction } from 'react';
 import { useCostAllocationStore } from '@/app/store/useCostAllocationStore';
 import { useFieldOperationsStore } from '@/app/store/useFieldOperationsStore';
 import { useInventoryStore } from '@/app/store/useInventoryStore';
@@ -8,6 +8,7 @@ import { useProductionPlanningStore } from '@/app/store/useProductionPlanningSto
 import { useTraceabilityStore } from '@/app/store/useTraceabilityStore';
 import type { ApplicationEvent, CropStage } from '@/entities';
 import { fieldUnitMeta, formatCurrency, formatDate, formatNumber, formatUnitLabel } from '@/shared/lib/format';
+import { usePersistentDraftState } from '@/shared/lib/usePersistentDraftState';
 import { CenterModal, ContextHelp, CreatableSelect, DetailCard, ExecutiveCard, NumberField, SearchBar, SmartEmptyState, StatusChip } from '@/shared/ui';
 
 const cropStageOptions: Array<{ value: CropStage; label: string }> = [
@@ -40,6 +41,16 @@ const buildDraft = (application?: ApplicationEvent) => ({
   notes: application?.notes ?? ''
 });
 
+interface ApplicationEditorState {
+  modalOpen: boolean;
+  draft: ReturnType<typeof buildDraft>;
+}
+
+const buildEditorState = (): ApplicationEditorState => ({
+  modalOpen: false,
+  draft: buildDraft()
+});
+
 export const FieldOperationsModule = () => {
   const applications = useFieldOperationsStore((state) => state.applications);
   const addApplication = useFieldOperationsStore((state) => state.addApplication);
@@ -61,8 +72,19 @@ export const FieldOperationsModule = () => {
   const startTour = useOnboardingStore((state) => state.startTour);
 
   const [query, setQuery] = useState('');
-  const [modalOpen, setModalOpen] = useState(false);
-  const [draft, setDraft] = useState(buildDraft());
+  const {
+    value: editorState,
+    setValue: setEditorState,
+    clear: clearEditorState
+  } = usePersistentDraftState<ApplicationEditorState>('dunamis-farm-os-application-editor-draft-v1', buildEditorState);
+  const { modalOpen, draft } = editorState;
+
+  const setDraft = (nextValue: SetStateAction<ReturnType<typeof buildDraft>>) => {
+    setEditorState((state) => ({
+      ...state,
+      draft: typeof nextValue === 'function' ? nextValue(state.draft) : nextValue
+    }));
+  };
 
   const visibleApplications = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -116,18 +138,21 @@ export const FieldOperationsModule = () => {
   };
 
   const openCreateModal = () => {
-    setDraft(buildDraft());
-    setModalOpen(true);
+    setEditorState({
+      modalOpen: true,
+      draft: buildDraft()
+    });
   };
 
   const openEditModal = (application: ApplicationEvent) => {
-    setDraft(buildDraft(application));
-    setModalOpen(true);
+    setEditorState({
+      modalOpen: true,
+      draft: buildDraft(application)
+    });
   };
 
   const closeModal = () => {
-    setDraft(buildDraft());
-    setModalOpen(false);
+    clearEditorState();
   };
 
   const saveApplication = () => {

@@ -1,10 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type SetStateAction } from 'react';
 import { useFieldOperationsStore } from '@/app/store/useFieldOperationsStore';
 import { useInventoryStore } from '@/app/store/useInventoryStore';
 import { useOptionCatalogStore } from '@/app/store/useOptionCatalogStore';
 import { useProductionPlanningStore } from '@/app/store/useProductionPlanningStore';
 import { calculateAverageUnitCost, type InventoryLot, type InventoryProduct } from '@/entities';
 import { formatCurrency, formatDate, formatNumber, formatUnitLabel } from '@/shared/lib/format';
+import { usePersistentDraftState } from '@/shared/lib/usePersistentDraftState';
 import { CenterModal, ContextHelp, CreatableSelect, DetailCard, ExecutiveCard, MoneyField, NumberField, SearchBar, SmartEmptyState, StatusChip } from '@/shared/ui';
 
 type InventoryModalMode = 'entry' | 'usage' | 'loss' | null;
@@ -52,6 +53,20 @@ const buildLossDraft = () => ({
   notes: ''
 });
 
+interface InventoryEditorState {
+  mode: InventoryModalMode;
+  entryDraft: ReturnType<typeof buildEntryDraft>;
+  usageDraft: ReturnType<typeof buildUsageDraft>;
+  lossDraft: ReturnType<typeof buildLossDraft>;
+}
+
+const buildEditorState = (): InventoryEditorState => ({
+  mode: null,
+  entryDraft: buildEntryDraft(),
+  usageDraft: buildUsageDraft(),
+  lossDraft: buildLossDraft()
+});
+
 const lotTone = (lot: InventoryLot): 'low' | 'medium' | 'high' | 'neutral' => {
   if (lot.status === 'vencido') return 'high';
   if (lot.status === 'parcial') return 'medium';
@@ -76,10 +91,40 @@ export const InventoryModule = () => {
   const addCatalogOption = useOptionCatalogStore((state) => state.addOption);
 
   const [query, setQuery] = useState('');
-  const [mode, setMode] = useState<InventoryModalMode>(null);
-  const [entryDraft, setEntryDraft] = useState(buildEntryDraft());
-  const [usageDraft, setUsageDraft] = useState(buildUsageDraft());
-  const [lossDraft, setLossDraft] = useState(buildLossDraft());
+  const {
+    value: editorState,
+    setValue: setEditorState,
+    clear: clearEditorState
+  } = usePersistentDraftState<InventoryEditorState>('dunamis-farm-os-inventory-editor-draft-v1', buildEditorState);
+  const { mode, entryDraft, usageDraft, lossDraft } = editorState;
+
+  const setMode = (nextMode: InventoryModalMode) => {
+    setEditorState((state) => ({
+      ...state,
+      mode: nextMode
+    }));
+  };
+
+  const setEntryDraft = (nextValue: SetStateAction<ReturnType<typeof buildEntryDraft>>) => {
+    setEditorState((state) => ({
+      ...state,
+      entryDraft: typeof nextValue === 'function' ? nextValue(state.entryDraft) : nextValue
+    }));
+  };
+
+  const setUsageDraft = (nextValue: SetStateAction<ReturnType<typeof buildUsageDraft>>) => {
+    setEditorState((state) => ({
+      ...state,
+      usageDraft: typeof nextValue === 'function' ? nextValue(state.usageDraft) : nextValue
+    }));
+  };
+
+  const setLossDraft = (nextValue: SetStateAction<ReturnType<typeof buildLossDraft>>) => {
+    setEditorState((state) => ({
+      ...state,
+      lossDraft: typeof nextValue === 'function' ? nextValue(state.lossDraft) : nextValue
+    }));
+  };
 
   const visibleLots = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -124,10 +169,7 @@ export const InventoryModule = () => {
   const activeLossLot = lots.find((lot) => lot.id === lossDraft.inventoryLotId) ?? null;
 
   const closeModal = () => {
-    setMode(null);
-    setEntryDraft(buildEntryDraft());
-    setUsageDraft(buildUsageDraft());
-    setLossDraft(buildLossDraft());
+    clearEditorState();
   };
 
   const saveEntry = () => {

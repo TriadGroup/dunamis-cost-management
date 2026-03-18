@@ -72,7 +72,7 @@ export const SettingsModule = () => {
             <p>
               {isDemo 
                 ? 'Você está no MODO TESTE. Nada está sendo salvo no Supabase. Ideal para simulações.' 
-                : 'Você está no MODO PRODUÇÃO. Todas as alterações são salvas automaticamente na nuvem.'}
+                : 'Você está no MODO PRODUÇÃO. Cada alteração é protegida localmente na hora e enviada para a nuvem assim que a sincronização estiver disponível.'}
             </p>
           </div>
           <div className="settings-reset-actions">

@@ -1,10 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type SetStateAction } from 'react';
 import { useFinanceStore } from '@/app/store/useFinanceStore';
 import { useOnboardingStore } from '@/app/store/useOnboardingStore';
 import { useOptionCatalogStore } from '@/app/store/useOptionCatalogStore';
 import { useProductionPlanningStore } from '@/app/store/useProductionPlanningStore';
 import { calculateRecurringCostSummary, type CostItem, type CostRecurrenceType, type CostStatus } from '@/entities';
 import { formatCurrency, formatDate } from '@/shared/lib/format';
+import { usePersistentDraftState } from '@/shared/lib/usePersistentDraftState';
 import { CenterModal, CreatableSelect, DetailCard, ExecutiveCard, FilterPills, MoneyField, SearchBar, SmartEmptyState, StatusChip } from '@/shared/ui';
 
 interface CostCategoryOption {
@@ -25,6 +26,12 @@ interface CostDraft {
   linkedCropId: string;
   status: CostStatus;
   notes: string;
+}
+
+interface CostEditorState {
+  modalOpen: boolean;
+  editingId: string | null;
+  draft: CostDraft;
 }
 
 const recurrenceOptions: Array<{ value: CostRecurrenceType; label: string }> = [
@@ -108,6 +115,12 @@ const buildDraftFromItem = (item: CostItem): CostDraft => ({
   notes: item.notes
 });
 
+const buildEditorState = (): CostEditorState => ({
+  modalOpen: false,
+  editingId: null,
+  draft: buildDefaultDraft()
+});
+
 const getSubcategoryOptions = (category: string): string[] => {
   const found = categoryOptions.find((option) => option.value === category);
   return found?.subcategories ?? ['Geral'];
@@ -127,9 +140,19 @@ export const CostsModule = () => {
 
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<CostRecurrenceType | 'todos'>('todos');
-  const [modalOpen, setModalOpen] = useState(false);
-  const [editingId, setEditingId] = useState<string | null>(null);
-  const [draft, setDraft] = useState<CostDraft>(buildDefaultDraft());
+  const {
+    value: editorState,
+    setValue: setEditorState,
+    clear: clearEditorState
+  } = usePersistentDraftState<CostEditorState>('dunamis-farm-os-cost-editor-draft-v1', buildEditorState);
+  const { modalOpen, editingId, draft } = editorState;
+
+  const setDraft = (nextValue: SetStateAction<CostDraft>) => {
+    setEditorState((state) => ({
+      ...state,
+      draft: typeof nextValue === 'function' ? nextValue(state.draft) : nextValue
+    }));
+  };
 
   const visible = useMemo(() => {
     return costItems.filter((item) => {
@@ -151,21 +174,23 @@ export const CostsModule = () => {
   const isSingleCost = draft.recurrenceType === 'unico';
 
   const openCreateModal = () => {
-    setEditingId(null);
-    setDraft(buildDefaultDraft());
-    setModalOpen(true);
+    setEditorState({
+      modalOpen: true,
+      editingId: null,
+      draft: buildDefaultDraft()
+    });
   };
 
   const openEditModal = (item: CostItem) => {
-    setEditingId(item.id);
-    setDraft(buildDraftFromItem(item));
-    setModalOpen(true);
+    setEditorState({
+      modalOpen: true,
+      editingId: item.id,
+      draft: buildDraftFromItem(item)
+    });
   };
 
   const closeModal = () => {
-    setModalOpen(false);
-    setEditingId(null);
-    setDraft(buildDefaultDraft());
+    clearEditorState();
   };
 
   const saveDraft = () => {

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type SetStateAction } from 'react';
 import { useImplantationStore, implantationStoreDefaults } from '@/app/store/useImplantationStore';
 import { useOnboardingStore } from '@/app/store/useOnboardingStore';
 import {
@@ -14,6 +14,7 @@ import {
   type Quotation
 } from '@/entities';
 import { formatCompactCurrency, formatCurrency, formatDate, fromCents, toCents } from '@/shared/lib/format';
+import { usePersistentDraftState } from '@/shared/lib/usePersistentDraftState';
 import { CenterModal, DetailCard, ExecutiveCard, SearchBar, SmartEmptyState, StatusChip, UiIcon, WizardModal } from '@/shared/ui';
 
 const implantationStepIds = ['projeto', 'item', 'pagamento', 'revisao'] as const;
@@ -85,6 +86,20 @@ const projectStatusTone = (status: ImplantationProject['status']) => {
 
 const createQuotationForm = (paymentMode: PaymentMode = 'avista') => implantationStoreDefaults.defaultQuotationDraft(paymentMode);
 
+interface QuotationEditorState {
+  quotationModalOpen: boolean;
+  quotationModalItemId: string | null;
+  editingQuotationId: string | null;
+  quotationDraft: ReturnType<typeof createQuotationForm>;
+}
+
+const buildQuotationEditorState = (): QuotationEditorState => ({
+  quotationModalOpen: false,
+  quotationModalItemId: null,
+  editingQuotationId: null,
+  quotationDraft: createQuotationForm()
+});
+
 export const ImplantationModule = () => {
   const projects = useImplantationStore((state) => state.projects);
   const items = useImplantationStore((state) => state.items);
@@ -113,12 +128,26 @@ export const ImplantationModule = () => {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const [wizardError, setWizardError] = useState('');
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
-  const [quotationModalOpen, setQuotationModalOpen] = useState(false);
-  const [quotationModalItemId, setQuotationModalItemId] = useState<string | null>(null);
-  const [editingQuotationId, setEditingQuotationId] = useState<string | null>(null);
+  const {
+    value: quotationEditorState,
+    setValue: setQuotationEditorState,
+    clear: clearQuotationEditorState
+  } = usePersistentDraftState<QuotationEditorState>('dunamis-farm-os-implantation-quotation-draft-v1', buildQuotationEditorState);
+  const { quotationModalOpen, quotationModalItemId, editingQuotationId, quotationDraft } = quotationEditorState;
   const [quotationError, setQuotationError] = useState('');
-  const [quotationDraft, setQuotationDraft] = useState(createQuotationForm());
   const [deleteTarget, setDeleteTarget] = useState<{ itemId: string; quotationId: string; supplier: string; isSelected: boolean } | null>(null);
+
+  const setQuotationDraft = (nextValue: SetStateAction<ReturnType<typeof createQuotationForm>>) => {
+    setQuotationEditorState((state) => ({
+      ...state,
+      quotationDraft: typeof nextValue === 'function' ? nextValue(state.quotationDraft) : nextValue
+    }));
+  };
+
+  const closeQuotationModal = () => {
+    clearQuotationEditorState();
+    setQuotationError('');
+  };
 
   useEffect(() => {
     if (!projects.length) {
@@ -273,29 +302,34 @@ export const ImplantationModule = () => {
     if (!item) return;
 
     if (quotation) {
-      setQuotationDraft({
-        supplier: quotation.supplier,
-        totalCostCents: quotation.totalCostCents,
-        freightCents: quotation.freightCents,
-        source: quotation.source,
-        notes: quotation.notes,
-        status: quotation.status,
-        paymentMode: quotation.paymentMode,
-        downPaymentCents: quotation.downPaymentCents,
-        installments: quotation.installments,
-        installmentValueCents: quotation.installmentValueCents,
-        firstDueDate: quotation.firstDueDate,
-        paymentNotes: quotation.paymentNotes
+      setQuotationEditorState({
+        quotationModalOpen: true,
+        quotationModalItemId: itemId,
+        editingQuotationId: quotation.id,
+        quotationDraft: {
+          supplier: quotation.supplier,
+          totalCostCents: quotation.totalCostCents,
+          freightCents: quotation.freightCents,
+          source: quotation.source,
+          notes: quotation.notes,
+          status: quotation.status,
+          paymentMode: quotation.paymentMode,
+          downPaymentCents: quotation.downPaymentCents,
+          installments: quotation.installments,
+          installmentValueCents: quotation.installmentValueCents,
+          firstDueDate: quotation.firstDueDate,
+          paymentNotes: quotation.paymentNotes
+        }
       });
-      setEditingQuotationId(quotation.id);
     } else {
-      setQuotationDraft(createQuotationForm(item.paymentMode));
-      setEditingQuotationId(null);
+      setQuotationEditorState({
+        quotationModalOpen: true,
+        quotationModalItemId: itemId,
+        editingQuotationId: null,
+        quotationDraft: createQuotationForm(item.paymentMode)
+      });
     }
-
-    setQuotationModalItemId(itemId);
     setQuotationError('');
-    setQuotationModalOpen(true);
   };
 
   const saveQuotation = () => {
@@ -330,10 +364,7 @@ export const ImplantationModule = () => {
       addQuotation(currentQuotationItem.id, normalizedDraft);
     }
 
-    setQuotationModalOpen(false);
-    setQuotationModalItemId(null);
-    setEditingQuotationId(null);
-    setQuotationError('');
+    closeQuotationModal();
   };
 
   const itemSteps = [
@@ -920,14 +951,14 @@ export const ImplantationModule = () => {
         open={quotationModalOpen}
         title={editingQuotationId ? 'Editar cotação' : 'Nova cotação'}
         subtitle={currentQuotationItem ? `Item: ${currentQuotationItem.name}` : 'Preencha fornecedor, valor e parcelamento'}
-        onClose={() => setQuotationModalOpen(false)}
+        onClose={closeQuotationModal}
         footer={
           <div className="wizard-footer">
             <div className="wizard-feedback">
               {quotationError && <span className="wizard-error">{quotationError}</span>}
             </div>
             <div className="wizard-actions">
-              <button type="button" className="ghost-btn" onClick={() => setQuotationModalOpen(false)}>
+              <button type="button" className="ghost-btn" onClick={closeQuotationModal}>
                 Cancelar
               </button>
               <button type="button" className="cta-btn" onClick={saveQuotation}>

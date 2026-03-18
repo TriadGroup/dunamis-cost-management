@@ -9,6 +9,7 @@ import {
 } from '@/app/store/useSetupStore';
 import { applySetupWorkspace, resetWorkspaceToEmpty } from '@/app/store/setupWorkspace';
 import { createId } from '@/app/store/id';
+import { usePersistentDraftState } from '@/shared/lib/usePersistentDraftState';
 import { BrandLogo, CenterModal, DetailCard, ExecutiveCard, StatusChip, UiIcon } from '@/shared/ui';
 import { FarmLocationField } from '@/features/setup/components/FarmLocationField';
 
@@ -138,8 +139,15 @@ export const SetupExperience = () => {
   const markFinancialStartingPointAsChosen = useSetupStore((state) => state.markFinancialStartingPointAsChosen);
   const completeSetup = useSetupStore((state) => state.completeSetup);
   const [draggedChannel, setDraggedChannel] = useState<ChannelOption | null>(null);
-  const [cropCategoryInModal, setCropCategoryInModal] = useState<string | null>(null);
-  const [customCropName, setCustomCropName] = useState('');
+  const {
+    value: customCropDraft,
+    setValue: setCustomCropDraft,
+    clear: clearCustomCropDraft
+  } = usePersistentDraftState('dunamis-farm-os-setup-custom-crop-draft-v1', () => ({
+    cropCategoryInModal: null as string | null,
+    customCropName: ''
+  }));
+  const { cropCategoryInModal, customCropName } = customCropDraft;
 
   const hasDraft = useMemo(() => {
     return (
@@ -200,8 +208,7 @@ export const SetupExperience = () => {
   }, [financialStartingPoints, hasChosenFinancialStartingPoint, recommendedFinancialStart, setFinancialStartingPoints, step.id]);
 
   const closeCustomCropModal = () => {
-    setCropCategoryInModal(null);
-    setCustomCropName('');
+    clearCustomCropDraft();
   };
 
   const saveCustomCrop = () => {
@@ -394,8 +401,10 @@ export const SetupExperience = () => {
                     type="button"
                     className="setup-crop-add"
                     onClick={() => {
-                      setCropCategoryInModal(category);
-                      setCustomCropName('');
+                      setCustomCropDraft({
+                        cropCategoryInModal: category,
+                        customCropName: ''
+                      });
                     }}
                     aria-label={`Adicionar cultivo em ${category.replace('_', ' ')}`}
                   >
@@ -650,7 +659,12 @@ export const SetupExperience = () => {
             <input
               className="input-dark"
               value={customCropName}
-              onChange={(event) => setCustomCropName(event.target.value)}
+              onChange={(event) =>
+                setCustomCropDraft((state) => ({
+                  ...state,
+                  customCropName: event.target.value
+                }))
+              }
               placeholder="Ex.: Almeirao roxo"
               autoFocus
             />

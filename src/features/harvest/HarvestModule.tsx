@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type SetStateAction } from 'react';
 import { useDemandChannelsStore } from '@/app/store/useDemandChannelsStore';
 import { useOnboardingStore } from '@/app/store/useOnboardingStore';
 import { useOptionCatalogStore } from '@/app/store/useOptionCatalogStore';
@@ -6,6 +6,7 @@ import { useProductionPlanningStore } from '@/app/store/useProductionPlanningSto
 import { useTraceabilityStore } from '@/app/store/useTraceabilityStore';
 import type { Harvest, Lot } from '@/entities';
 import { formatCurrency, formatDate, formatNumber, formatUnitLabel } from '@/shared/lib/format';
+import { usePersistentDraftState } from '@/shared/lib/usePersistentDraftState';
 import { CenterModal, ContextHelp, CreatableSelect, DetailCard, ExecutiveCard, MoneyField, NumberField, SearchBar, SmartEmptyState, StatusChip } from '@/shared/ui';
 
 interface HarvestDraftDestination {
@@ -27,6 +28,16 @@ const buildDraft = (harvest?: Harvest) => ({
     quantity: destination.quantity,
     valueCents: destination.valueCents
   })) ?? []
+});
+
+interface HarvestEditorState {
+  modalOpen: boolean;
+  draft: ReturnType<typeof buildDraft>;
+}
+
+const buildEditorState = (): HarvestEditorState => ({
+  modalOpen: false,
+  draft: buildDraft()
 });
 
 const sum = (values: number[]) => values.reduce((acc, value) => acc + value, 0);
@@ -51,8 +62,19 @@ export const HarvestModule = () => {
   const startTour = useOnboardingStore((state) => state.startTour);
 
   const [query, setQuery] = useState('');
-  const [modalOpen, setModalOpen] = useState(false);
-  const [draft, setDraft] = useState(buildDraft());
+  const {
+    value: editorState,
+    setValue: setEditorState,
+    clear: clearEditorState
+  } = usePersistentDraftState<HarvestEditorState>('dunamis-farm-os-harvest-editor-draft-v1', buildEditorState);
+  const { modalOpen, draft } = editorState;
+
+  const setDraft = (nextValue: SetStateAction<ReturnType<typeof buildDraft>>) => {
+    setEditorState((state) => ({
+      ...state,
+      draft: typeof nextValue === 'function' ? nextValue(state.draft) : nextValue
+    }));
+  };
 
   const visibleLots = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -93,18 +115,21 @@ export const HarvestModule = () => {
   const destinationsMatch = Math.round(destinationTotal * 100) === Math.round(draft.marketableQuantity * 100);
 
   const openCreateModal = () => {
-    setDraft(buildDraft());
-    setModalOpen(true);
+    setEditorState({
+      modalOpen: true,
+      draft: buildDraft()
+    });
   };
 
   const openEditModal = (lot: Lot, harvest: Harvest) => {
-    setDraft(buildDraft({ ...harvest, lotId: lot.id }));
-    setModalOpen(true);
+    setEditorState({
+      modalOpen: true,
+      draft: buildDraft({ ...harvest, lotId: lot.id })
+    });
   };
 
   const closeModal = () => {
-    setDraft(buildDraft());
-    setModalOpen(false);
+    clearEditorState();
   };
 
   const saveHarvest = () => {
@@ -221,8 +246,10 @@ export const HarvestModule = () => {
                             openEditModal(lot, latestHarvest);
                             return;
                           }
-                          setDraft({ ...buildDraft(), lotId: lot.id, unit: lotUnit });
-                          setModalOpen(true);
+                          setEditorState({
+                            modalOpen: true,
+                            draft: { ...buildDraft(), lotId: lot.id, unit: lotUnit }
+                          });
                         }}
                       >
                         {lot.harvests.length > 0 ? 'Editar última' : 'Registrar'}
